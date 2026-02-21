@@ -1,0 +1,16 @@
+.typed {
+  animation: none !important;
+  border-right: none !important;
+}
+
+.typed-cursor {
+  display: none !important;
+}
+
+.timeline-line {
+  display: none !important;
+}
+
+.timeline-index {
+  display: none !important;
+}

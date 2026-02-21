@@ -10,95 +10,74 @@ section:
   # hideTitle: true
 
 degrees:
-- name: Ph.D in Quantum Cryptography
+- name: Ph.D. and M.Sc. in Chemistry
   icon: fa-microscope
-  timeframe: 2016-2020
+  timeframe: 2020-2025
   institution:
-    name: ABC University of Technology
-    url: "#"
-    logo: /images/sections/education/tech_college.png
-    # Can optionally show a different logo for dark theme
+    name: The University of Chicago
+    url: "https://chemistry.uchicago.edu"
+    logo: /images/sections/education/uchicago.png
+    takenCourses:
+      - name: "Chicago, IL, USA"    # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/tech_college.png
-  grade: #(optional)
-    scale: CGPA
-    achieved: 3.6
-    outOf: 4
-  publications: #(optional)
-  - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    url: "#"
-  - title: Fusce eu augue ut odio porttitor pulvinar.
-    url: "#"
-  - title: Nullam vitae orci tincidunt purus viverra pulvinar.
-    url: "#"
-- name: B.Sc. in Computer Science & Engineering
+  customSections:
+    - name: Advisor 
+      content: "[Prof. Laura Gagliardi](https://gagliardigroup.uchicago.edu)"
+    - name: Ph.D. Thesis
+      content: "Multireference Studies of Transition Metal and Actinide Containing Molecular Systems"
+
+#  grade: #(optional)
+#    scale: CGPA
+#    achieved: 3.6
+#    outOf: 4
+#  publications: #(optional)
+#  - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+#    url: "#"
+#  - title: Fusce eu augue ut odio porttitor pulvinar.
+#    url: "#"
+
+- name: M.Sc. in Chemistry
   icon: fa-graduation-cap
-  timeframe: 2012-2016
+  timeframe: 2018-2020
   institution:
-    name: University of XYZ
-    url: "#"
-    logo: /images/sections/education/university.jpg
+    name: Universidad Nacional Autónoma de México, (National Autonomous University of Mexico), UNAM
+    url: "https://iquimica.unam.mx"
+    logo: /images/sections/education/unam.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/university.jpg
-  grade: #(optional)
-    scale: CGPA
-    achieved: 3.5
-    outOf: 4
-  takenCourses: #(optional)
-    # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
-    showGrades: true
-    collapseAfter: 3
-    courses:
-    - name: Data Structures and Algorithm
-      achieved: 3.75
-      outOf: 4
-    - name: Network Security
-      achieved: 3.80
-      outOf: 4
-    - name: Operating System
-      achieved: 3.5
-      outOf: 4
-    - name: Artificial Intelligent
-      achieved: 3.75
-      outOf: 4
-  publications: #(optional)
-  - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    url: "#"
-  - title: Fusce eu augue ut odio porttitor pulvinar.
-    url: "#"
-  extracurricularActivities: #(optional)
-  - In vitae facilisis est, eget porta sem.
-  - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
-  - Duis sed massa feugiat, ornare justo et, aliquam est.
-  - Pellentesque ut fringilla magna.
-  customSections: #(optional)
-    - name: Thesis
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - name: Supervisor
-      content: Fusce eu augue ut odio porttitor pulvinar.
-- name: Higher Secondary School Certificate
-  icon: fa-university
-  timeframe: 2010-2012
+  customSections:
+    - name: Advisor
+      content: "[Prof. Tomás Rocha Rinza](https://iquimica.unam.mx/academicos/dr-tomas-rocha-rinza/)"
+    - name: M.Sc. Thesis
+      content: "Non-additive effects in the interaction of water clusters with mono- and divalent cations and anions"
+
+- name: B.Sc. in Chemistry
+  icon: fa-graduation-cap
+  timeframe: 2010-2017
   institution:
-    name: MST College of Science
-    url: "#"
-    logo: /images/sections/education/science_college.png
+    name: Universidad Nacional Autónoma de México, (National Autonomous University of Mexico), UNAM
+    url: "https://iquimica.unam.mx"
+    logo: /images/sections/education/unam.png
     # Can optionally show a different logo for dark theme
-    # darkLogo: /images/sections/education/science_college.png
-  grade: #(optional)
-    scale: GPA
-    achieved: 5
-    outOf: 5
-  extracurricularActivities: #(optional)
-  - In vitae facilisis est, eget porta sem.
-  - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
-  - Duis sed massa feugiat, ornare justo et, aliquam est.
-  - Pellentesque ut fringilla magna.
-- name: Secondary School Certificate
-  icon: fa-school
-  timeframe: 2005-2010
+    # darkLogo: /images/sections/education/university.jpg
+  customSections:
+    - name: Advisor
+      content: "[Prof. Tomás Rocha Rinza](https://iquimica.unam.mx/academicos/dr-tomas-rocha-rinza/)"
+    - name: B.Sc. Thesis
+      content: "Water clusters as bifunctional catalysts in organic chemistry. Ethylene oxide hydrolysis"
+
+- name: B.Eng in Industrial Chemical Engineering
+  icon: fa-graduation-cap
+  timeframe: 2009-2015
   institution:
-    name: JK School of Science
-  grade: #(optional)
-    scale: GPA
-    achieved: 4.5
-    outOf: 5
+    name: Instituto Politécnico Nacional, (National Polytechnic Institute), IPN
+    url: "https://www.esiqie.ipn.mx"
+    logo: /images/sections/education/ipn_logo.png
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/education/university.jpg
+  customSections:
+    - name: Advisor
+      content: "[Prof. Tomás Rocha Rinza](https://iquimica.unam.mx/academicos/dr-tomas-rocha-rinza/)"
+    - name: B.Eng. Thesis
+      content: "Electron density topology and analysis of noncovalent interactions of dehydroalanines relevant in medicinal chemistry "
+
