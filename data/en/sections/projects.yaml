@@ -13,53 +13,53 @@ buttons:
 - name: All
   filter: "all"
 - name: Heavy Elements
-  filter: "heavy element"
+  filter: "Heavy element"
+  filter: "Actinide"
+  filter: "QTAIM"
 - name: Molecular Qubits
   filter: "qubits"
 - name: QCT
-  filter: "qct"
+  filter: "QCT"
+- name: Molecular Magnetism
+  filter: "magnetism"
+#- name: Redox
+#  filter: "redox"
 
 # your projects
 projects:
-- name: Kubernetes
+- name: "Molecular Qubits"
   logo: /images/sections/projects/kubernetes.png
-  role: Contributor
-  timeline: "March 2018 - Present"
-  repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  role: Researcher
+#  timeline: ""
+#  repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
   #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: Production-Grade Container Scheduling and Management.
-  tags: ["professional", "kubernetes", "cloud"]
+  summary: "Quantum Information Science represents a transformative shift in modern technology, proomising to revolutionize fiels like sensing and materials discovery by leveraging the fundamental principles of quantum mechanics. Molecular spin qubits have emerged as a powerful platform. The main advantage of these molecular systems lies in their precise control and tunability via chemical synthesis. My research focuses on the development of computational protocols for the study of molecular spin quibits using multireference quantum cemistry methods for the computation of energy gaps associated with the qubit initialization, and the zero-field splitting parameters for the optical control of the electron spin."
+  tags: ["Qubits", "Magnetism", "ZFS", "Energy Gaps"]
 
-- name: Tensorflow
+- name: "Actinides and Lanthanides Chemistry"
   logo: /images/sections/projects/tensorflow.png
-  role: Developer
-  timeline: "Jun 2018 - Present"
-  repo: https://github.com/tensorflow/tensorflow
+  role: Researcher
+#  timeline: "Jun 2018 - Present"
+#  repo: https://github.com/tensorflow/tensorflow
   #url: ""
-  summary: An Open Source Machine Learning Framework for Everyone.
-  tags: ["professional", "machine-learning"]
+  summary: "The understanding of lanthanides and actinides chemistry is under developed when comparing with transition metals and main group compounds. Lanthanides are used as models for the study of actinides due to some similitudes in their electronic structure. Still, the research around the actinides is challenging due to the difficulties to handle the materials for experimental investigations, and from a theoretical perspective, the analysis of their electronic structure requires of high-level of quantum chemical methods and relativistic approximations."
+  tags: ["Actinide", "Lanthanide", "Redox", "Spectroscopy", "Chemical Bonding"]
 
-- name: A sample academic paper
-  role: Team Lead
-  timeline: "Jan 2017 - Nov 2017"
-  url: "https://www.example.com"
-  summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius reprehenderit animi suscipit autem eligendi esse amet aliquid error eum. Accusantium distinctio soluta aliquid quas placeat modi suscipit eligendi nisi.
-  tags: ["academic","iot"]
+- name: "Quantum Chemical Topology"
+  role: Researcher
+#  timeline: "Jan 2017 - Nov 2017"
+#  url: "https://www.example.com"
+  summary: " Quantum chemical topology (QCT) provides a robust, real-space framework for decoding the intricate nature of chemical bonding across the periodic table. By employing methods such as the Quantum Theory of Atoms in Molecules (QTAIM) and the Electron Localization Function (ELF), researchers can move beyond traditional orbital-based descriptions to visualize electron density gradients and localization domains. This approach is particularly powerful for analyzing both organic molecules and complex inorganic systems, such as lanthanide and actinide complexes. In these f-element systems, QCT helps quantify the degree of covalency and the subtle variations in metal-ligand interactions that govern their unique electronic signatures.
 
-- name: Nocode
+Beyond formal covalent bonding, QCT tools like the Non-Covalent Interaction (NCI) index and the Interacting Quantum Atoms (IQA) energy approach are indispensable for characterizing the nature of molecular architecture: non-covalent interactions. These methods allow for the precise identification and energetic decomposition of ion-dipole, hydrogen bonding, and dispersive van der Waals interactions."
+  tags: ["QTAIM","IQA", "ELF", "NCI", "Chemical Bonding", "H-bond"]
+
+- name: Molecular Clusters
   logo: /images/sections/projects/no-code.png
-  role: Nothing
-  timeline: "Oct 2019 - Dec 2019"
-  repo: https://github.com/kelseyhightower/nocode
+  role: Researcher
+#  timeline: "Oct 2019 - Dec 2019"
+#  repo: https://github.com/kelseyhightower/nocode
   #url: ""
-  summary: The best way to write secure and reliable applications. Write nothing; deploy nowhere.
-  tags: ["hobby", "fun"]
+  summary: "The study of molecular clusters offers a unique window into the transition from isolated atoms to bulk materials, where every additional atom can fundamentally alter the system's electronic and structural properties. By investigating doped systems, such as scandium-doped aluminum clusters ($ScAl_n$), we can observe how a single transition metal impurity modulates the growth patterns and stability of the host framework. Similarly, examining water clusters interacting with various ions allows us to decode the microscopic details of solvation shells and the subtle balance of many-body forces. My research focuses on the precise characterization of these systems through the lens of quantum mechanics, specifically analyzing molecular interactions and electronic descriptors. "
+  tags: ["Energy Gaps", "QCT", "Chemical Bonding", "H-bond"  ] 
 
-- name: Toha
-  logo: /images/sections/projects/toha.png
-  image: /images/sections/projects/toha_website.png
-  role: Owner
-  timeline: "Jun 2019 - Present"
-  repo: https://github.com/hossainemruz/toha
-  summary: A Hugo theme for personal portfolio.
-  tags: ["hobby","hugo","theme","professional"]
