@@ -1,4 +1,4 @@
-# section information
+## section information
 section:
   name: Publications
   id: publications
@@ -12,34 +12,42 @@ section:
 buttons:
 - name: All
   filter: "all"
-- name: "Machine Learning"
-  filter: "machinelearning"
-- name: "Image Processing"
-  filter: "image-processing"
-- name: Security
-  filter: "security"
+- name: "Molecular Qubits"
+  filter: "qubits"
+- name: "Heavy elements"
+  filter: "heavy-elements"
+- name: "QCT"
+  filter: "qct"
+- name: "Magnetism"
+  filer: "magnetism"
+- name: "Molecular Clusters"
+  filter: "clusters"
+- name: "Redox"
+  filters: "redox"
+- name: "Perovskites"
+  filter: "perovskites"
+
 
 # your publications
 publications:
-- title: An Example Paper on Machine Learning
+- title: Acidity and basicity interplay in amide and imide self-association
   publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
+    name: "Chem. Sci., 2018, 9, 4402-4413"
+    #date: 7 June 2020
+    url: https://doi.org/10.1039/C8SC01020J
   authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
+  - name: "Vallejo Narváez;" 
+  - name: "Jiménez, E. I.s;,"
+  - name: "Romero-Montalvo, E.;"
+  - name: "Sauza-de la Vega, A.;"
+  - name: "Quiroz-García, B;"
+  - name: "Hernández-Rodríguez, M.;"
+  - name: "Rocha-Rinza, T."
   paper:
-    summary: Voluptate in id id voluptate laboris. Minim mollit aliquip sit aliqua ut exercitation voluptate eiusmod consequat pariatur sunt enim veniam. Velit esse tempor laboris anim tempor officia. Magna non labore duis do esse sit do ipsum culpa. Officia consequat id non duis culpa dolor. Excepteur magna non nostrud cupidatat aute aliqua aliquip.
-    url: https://example.com
-  categories: ["machinelearning","image-processing"]
-  tags: ["Machine Learning", "Autonomous Driving", "Computer Vision"]
+    summary: "Hola"
+    url: "https://doi.org/10.1039/C8SC01020J"
+  categories: ["qct"]
+  tags: ["DFT", "QTAIM", "NCI", "IQA", "H-Bond"]
 
 - title: An Sample Paper on Image Processing
   publishedIn:

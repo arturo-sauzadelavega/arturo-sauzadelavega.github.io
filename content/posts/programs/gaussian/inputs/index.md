@@ -1,12 +1,12 @@
 ---
-title: "Rich Content"
-date: 2020-06-08T08:06:25+06:00
-description: Sample post with multiple images, embedded video etc.
+title: "Standard Input"
+date: 2026-02-22
+description: Example of general gaussian inputs.
 menu:
   sidebar:
-    name: Rich Content
-    identifier: rich-content
-    parent: sub-category
+    name: Standard Input
+    identifier: standard-input
+    parent: gaussian
     weight: 10
 hero: images/forest.jpg
 tags:

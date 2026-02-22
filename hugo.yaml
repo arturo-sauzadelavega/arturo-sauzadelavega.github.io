@@ -66,6 +66,9 @@ params:
   background: images/background_a.png
   # Background image of the landing page for dark theme
   #darkBackground: /images/site/background.jpg
+  
+#  customJS:
+#    - js/research-filter.js
 
   customCSS:
     - css/override.css

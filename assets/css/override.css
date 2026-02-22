@@ -14,3 +14,103 @@
 .timeline-index {
   display: none !important;
 }
+
+/* ── Research / Projects Section ── */
+.research-section h1 {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Filter Buttons ── */
+/* .filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+} */
+
+.research-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.research-item:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.research-image-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+.research-img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.research-content {
+  padding: 0.5rem;
+}
+
+.research-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #2c9c6e;
+  margin-bottom: 0.8rem;
+}
+
+.research-badge {
+  background: #2c9c6e;
+  color: white;
+  font-size: 0.65rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.research-summary {
+  font-size: 0.92rem;
+  text-align: justify;
+  color: #444;
+  margin-bottom: 0.8rem;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/*  .research-tag {
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 2px 12px;
+  font-size: 0.8rem;
+  color: #555;
+} */
+
+.research-read-more {
+  float: right;
+  background: #2c3e50;
+  color: white !important;
+  border-radius: 4px;
+  padding: 5px 16px;
+  font-size: 0.85rem;
+}
+
+.research-read-more:hover {
+  background: #1a252f;
+}
+
+.research-item.hidden {
+  display: none;
+}

@@ -1,0 +1,104 @@
+{{ $sectionID := replace (lower .section.name) " " "-" }}
+{{ if .section.id }}
+{{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 research-section">
+  {{ if not (.section.hideTitle) }}
+    <h1 class="text-center"><span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ end }}
+
+  <!-- Filter Buttons -->
+  {{ if .buttons }}
+  <div class="text-center mb-4">
+    <div class="btn-group flex-wrap" role="pub-group">
+      {{ range .buttons }}
+      <button type="button" class="btn btn-dark pub-filtr-control {{ if eq .filter "all" }}active{{ end }}" data-filter="{{ .filter }}">
+  {{ .name }}
+      </button>
+      {{ end }}
+    </div>   
+  </div>
+  {{ end }}
+
+  <!-- Projects List -->
+  <div class="container research-list">
+    {{ range .projects }}
+    {{ $tags := .tags }}
+    {{ $tagStr := delimit $tags "," }}
+    <div class="research-item card mb-4" data-tags="{{ $tagStr }}">
+      <div class="row g-0">
+
+        <!-- Image -->
+        <div class="col-md-4 research-image-col">
+          {{ $logo := resources.Get .logo }}
+          {{ if $logo }}
+          <img src="{{ $logo.RelPermalink }}" class="research-img" alt="{{ .name }}" />
+          {{ end }}
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-8 research-content">
+          <div class="card-body d-flex flex-column">
+
+            <!-- Title with tag badge -->
+            <h5 class="research-title">
+              {{ if .url }}
+              <a href="{{ .url }}">{{ .name }}</a>
+              {{ else }}
+              {{ .name }}
+              {{ end }}            </h5>
+
+            <!-- Summary -->
+            <p class="research-summary">{{ .summary }}</p>
+
+            <!-- Tags -->
+            <div class="research-tags mb-2">
+              {{ range .tags }}
+              <span class="badge bg-dark rounded-pill">{{ . }}</span>
+              {{ end }}
+            </div>
+
+
+            <!-- Read More Button -->
+            {{ if .url }}
+            <div class="mt-auto text-end">
+              <a href="{{ .url }}" class="btn btn-dark rounded-pill">Read More</a>
+            </div>
+            {{ end }}
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".pub-filtr-control");
+  const items = document.querySelectorAll(".research-item");
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const filter = this.getAttribute("data-filter");
+
+      buttons.forEach(function(b) {
+        b.classList.remove("active");
+      });
+      this.classList.add("active");
+
+      items.forEach(function (item) {
+        const tags = item.getAttribute("data-tags");
+        if (filter === "all" || tags.includes(filter)) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+    });
+  });
+});
+</script>
+</div>
+
+
