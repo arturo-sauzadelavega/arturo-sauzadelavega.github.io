@@ -1,10 +1,13 @@
 ## section information
 section:
-  name: Publications
+  name: All Publications
   id: publications
   enable: true
   weight: 6
   showOnNavbar: true
+  navbar:
+    name: All Co-authored
+    parent: Publications
   # Can optionally hide the title in sections
   # hideTitle: true
 
