@@ -1,0 +1,111 @@
+{{ $sectionID := replace (lower .section.name) " " "-" }}
+{{ if .section.id }}
+{{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5">
+  {{ if not (.section.hideTitle) }}
+  <h1 class="text-center mb-4">
+    <span id="{{ $sectionID }}"></span>{{ .section.name }}
+  </h1>
+  {{ end }}
+
+  <!-- Carrusel Bootstrap -->
+  <div class="container">
+    <div id="featured-posts-carousel" class="carousel slide" data-bs-ride="false">
+
+      <!-- Indicadores numéricos -->
+      <div class="carousel-indicators">
+        {{ range $index, $post := .posts }}
+        {{ $page := site.GetPage (printf "/posts/%s" $post) }}
+        {{ if $page }}
+        <button type="button"
+          data-bs-target="#featured-posts-carousel"
+          data-bs-slide-to="{{ $index }}"
+          class="{{ if eq $index 0 }}active{{ end }}"
+          aria-label="Slide {{ add $index 1 }}">
+          {{ add $index 1 }}
+        </button>
+        {{ end }}
+        {{ end }}
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        {{ range $index, $post := .posts }}
+        {{ $page := site.GetPage (printf "/posts/%s" $post) }}
+        {{ if $page }}
+        <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+          <div class="card featured-card">
+            <div class="row g-0">
+
+              <!-- Imagen -->
+              {{ $cardImage := $page.Params.image }}
+              {{ if not $cardImage }}
+                {{ $cardImage = $page.Params.hero }}
+              {{ end }}
+              {{ if $cardImage }}
+              {{ $cardImageRes := resources.Get $cardImage }}
+              {{ if $cardImageRes }}
+              <div class="col-md-4 featured-image-col">
+                <img src="{{ $cardImageRes.RelPermalink }}"
+                     class="featured-img"
+                     alt="{{ $page.Title }}" />
+              </div>
+              {{ end }}
+              {{ end }}
+              <!-- Contenido -->
+              <div class="{{ if $page.Params.hero }}col-md-8{{ else }}col-12{{ end }} featured-content">
+                <div class="card-body">
+                  <h5 class="featured-title">
+                    {{ if $page.Params.publishedIn.url }}
+                    <a href="{{ $page.Params.publishedIn.url }}" target="_blank" rel="noopener">{{ $page.Title }}</a>
+                    {{ else }}
+                    <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+                    {{ end }}                  </h5>
+                  {{ if $page.Params.publishedIn }}
+                  <p class="featured-journal">
+                    {{ $page.Params.publishedIn.name }}
+                    {{ if $page.Params.publishedIn.date }}{{ $page.Params.publishedIn.date }}{{ end }}
+                  </p>
+                  {{ end }}
+                  {{ if $page.Params.authors }}
+                  <p class="featured-authors">
+                    {{ range $i, $author := $page.Params.authors }}
+                    {{ if $i }}, {{ end }}{{ $author.name }}
+                    {{ end }}
+                  </p>
+                  {{ end }}
+                  {{ if $page.Description }}
+                  <p class="featured-summary">
+                    <strong style="color: #27ae60;">Synopsis:</strong>
+                    {{ $page.Description }}
+                  </p>
+                  {{ end }}
+                  <a href="{{ $page.RelPermalink }}"
+                     class="btn btn-dark rounded-pill mt-2">Read More</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+
+      <!-- Flechas de navegación -->
+      <button class="carousel-control-prev" type="button"
+        data-bs-target="#featured-posts-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button"
+        data-bs-target="#featured-posts-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+  </div>
+</div>
