@@ -3,7 +3,7 @@ title: "Multiconfiguration Pair-Density Functional Theory for Chromium(IV) Molec
 date: 2026-02-22 
 hero: "images/sections/projects/bloch.png"   #Blog post
 image: "images/sections/projects/toc_qubits1.jpeg"  #Carrrusel 
-description: "Here we show a computational protocol based on the MC-PDFT method for the computation of triplet-singlet energy gaps, and the Zero-Field Splitting parameters of molecular spin qubits. "
+description: "Here we show a computational protocol based on the MC-PDFT method for the computation of triplet-singlet energy gaps, and the Zero-Field Splitting parameters of molecular spin qubits. The importance of molecular geometry is highlighted for the calculation of the axial and rhombic parameters. Bulk-optimized molecules display geometries that reproduce the $|E|$ parameter while gas-phase optimized molecules are better for $|D|$. "
 publishedIn:
   name: "JACS Au, 2022, 2, 9, 2029–2037"
   url: "https://doi.org/10.1021/jacsau.2c00306"
