@@ -1,0 +1,132 @@
+{{ $sectionID := replace (lower .section.name) " " "-" }}
+{{ if .section.id }}
+{{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 publications-section" id="{{ $sectionID }}">
+  {{ if not (.section.hideTitle) }}
+  <h1 class="text-center">
+    <span id="{{ $sectionID }}"></span>{{ .section.name }}
+  </h1>
+  {{ end }}
+
+  <!-- Botones de filtro -->
+  <div class="container ms-auto text-center mb-4">
+    <div class="btn-group flex-wrap" role="pub-group" id="publication-filter-buttons">
+      {{ range .buttons }}
+      <button type="button" class="btn btn-dark pub-filtr-control" data-filter="pub-{{ .filter }}">
+        {{ .name }}
+      </button>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Lista de publicaciones -->
+  <div class="container">
+    {{ $total := len .publications }}
+    {{ range $index, $pub := .publications }}
+    {{ $number := sub $total $index }}
+    <div class="pub-item card mb-3 {{ range $pub.categories }}pub-{{ . }} {{ end }}"
+         data-categories="{{ range $pub.categories }}pub-{{ . }} {{ end }}">
+      <div class="card-body">
+        <div class="row">
+
+          <!-- Contenido izquierda -->
+          <div class="{{ if $pub.image }}col-md-8{{ else }}col-12{{ end }}">
+
+            <!-- Número y fecha -->
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background-color:#2c3e50; color:white; font-size:0.82rem; font-weight:bold; flex-shrink:0;">{{ $number }}</span>
+              {{ if $pub.date }}
+              <span class="pub-date">{{ $pub.date }}</span>
+              {{ end }}
+            </div>
+
+            <!-- Título -->
+            <h5 class="pub-title">
+              {{ if $pub.publishedIn.url }}
+              <a href="{{ $pub.publishedIn.url }}" target="_blank" rel="noopener">{{ $pub.title }}</a>
+              {{ else }}
+              {{ $pub.title }}
+              {{ end }}
+            </h5>
+
+            <!-- Journal -->
+            {{ if $pub.publishedIn.name }}
+            <p class="pub-journal">{{ $pub.publishedIn.name | markdownify }}</p>
+            {{ end }}
+
+            <!-- Autores -->
+            {{ if $pub.authors }}
+            <p class="pub-authors">
+              {{ range $i, $author := $pub.authors }}
+              {{ if $i }}; {{ end }}
+              {{ if $author.highlight }}<strong>{{ $author.name }}</strong>{{ else }}{{ $author.name }}{{ end }}
+              {{ end }}
+            </p>
+            {{ end }}
+
+            <!-- Synopsis -->
+            {{ if $pub.paper.summary }}
+            <p class="pub-summary">
+              <strong style="color: #2c7a9c;">Synopsis:</strong> {{ $pub.paper.summary }}
+            </p>
+            {{ end }}
+
+            <!-- Botones -->
+            <div class="pub-buttons d-flex gap-2 mt-2">
+
+              <!-- Read More -->
+              {{ if $pub.publishedIn.url }}
+              <a href="{{ $pub.publishedIn.url }}" target="_blank" rel="noopener"
+                class="btn btn-dark btn-sm rounded-pill ms-auto">
+                Read More
+              </a>
+              {{ end }}
+
+            </div>
+          </div>
+
+          <!-- Imagen derecha -->
+          {{ if $pub.image }}
+          <div class="col-md-4 pub-image-col">
+            {{ $img := resources.Get $pub.image }}
+            {{ if $img }}
+            <img src="{{ $img.RelPermalink }}" class="pub-img" alt="{{ $pub.title }}" />
+            {{ end }}
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+
+<script>
+window.addEventListener("load", function () {
+
+  /* ── Filtros ── */
+  const filterBtns = document.querySelectorAll('.pub-filtr-control');
+  const pubItems = document.querySelectorAll('.pub-item');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      pubItems.forEach(function(item) {
+        const cats = item.getAttribute('data-categories');
+        if (filter === 'pub-all' || cats.includes(filter)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+});
+</script>

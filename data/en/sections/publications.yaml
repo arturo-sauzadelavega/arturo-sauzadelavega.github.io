@@ -22,72 +22,328 @@ buttons:
 - name: "QCT"
   filter: "qct"
 - name: "Magnetism"
-  filer: "magnetism"
+  filter: "magnetism"
 - name: "Molecular Clusters"
   filter: "clusters"
 - name: "Redox"
-  filters: "redox"
-- name: "Perovskites"
-  filter: "perovskites"
+  filter: "redox"
+- name: "Machine Learning"
+  filter: "machine-learning"
 
 
 # your publications
 publications:
+
+#--------- Actinides radicals LANL
+- title: Chemical Bonding and Oxidation State Variability in Lanthanide and Actinide Systems with Non-Innocent Ligands
+  date: "February 2026..."
+  image: "images/sections/publications/working.jpg"
+  publishedIn:
+    name: "2026, To be submitted for publication"
+    #date: 
+    url:
+  authors:
+  - name: "Beltrán-Leiva, M. J."
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Gagliardi, L."
+  - name: "Batista, E. R."
+  - name: "Yang, P."
+  paper:
+    summary: (Soon)
+    url:
+  categories: ["heavy-elements"]
+  tags: ["Actinides", "Lanthanides", "Multireference Calculations", "TD-DFT", "Radicals", "ETS-NOCV" ]  
+
+#------------ Pentaimido uranate Suzanne Bart
+- title: "Isolation and Characterization of a Pentakis(imido)uranate (VI) Tetraanion." 
+  date: "February 2026..."
+  image: "images/sections/publications/working.jpg"
+  publishedIn:
+    name: "2026, Submitted for publication"
+    #date: 
+    url:
+  authors: 
+  - name: "Gullet, K. L." 
+  - name: "Silva, C. L."
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Shaw, T. E."
+  - name: "Pereiro, F. A."
+  - name: "Collins, T. S."
+  - name: "Coughlin, E. J."
+  - name: "Lapsheva, E."
+  - name: "Anderson, N. H."
+  - name: "Gaggioli, C."
+  - name: "Zeller, M."
+  - name: "Mullis, M. S."
+  - name: "Shafer, J. C."
+  - name: "Kozimor, S. A."
+  - name: "Gagliardi, L."
+  - name: "Schelter, E. J."
+  - name: "Bart, S."
+  paper:
+    summary: (Soon)
+    url:
+  categories: ["heavy-elements", "qct"]
+  tags: ["Actinides", "QTAIM", "NBO", "DFT"  ]
+
+
+#--------------  Molecular Qubits Chem. Sci.
+- title: "Designing molecular qubits: computational insights into first-row and group 6 transition metal complexes."
+  date: "June 2025"
+  image: "images/sections/publications/toc11.png"
+  publishedIn:
+    name: "Chem. Sci., 2025, 16, 12896-12905"
+    #date: 
+    url: https://doi.org/10.1039/D5SC02544C
+  authors:
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Darù, A."
+  - name: "Nofz, S."
+  - name: "Gagliardi, L."
+  paper:
+    summary: "This second paper in the area of molecular qubits consist of using the developed computational protocol for the rational design of molecular spin qubits. In this paper, we follow the strategy of substituting the metal centers to tune the triplet-singlet gaps and the zero-field splitting parameters. We identify the key featurs governing the design of molecular qubits when considering transition metal centers. In addition, we briefly explore the  effects of molecular distortion upon the molecular qubits electronic structure and the zero-field splitting. "
+    url: https://doi.org/10.1039/D5SC02544C
+  categories: ["qubits", "magnetism"]
+  tags: ["Molecular Qubits", "Zero-Field Splitting", "Triplet-Singlet Gap", "Multireference Calculations"]
+
+
+
+#--------------- Uranium Dicarbollides
+- title: Electronically Tunable Low-Valent Uranium Metallacarboranes.
+  date: "March 2025"
+  image: "images/sections/publications/toc10.jpeg"
+  publishedIn:
+    name: "Inorg. Chem., 2025, 64, 4749-4760"
+    #date: 
+    url: https://doi.org/10.1021/acs.inorgchem.4c04431
+  authors:
+  - name: "Kirlikovali, K. O." 
+  - name: "Gómez-Torres, A."
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Darù, A."
+  - name: "Krzyaniak, M. D."
+  - name: "Garg, P."
+  - name: "Malliakas, C. D."
+  - name: "Wasielewski, M. R."
+  - name: "Gagliardi, L."
+  - name: "Farha, O. K."
+  paper:
+    summary: "We studied a series of uranium (III) bisdicarbollide complexes experimentally and with theoretical calculations. The dicarbollide ligands are platforms similar to the Cp ligand, but with the advantage of substituting hydrogen atoms for ligands that can tune the sterics and the electronic properties of the ligand. In this research, we tested electron-donor and -withdrawing ligands and their influence in the redox potentials. Additionally, we evaluate the role of $5f$ orbitals in the metal-ligand bonding. "
+    url: https://doi.org/10.1021/acs.inorgchem.4c04431
+  categories: ["redox","heavy-elements"]
+  tags: ["Actinides", "Redox", "Ligand Functionalization", "DFT" ]
+
+
+#-------------- Iron IV Trevor Hayton
+- title: A homoleptic Fe (iv) ketimide complex with a low-lying excited state.
+  date: "September 2024"
+  image: "images/sections/publications/toc9.png"
+  publishedIn:
+    name: "Chem. Sci., 2024, 15, 16559-16566"
+    #date: 
+    url: https://doi.org/10.1039/D4SC04880F
+  authors:
+  - name: "Hertler, P. R. "
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Darù, A."
+  - name: "Sarkar, A."
+  - name: "Lewis, R. A."
+  - name: "Wu, G." 
+  - name: "Gagliardi, L."
+  - name: "Hayton, T. W. "
+  paper:
+    summary: "In the literature there are a few examples of Fe(IV) complexes. In this research, we studied a quasi-planar ketimide complex. This molecule displays a small magnetic moment at too temperature. We used multireference calculations to elucidate the nature of the ground state. We determined the ground state is a singlet with a low-lying triplet excited state. Due to the small energy difference between these states, we rebeal the magnetic properties are due to temperature independent paramagnetism. " 
+    url: https://doi.org/10.1039/D4SC04880F
+  categories: ["magnetism"]
+  tags: ["Magnetism", "Energy Gap", "Multireference Calculations", "Temperature Independent Paramagnetism"]
+
+
+#------------ Ruthenium Oxide JACS
+- title: Competitive Valerate Binding Enables RuO$_2$-Mediated Butene Electrosynthesis in Water
+  date: "July 2024"
+  image: "images/sections/publications/toc8.png"
+  publishedIn:
+    name: "J. Am. Chem. Soc., 2024, 146, 20584-20593"
+    #date: 
+    url: https://doi.org/10.1021/jacs.4c01776
+  authors:
+  - name: "Špela, K."
+  - name: "Darù, A."
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Stroscio, G. D."
+  - name: "Edwards, E."
+  - name: "Papadopoulos, R."
+  - name: "Gagliardi, L."
+  - name: "Wuttig. A."
+  paper:
+    summary: "The oxidation of valeric acid thorugh the non-Kolbe reaction is a route to obtain butene, a chemical of great importance in industry. Different electrodes have been tested in the past for this reaction. Here, we present an experimental and theoretical study of using ruthenium oxide as electrode and its importance in the mechanistic studies.     "
+    url: https://doi.org/10.1021/jacs.4c01776
+  categories: ["redox"]
+  tags: ["Oxygen Evolution Reaction", "Redox", "DFT", "Organic Reactions"]
+
+
+#---------- Aluminium-Sc clusters
+- title: Wave function analyses of scandium-doped aluminium clusters, Al$_n$Sc ($n= 1–24$), and their CO$_2$ fixation abilities
+  date: "June 2023"
+  image: "images/sections/publications/toc7.png"
+  publishedIn:
+    name: "Phys. Chem. Chem. Phys., 2023, 25, 18854-18865"
+    #date: 
+    url: https://doi.org/10.1039/D3CP01730C
+  authors:
+  - name: "Guevara-Vela, J. M."
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Gallegos, M."
+  - name: "Martín Pendás, Á."
+  - name: "Rocha-Rinza, T." 
+  paper:
+
+    summary: "We studied aluminium-doped nanoclusters and their electronic and optic properties by means of density-functional theory and quantum chemical topology. With the increasing size of the molecular nano cluster, we explored the changes in adsorption energies with carbon dioxide.  We determined that Sc-doping the Al$_{13}$ cluster improves the CO$_2$ adsorption."
+    url: https://doi.org/10.1039/D3CP01730C
+  categories: ["qct", "clusters"]
+  tags: ["QCT", "QTAIM", "IQA", "CO2 Adsorption", "Metallic Clusters"]
+
+
+# ---------------  Molecular Qubits JACS Au
+- title: Multiconfiguration Pair-Density Functional Theory for Chromium (IV) Moleclar Qubits 
+  date: "September 2022"
+  image: "images/sections/publications/toc6.png"
+  publishedIn:
+    name: "JACS Au, 2022, 2, 9, 2029-2037"
+    #date: 
+    url: https://doi.org/10.1021/jacsau.2c00306
+  authors:
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Pandharkar, R."
+  - name: "Stroscio, G. D."
+  - name: "Sarkar, A."
+  - name: "Truhlar, D. G."
+  - name: "Gagliardi, L."
+  paper:
+    summary: "We developed a computational protocol based on hybrid MC-PDFT for the computation of triplet-singlet energy gaps and zero-field splitting parameters of molecular spin qubits. We assessed the influence of molecular geometries in the computation of the axial and rhombic parameters. To obtain semiqualitative description of axial parameter trends in the GHz regime, it is necessary to perform molecular optimizations. However, to address correctly the rhombic parameter, optimization of the molecular qubit candidates whithin a bulk is preferred. "
+    url: https://doi.org/10.1021/jacsau.2c00306
+  categories: ["qubits", "magnetism"]
+  tags: ["Molecular Qubits", "Zero-Field Splitting", "Triplet-Singlet Gap", "Multireference Calculations"]
+
+
+#------------Puto Aristi paper
+- title: Computation of photovoltaic and stability properties of hybrid organic-inorganic perovskites via convolutional neural networks
+  date: "March 2022"
+  image: "images/sections/publications/toc5.png"
+  publishedIn:
+    name: "Theor. Chem. Acc., 2022, 141, 19 "
+    #date: 
+    url: https://link.springer.com/article/10.1007/s00214-022-02875-9
+  authors:
+  - name: "Aristizabal-Ferreira, V. A."
+  - name: "Guevara-Vela, J. M."
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Martín Pendás, Á."
+  - name: "Fuetes-Pineda, G."
+  - name: "Rocha-Rinza, T."
+  paper:
+    summary: "Here, we used trained crystal graph neural networks with density functional theory calculations for the computation of band gaps, refractive indexes, atomization energies and unit cell volumes of hybrid organic-inorganic perovskites. Overall, our investigation shows how deep learning techniques can be exploited to achieve a rapid screening of potential photovoltaic materials in terms of their electronic properties and stability. "
+    url: https://link.springer.com/article/10.1007/s00214-022-02875-9
+  categories: ["machine-learning"]
+  tags: ["Machine Learning", "Perovskites", "DFT", "Band Gap"]
+
+
+#--------- Succinic Acid REG-IQA
+- title: Towards and atomistic understanding of polymorphism in molecular solids.
+  date: "April 2022"
+  image: "images/sections/publications/toc4.png"
+  publishedIn:
+    name: "Phys. Chem. Chem. Phys., 2022, 24, 11278-11294"
+    #date: 
+    url: https://doi.org/10.1039/D2CP00457G
+  authors:
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Duarte, L. J."
+  - name: "Silva, A."
+  - name: "Skelton, J."
+  - name: "Rocha-Rinza, T."
+  - name: "Popelier, P. L. A."
+  paper:
+    summary: "The rules that govern polymorphism in molecular solids are unknown. In this research, we explore the succinic acid polymorphs using the relative energy gradient approach to determine the energetic terms with largest influence for the transformation between the different polymorphs. Using the interacting quantum atoms energy approach we obtained energy terms that were tracked along reaction coordinates related to the transformation between the succinic acid polymorphs. We find that the  conformation is  mainly described by a combination of electrostatics and sterics."
+    url: https://doi.org/10.1039/D2CP00457G
+  categories: ["qct"]
+  tags: ["QCT", "QTAIM", "Catalysis", "H-Bond"]
+
+
+#-------- Water and epoxides
+- title: Water clusters as bifunctional catalysts in organic chemistry. The hydrolysis of oxirane and its methyl derivatives.
+  date: "July 2021"
+  image: "images/sections/publications/toc3.png"
+  publishedIn: 
+    name: "Org. Biomol. Chem., 2021, 19, 6776-6780"
+    #date: 
+    url: https://doi.org/10.1039/D1OB01026C
+  authors:
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Salazar-Lozas, H."
+  - name: "Vallejo Narváez, W. E."
+  - name: "Hernández-Rodríguez, M."
+  - name: "Rocha-Rinza, T."
+  paper:
+    summary: "We explore the bifunctional catalyst role of water cluster for the hydrolysis reaction of various epoxides. With the addition of water molecules into the reactant cluster, the activation energy decreases, demonstrating the catalytic role of water clusters in organic reactions. We explore the kintetics and energetics of the explored reactions, and we studied the chemical-bonding scenario with the quantum theory of atoms in molecules."
+    url: https://doi.org/10.1039/D1OB01026C
+  categories: ["qct", "clusters"]
+  tags: ["QCT", "QTAIM", "Catalysis", "H-Bond"]
+
+
+
+#--------- Water clusters ion-dipole
+- title: Cooperativity and anticooperativity in ion-water interactions. Implications in the aqueous solvation of ions. 
+  date: "February 2021"
+  image: "images/sections/publications/toc2.jpg"
+  publishedIn:
+    name: "ChemPhysChem, 2021, 22, 1269-1285"
+    #date: 
+    url: https://doi.org/10.1002/cphc.202000981
+  authors:
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Guevara-Vela, J. M."
+  - name: "Rocha-Rinza, T."
+  paper:
+    summary: "Using genetic algorithms we build water cluster models interacting with cations and anions. We considered the metal ions from group 1 and 2 of the periodic table. Also, the anions we considered were the F$^-$, Cl$^-$ and Br$^-$ halides and the NO$_3^-$ and SO$_4^{2-}$ oxoanaions."
+    url: https://doi.org/10.1002/cphc.202000981
+  categories: ["qct", "clusters"]
+  tags: ["DFT", "QTAIM", "IQA", "H-Bond", "Ion-Dipole"  ]
+
+
+#----------- Wilmer's Chem. Sci. paper
 - title: Acidity and basicity interplay in amide and imide self-association
+  date: "April 2018"
+  image: "images/sections/publications/toc1.png"
   publishedIn:
     name: "Chem. Sci., 2018, 9, 4402-4413"
     #date: 7 June 2020
     url: https://doi.org/10.1039/C8SC01020J
   authors:
-  - name: "Vallejo Narváez;" 
-  - name: "Jiménez, E. I.s;,"
-  - name: "Romero-Montalvo, E.;"
-  - name: "Sauza-de la Vega, A.;"
-  - name: "Quiroz-García, B;"
-  - name: "Hernández-Rodríguez, M.;"
+  - name: "Vallejo Narváez" 
+  - name: "Jiménez, E. I.s,"
+  - name: "Romero-Montalvo, E."
+  - name: "Sauza-de la Vega, A."
+    highlight: true
+  - name: "Quiroz-García, B"
+  - name: "Hernández-Rodríguez, M."
   - name: "Rocha-Rinza, T."
   paper:
-    summary: "Hola"
+    summary: "We study the interactions involved in the self-association of a set of amides and imides using H-NMR, density functional theory calculations, and quantum chemical topology analyses using the QTAIM, NCI, and IQA methods."
     url: "https://doi.org/10.1039/C8SC01020J"
   categories: ["qct"]
   tags: ["DFT", "QTAIM", "NCI", "IQA", "H-Bond"]
 
-- title: An Sample Paper on Image Processing
-  publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
-  authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
-  paper:
-    summary: Ullamco magna minim cupidatat Lorem ea ex aliqua fugiat et. Dolor quis cillum ea duis irure et commodo aliquip consectetur ullamco labore ut anim nisi. Commodo reprehenderit est consectetur tempor adipisicing occaecat exercitation amet do aliquip dolor do irure. Labore officia ut magna pariatur reprehenderit et ex sit sunt. Magna proident ullamco adipisicing sit.
-    url: https://example.com
-  categories: ["image-processing"]
-  tags: ["Image Processing", "Computer Vision"]
 
-- title: An Example Paper on Security
-  publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
-  authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
-  paper:
-    summary: Dolor ad cupidatat pariatur nulla ipsum ex ullamco nisi anim ullamco. Dolore elit esse in exercitation minim aliqua. Amet velit incididunt magna laboris. Proident reprehenderit deserunt ad officia duis dolor. Tempor nostrud ullamco ullamco sint deserunt cupidatat irure minim consectetur nulla adipisicing sunt.
-    url: https://example.com
-  categories: ["security"]
-  tags: ["Machine Learning", "Autonomous Driving", "Machine Vision"]
