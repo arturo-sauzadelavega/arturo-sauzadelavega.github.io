@@ -34,59 +34,59 @@ buttons:
 # your publications
 publications:
 
-#--------- Actinides radicals LANL
-- title: Chemical Bonding and Oxidation State Variability in Lanthanide and Actinide Systems with Non-Innocent Ligands
-  date: "February 2026..."
-  image: "images/sections/publications/working.jpg"
-  publishedIn:
-    name: "2026, To be submitted for publication"
-    #date: 
-    url:
-  authors:
-  - name: "Beltrán-Leiva, M. J."
-  - name: "Sauza-de la Vega, A."
-    highlight: true
-  - name: "Gagliardi, L."
-  - name: "Batista, E. R."
-  - name: "Yang, P."
-  paper:
-    summary: (Soon)
-    url:
-  categories: ["heavy-elements"]
-  tags: ["Actinides", "Lanthanides", "Multireference Calculations", "TD-DFT", "Radicals", "ETS-NOCV" ]  
-
-#------------ Pentaimido uranate Suzanne Bart
-- title: "Isolation and Characterization of a Pentakis(imido)uranate (VI) Tetraanion." 
-  date: "February 2026..."
-  image: "images/sections/publications/working.jpg"
-  publishedIn:
-    name: "2026, Submitted for publication"
-    #date: 
-    url:
-  authors: 
-  - name: "Gullet, K. L." 
-  - name: "Silva, C. L."
-  - name: "Sauza-de la Vega, A."
-    highlight: true
-  - name: "Shaw, T. E."
-  - name: "Pereiro, F. A."
-  - name: "Collins, T. S."
-  - name: "Coughlin, E. J."
-  - name: "Lapsheva, E."
-  - name: "Anderson, N. H."
-  - name: "Gaggioli, C."
-  - name: "Zeller, M."
-  - name: "Mullis, M. S."
-  - name: "Shafer, J. C."
-  - name: "Kozimor, S. A."
-  - name: "Gagliardi, L."
-  - name: "Schelter, E. J."
-  - name: "Bart, S."
-  paper:
-    summary: (Soon)
-    url:
-  categories: ["heavy-elements", "qct"]
-  tags: ["Actinides", "QTAIM", "NBO", "DFT"  ]
+####--------- Actinides radicals LANL
+###- title: Chemical Bonding and Oxidation State Variability in Lanthanide and Actinide Systems with Non-Innocent Ligands
+###  date: "February 2026..."
+###  image: "images/sections/publications/working.jpg"
+###  publishedIn:
+###    name: "2026, To be submitted for publication"
+###    #date: 
+###    url:
+###  authors:
+###  - name: "Beltrán-Leiva, M. J."
+###  - name: "Sauza-de la Vega, A."
+###    highlight: true
+###  - name: "Gagliardi, L."
+###  - name: "Batista, E. R."
+###  - name: "Yang, P."
+###  paper:
+###    summary: (Soon)
+###    url:
+###  categories: ["heavy-elements"]
+###  tags: ["Actinides", "Lanthanides", "Multireference Calculations", "TD-DFT", "Radicals", "ETS-NOCV" ]  
+###
+####------------ Pentaimido uranate Suzanne Bart
+###- title: "Isolation and Characterization of a Pentakis(imido)uranate (VI) Tetraanion." 
+###  date: "February 2026..."
+###  image: "images/sections/publications/working.jpg"
+###  publishedIn:
+###    name: "2026, Submitted for publication"
+###    #date: 
+###    url:
+###  authors: 
+###  - name: "Gullet, K. L." 
+###  - name: "Silva, C. L."
+###  - name: "Sauza-de la Vega, A."
+###    highlight: true
+###  - name: "Shaw, T. E."
+###  - name: "Pereiro, F. A."
+###  - name: "Collins, T. S."
+###  - name: "Coughlin, E. J."
+###  - name: "Lapsheva, E."
+###  - name: "Anderson, N. H."
+###  - name: "Gaggioli, C."
+###  - name: "Zeller, M."
+###  - name: "Mullis, M. S."
+###  - name: "Shafer, J. C."
+###  - name: "Kozimor, S. A."
+###  - name: "Gagliardi, L."
+###  - name: "Schelter, E. J."
+###  - name: "Bart, S."
+###  paper:
+###    summary: (Soon)
+###    url:
+###  categories: ["heavy-elements", "qct"]
+###  tags: ["Actinides", "QTAIM", "NBO", "DFT"  ]
 
 
 #--------------  Molecular Qubits Chem. Sci.
