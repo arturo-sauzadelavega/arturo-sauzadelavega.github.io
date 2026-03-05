@@ -101,4 +101,17 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </div>
 
-
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const carousel = document.querySelector('.typing-carousel');
+  if (carousel) {
+    const typed = carousel.querySelector('[data-typeit-id]');
+    if (typed) {
+      const text = "Welcome to my academic portfolio!";
+      setTimeout(function() {
+        typed.innerHTML = text;
+      }, 100);
+    }
+  }
+});
+</script>

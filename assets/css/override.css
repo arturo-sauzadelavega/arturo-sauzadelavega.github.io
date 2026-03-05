@@ -1,3 +1,21 @@
+.ti-cursor {
+  display: none !important;
+}
+
+.ityped-cursor {
+  display: none !important;
+}
+
+.typing-carousel .static-summary {
+  color: white !important;
+  font-size: 1.1rem !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .typed {
   animation: none !important;
   border-right: none !important;
@@ -317,6 +335,14 @@ div.featured-indicators-wrapper {
   flex-wrap: wrap;
 }
 
+.static-summary {
+  color: white !important;
+  font-size: 1.1rem !important;
+  margin-top: 0.5rem !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 
 
 

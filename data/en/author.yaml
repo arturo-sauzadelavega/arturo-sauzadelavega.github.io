@@ -1,6 +1,6 @@
 # some information about you
 name: "Arturo Sauza de la Vega"
-nickname: "Arturo"
+nickname: "Arturo!"
 # greeting message before your name. it will default to "Hi! I am" if not provided
 greeting: "Hi, I am"
 image: "images/author/arturo_formal.jpg"
@@ -12,8 +12,6 @@ contactInfo:
   linkedin: asdlv
   researchgate: Arturo-Sauza-De-La-Vega
 
-#intro: Welcome to my academic portfolio! 
-# some summary about what you do
-summary:
-  - Welcome to my Academic Portfolio!
+intro: "Welcome to my academic portfolio! "
+summary: " Welcome to my Academic Portfolio!"
 #description: "Hola"
