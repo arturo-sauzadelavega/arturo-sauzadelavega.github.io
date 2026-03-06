@@ -15,7 +15,7 @@ author:
 math: true
 ---
 
-{{< img src="/images/author/arturo_cartoon_08.png"  width="400" align="center" title="Coding OpenMolcas" >}}
+{{< img src="arturo_cartoon_08.png"  width="400" align="center" title="Coding OpenMolcas" >}}
 
 {{< vs 3 >}}
 
