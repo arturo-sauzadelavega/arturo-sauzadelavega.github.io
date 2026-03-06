@@ -73,6 +73,60 @@ qsub openmolcas-24.sh
 
 Be sure you modified the `openmolcas-24.sh` submission script according to your calculation needs.
 
+In case you are still interested on a launcher script for OpenMolcas calculations, this is the type of script I am using for an HPC with Sun Grid Engine.
+
+```
+#!/bin/bash
+#$ -q BV
+#$ -l h_rt=1200:00:00
+#$ -pe smp 8
+#$ -l mf=161G
+#$ -N job_openmolcas
+#$ -o job_openmolcas.log
+#$ -e job_openmolcas.err
+#$ -cwd 
+
+#Setting working directory for OpenMolcas calculation
+export JOB_HOME=/path/to/input/file/
+export SCRATCH=$TMPDIR
+echo ' JOB ID = ' $JOB_ID  > ${JOB_NAME}.log 
+echo 'SCRATCH = ' $SCRATCH  >> ${JOB_NAME}.log
+echo ' ' >> ${JOB_NAME}.log 
+
+#Loading modules for OpenMolcas
+module load python
+module load py-h5py
+module load py-six
+module load py-matplotlib
+module load intel-mkl
+
+#Setting OpenMolcas Variables
+
+export Project=job_openmolcas
+
+export MOLCAS_NPROCS=1
+export MOLCAS_CPUS=1
+export MOLCAS_MEM=10Gb
+export MOLCAS=/path/to/openmolcas/installation/
+export MOLCAS_SOURCE=/path/to/openmolcas/source_code/
+export MOLCAS_MOLDEN=ON
+
+export Scratch=$TMPDIR
+export WorkDir=$Scratch/$Project
+export CurrDir=$PWD
+
+#commands to run your program start here 
+ulimit -c 0
+
+#### start the calculation ####
+cd $JOB_HOME
+
+$MOLCAS/pymolcas openmolcas.input >> ${JOB_NAME}.log
+
+```
+
+
+
 ### Input Structure
 
 #### &GATEWAY and &SEWARD
