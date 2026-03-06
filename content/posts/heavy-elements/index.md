@@ -13,21 +13,21 @@ tags: ["Actinides", "Lanthanides", "Quantum Chemistry", "Multireference Methods"
 </div>
 -->
 
-## Summary
+#### Summary
 
-Write a detailed summary of the project here. You can write as much
+>Write a detailed summary of the project here. You can write as much
 as you need, including equations using $...$ for inline math or
 $$...$$ for display math.
 
 For example: The spin Hamiltonian is given by $$\hat{H} = D\hat{S}_z^2$$
 
-## Objectives
+#### Key Ideas
 
 - Investigate the electronic structure of transition metal complexes
 - Model magnetic properties using ab initio methods
 - Identify design principles for improved qubit coherence times
 
-## Publications
+#### Relevant Publications
 
 - [Title of Paper 1](https://doi.org/your-doi-1)
 - [Title of Paper 2](https://doi.org/your-doi-2)
