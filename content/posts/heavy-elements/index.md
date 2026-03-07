@@ -1,7 +1,8 @@
 ---
 title: "Actinide and Lanthanide Chemistry"
 date: 2026-02-22
-hero: "images/sections/projects/actinides_fondo.png"
+hero: ln_an_chem.png
+#hero: "images/sections/projects/actinides_fondo.png"
 description: "Electronic Structure, Chemical Bonding, and Spectroscopy of Heavy Elements"
 tags: ["Actinides", "Lanthanides", "Quantum Chemistry", "Multireference Methods", "Absorption/Emission", "Energy Gaps", "QTAIM", "CASPT2"  ]
 ---

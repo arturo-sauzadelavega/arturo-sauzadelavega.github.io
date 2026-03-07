@@ -2,7 +2,8 @@
 title: "OpenMolcas Manual"
 date: 2026-03-05
 description: OpenMolcas Modules and Examples
-#hero: /images/author/arturo_cartoon_08.png
+tags: [ "Quantum Chemistry", "CASSCF", "CASPT2", "MC-PDFT", "Multireference Methods", "Spin-Orbit Coupling", "Magnetism", "Spectroscopy"  ]
+hero: openmolcas.png
 menu:
   sidebar:
     name: OpenMolcas

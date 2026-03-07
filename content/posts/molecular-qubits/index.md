@@ -1,7 +1,7 @@
 ---
 title: "Molecular Qubits"
 date: 2026-02-22
-hero: "images/sections/projects/qubits_fondo.png"
+hero: molecular_qubits2.png
 description: "Electronic structure of molecular qubits"
 tags: ["Molecular Qubits", "Quantum Chemistry", "Multireference Methods", "Zero-Field Splitting", "Energy Gaps", "MC-PDFT", "CASPT2"  ]
 ---

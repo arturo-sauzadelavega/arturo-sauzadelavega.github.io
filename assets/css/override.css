@@ -344,5 +344,13 @@ div.featured-indicators-wrapper {
   opacity: 1 !important;
 }
 
+#hero-area {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  min-height: 120px !important;
+  max-height: 120px !important;
+  height: 120px !important;
+}
 
 

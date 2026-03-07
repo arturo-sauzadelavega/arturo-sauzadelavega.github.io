@@ -1,7 +1,7 @@
 ---
 title: "Molecular Clusters "
 date: 2026-02-22
-hero: "images/sections/projects/clusters.png"
+hero: molecular_clusters.png
 description: "Chemical Bonding, and Noncovalent Interactions"
 tags: [ "Quantum Chemistry", "QTAIM", "IQA", "Molecuar Clusters"  ]
 ---

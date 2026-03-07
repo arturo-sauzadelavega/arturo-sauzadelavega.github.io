@@ -1,7 +1,7 @@
 ---
 title: "Quantum Chemical Topology "
 date: 2026-02-22
-hero: "images/sections/projects/qct.png"
+hero: qct2.png
 description: "Chemical Bonding, and Noncovalent Interactions"
 tags: [ "Quantum Chemistry", "QTAIM", "IQA", "NCI", "ELF"  ]
 ---
