@@ -1,0 +1,745 @@
+<!doctype html><html lang=en><head><title>OpenMolcas Manual</title><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel=canonical href=https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/><link rel=stylesheet href=/application.6a687f87ddd729d8bcf3369951d97352be322d92d07f8a3dd883f291184f9995.css integrity="sha256-amh/h93XKdi88zaZUdlzUr4yLZLQf4o92IPykRhPmZU="><link rel=icon type=image/png href=/images/site/favicon_hu_619875a29a04944e.png><meta property="og:title" content="Arturo's Portfolio"><meta property="og:type" content="website"><meta property="og:description" content="Portfolio and personal blog of Arturo Sauza de la Vega."><meta property="og:image" content="/images/author/arturo_2.jpg"><meta property="og:url" content="https://arturo-sauzadelavega.github.io/"><meta name=description content="OpenMolcas Modules and Examples"><script async src="https://www.googletagmanager.com/gtag/js?id=G-H4LBG7NDFZ"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-H4LBG7NDFZ")}</script><script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">let theme=localStorage.getItem("theme-scheme")||localStorage.getItem("darkmode:color-scheme")||"light";theme==="system"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?theme="dark":theme="light"),document.documentElement.setAttribute("data-theme",theme)</script></head><body class="type-posts kind-page" data-bs-spy=scroll data-bs-target=#TableOfContents data-bs-offset=80><div class="container-fluid bg-secondary wrapper"><nav class="navbar navbar-expand-xl top-navbar shadow" id=top-navbar><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button>
+<i data-feather=sidebar></i>
+</button>
+<a class=navbar-brand href=/><img src=/images/site/main-logo_hu_619875a29a04944e.png id=logo alt=Logo>
+Arturo Sauza de la Vega, Ph.D.</a>
+<button class="navbar-toggler navbar-light" id=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#top-nav-items aria-label=menu>
+<i data-feather=menu></i></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="nav navbar-nav ms-auto"><li class=nav-item><a class=nav-link href=/#home>Home</a></li><li class=nav-item><a class=nav-link href=/#about>About</a></li><li class=nav-item><a class=nav-link href=/#experiences>Experience</a></li><li class=nav-item><a class=nav-link href=/#education>Education</a></li><li class=nav-item><a class=nav-link href=/#projects>Research</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>Publications</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=/#featured-posts>Featured Publications</a>
+<a class=dropdown-item href=/#publications>All Publications</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class=nav-item><a class=nav-link id=note-link href=/notes>Notes</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/main-logo_hu_619875a29a04944e.png class=d-none id=main-logo alt=Logo>
+<img src=/images/site/inverted-logo_hu_619875a29a04944e.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/introduction/ title="Welcome Message">Welcome Message</a></li><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/programs/> Programs</a><ul class=active><li><a class=list-link href=/posts/programs/gaussian/ title=Gaussian>Gaussian</a></li><li><a class="active list-link" href=/posts/programs/openmolcas/ title=OpenMolcas>OpenMolcas</a></li></ul></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/programs/openmolcas/openmolcas.png)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/arturo_formal_hu_850b779fe9a0974a.jpg alt="Author Image"><h5 class=author-name>Arturo Sauza de la Vega</h5><p class=text-muted>Thursday, March 5, 2026 | 34 minutes</p></div><div class=title><h1>OpenMolcas Manual</h1></div><div class=tags><ul style=padding-left:0><li><a href=/tags/quantum-chemistry/ class="btn btn-sm btn-outline-info rounded">Quantum Chemistry</a></li><li><a href=/tags/casscf/ class="btn btn-sm btn-outline-info rounded">CASSCF</a></li><li><a href=/tags/caspt2/ class="btn btn-sm btn-outline-info rounded">CASPT2</a></li><li><a href=/tags/mc-pdft/ class="btn btn-sm btn-outline-info rounded">MC-PDFT</a></li><li><a href=/tags/multireference-methods/ class="btn btn-sm btn-outline-info rounded">Multireference Methods</a></li><li><a href=/tags/spin-orbit-coupling/ class="btn btn-sm btn-outline-info rounded">Spin-Orbit Coupling</a></li><li><a href=/tags/magnetism/ class="btn btn-sm btn-outline-info rounded">Magnetism</a></li><li><a href=/tags/spectroscopy/ class="btn btn-sm btn-outline-info rounded">Spectroscopy</a></li></ul></div><div class=post-content id=post-content><img src=arturo_cartoon_08.png alt="Coding OpenMolcas" width=400 class=center><div style=margin-top:3rem></div><p>OpenMolcas is the open-source version of Molcas, the program that was initially developed by Jan Almlöf, Björn Roos, and Per Siegbahn in the late 1980s. The complete Molcas Documentation can be found <a href=https://www.molcas.org/documentation/manual/node1.html target=_blank rel=noopener>HERE</a>.</p><p>This software includes most of the methods that other programs like Gaussian or Orca have, for example, Hartree-Fock, density functional theory (DFT), coupled cluster, second-order Moller-Plesset, etc. However, OpenMolcas excels in the implementation of multiconfigurational self-consistent field (MCSCF) methods, such as complete active space self-consistent field (CASSCF), and has the capability to compute excited states, spin-orbit coupling (SOC), magnetic properties, etc., using MCSCF wave functions. This is of great importance for the study of transition metals, lanthanides, and heavy element chemistry, some of the topics of interest in the Vlaisavljevich and Miro research groups.</p><h3 id=modules>Modules</h3><p>OpenMolcas operates by calling various programs to perform specific tasks. Each program is called a <code>module</code> and in the OpenMolcas input, it always starts with the <code>&</code> symbol. For example, to perform a Hartree-Fock calculation, you have to include in your input the <code>&amp;SCF</code> module.</p><p>The most common modules we use in our research groups are the following:</p><blockquote><ul><li><code>&amp;SEWARD</code>: For integrals, XYZ coordinates, basis sets, spatial symmetry point group, density fitting, etc. <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/seward.html target=_blank rel=noopener>Seward</a></li><li><code>&amp;SCF</code>: for Hartree-Fock and DFT calculations. <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/scf.html target=_blank rel=noopener>Scf</a></li><li><code>&amp;GUESSORB</code>: To generate initial guess orbitals. <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/guessorb.html target=_blank rel=noopener>Guessorb</a></li><li><code>&amp;GRID_IT</code>: For plotting the computed molecular orbitals <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/grid_it.html target=_blank rel=noopener>GridIt</a></li><li><code>&amp;EXPBAS</code>: To increase the basis functions of a previous calculation for a new calculation <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/expbas.html target=_blank rel=noopener>ExpBas</a></li><li><code>&amp;RASSCF</code>: To perform state-specific and state-average CASSCF, RASSCF, CASCI, RASCI calculations <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/rasscf.html target=_blank rel=noopener>Rasscf</a></li><li><code>&amp;CASPT2</code>: For single-state, multistate and extended multistate CASPT2 calculations <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/caspt2.html target=_blank rel=noopener>Caspt2</a></li><li><code>&amp;RASSI</code>: For Spin-Orbit Coupling, oscillator strengths, SOC matrix elements, transition dipole moments, etc. <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/rassi.html target=_blank rel=noopener>Rassi</a></li><li><code>&amp;SINGLE_ANISO</code>: Magnetic properties (g-tensor, zero-field splitting, magnetic susceptibility), crystal field parameters, etc. <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/single_aniso.html target=_blank rel=noopener>SingleAniso</a></li><li><code>&amp;MCPDFT</code>: For MC-PDFT energies (also multistate MC-PDFT, but it is not recommended due to bad results, except for <a href=https://pubs.acs.org/doi/abs/10.1021/acs.jctc.3c00207 target=_blank rel=noopener>L-PDFT</a> -on PySCF) <a href=https://molcas.gitlab.io/OpenMolcas/sphinx/users.guide/programs/mcpdft.html target=_blank rel=noopener>Mcpdft</a></li></ul></blockquote><p>Something you have to know is that all OpenMolcas calculations necessary must start with <code>&amp;GATEWAY</code> followed by <code>&amp;SEWARD</code>, or only <code>&amp;SEWARD</code> (Gateway can be used independently of Seward, but in the end, Gateway is a submodule of Seward, so people usually use only Seward) because these modules generate the one- and two-electron integrals necessary for all quantum chemical calculation, and of course, you define the basic settings for all calculations, like the molecular geometry and basis sets. This information is stored in files you don&rsquo;t usually observe in the submitting directory. These files are usually handled in the OpenMolcas working directory, for example, <code>RUNFILE</code> and <code>INPORB</code>. Most of the time, you don&rsquo;t have to worry about these files, but it is important for you to know they exist, because depending on this, you can run OpenMolcas calculations in a particular way.</p><p>Another important consideration is that every module creates files that can be used by subsequent modules, and vice versa; most modules can read output files from other modules. For example:</p><blockquote><ul><li><code>&amp;SEWARD</code> creates in the working directory the <code>RUNFILE</code>, <code>ONEINT</code>, and <code>ORDINT</code> files, containing general information about the calculation, the one-electron integrals, and the two-electron integrals, respectively. Such files are input files for the <code>&amp;SCF</code> module, so you can perform a DFT calculation according to the Kohn-Sham equations.</li><li>In a second example, let us assume you perform a Hartree-Fock calculation. The <code>&amp;SCF</code> module uses as input the files mentioned above, and once the SCF calculation converges, some of the output files of this module are the <code>INPORB</code> file, which is handled by OpenMolcas in the working directory for subsequent calculations, but you also obtain files with extensions <code>.ScfOrb</code>, <code>.UhfOrb</code>, and <code>.UnaOrb</code>, where the last two files are obtained only after an unrestricted SCF calculation. Each of these <code>Orb</code> files can be used as input for other modules. We often use these orbital files as input for the <code>&amp;RASSCF</code> module to perform a CASSCF calculation.</li><li>Similarly, the <code>&amp;RASSCF</code> module generates files that can be used for different modules, like <code>&amp;MCPDFT</code> to obtain the MC-PDFT energies, to <code>&amp;CASPT2</code> module, and then obtain CASPT2 energies and wave functions, or we can directly use the <code>&amp;RASSCF</code> output files for the <code>&amp;RASSI</code> module.</li></ul></blockquote><p>As you can see, there is not a single way to perform a calculation with OpenMolcas. You can perform a calculation in a single input by concatenating all the desired modules, or you can split your calculation into various inputs, doing separate calculations one at a time (Check my old <a href=https://github.com/peremiro/QuantumHawks/blob/main/doc/images/openmolcas_tutorial_2022.pdf target=_blank rel=noopener>Slides</a> if you want to check better examples).</p><h3 id=submitting-jobs>Submitting Jobs</h3><div class="alert danger"><span><i data-feather=alert-octagon></i></span>
+<span><strong>These instructions are valid for the HPC Cluster, Argon, we have at the University of Iowa (2026) <code>type="danger"</code>.</strong></span></div><p>Before explaining the input structure, you have to check the scripts necessary to submit OpenMolcas calculations in Argon HPC. The scripts are stored at <code>/Shared/lss_bvlaisavljevich/Scripts/</code>.</p><p>The submission scripts have names such as <code>openmolcas-24.sh</code>. Depending on the number at the end of the file name, the requested resources for your calculations change. This implies that the total memory allocated for that job is 24*8GB = 192GB. However, be sure not to request your OpenMolcas calculation to use all the requested memory, especially for memory-intensive calculations. You have to use approximately 80 to 90% of the requested memory.</p><p>We run OpenMolcas in serial, thus, the available installation in the Shared folder was compiled considering that setting. Only a few OpenMolcas modules experience slight performance improvements for a multicore/parallel installation, however, you may encounter numerical instabilities if you are not cautious while using non-serial calculations. In the Argon HPC Cluster, no parallel installation is available.</p><p>Once you are logged in to Argon HPC, to submit the calculations, use the following command:</p><pre>
+qsub openmolcas-24.sh
+</pre><p>Be sure you modified the <code>openmolcas-24.sh</code> submission script according to your calculation needs.</p><p>In case you are still interested on a launcher script for OpenMolcas calculations, this is the type of script I am using for an HPC with Sun Grid Engine.</p><pre tabindex=0><code>#!/bin/bash
+#$ -q BV
+#$ -l h_rt=1200:00:00
+#$ -pe smp 8
+#$ -l mf=161G
+#$ -N job_openmolcas
+#$ -o job_openmolcas.log
+#$ -e job_openmolcas.err
+#$ -cwd 
+
+#Setting working directory for OpenMolcas calculation
+export JOB_HOME=/path/to/input/file/
+export SCRATCH=$TMPDIR
+echo &#39; JOB ID = &#39; $JOB_ID  &gt; ${JOB_NAME}.log 
+echo &#39;SCRATCH = &#39; $SCRATCH  &gt;&gt; ${JOB_NAME}.log
+echo &#39; &#39; &gt;&gt; ${JOB_NAME}.log 
+
+#Loading modules for OpenMolcas
+module load python
+module load py-h5py
+module load py-six
+module load py-matplotlib
+module load intel-mkl
+
+#Setting OpenMolcas Variables
+
+export Project=job_openmolcas
+
+export MOLCAS_NPROCS=1
+export MOLCAS_CPUS=1
+export MOLCAS_MEM=10Gb
+export MOLCAS=/path/to/openmolcas/installation/
+export MOLCAS_SOURCE=/path/to/openmolcas/source_code/
+export MOLCAS_MOLDEN=ON
+
+export Scratch=$TMPDIR
+export WorkDir=$Scratch/$Project
+export CurrDir=$PWD
+
+#commands to run your program start here 
+ulimit -c 0
+
+#### start the calculation ####
+cd $JOB_HOME
+
+$MOLCAS/pymolcas openmolcas.input &gt;&gt; ${JOB_NAME}.log
+</code></pre><h3 id=input-structure>Input Structure</h3><h4 id=gateway-and-seward>&amp;GATEWAY and &amp;SEWARD</h4><p>In the <strong>Modules</strong> section, it was mentioned that <code>&amp;GATEWAY</code> is a submodule of <code>&amp;SEWARD</code>. Thus, they share many keywords. Consider the water molecule with XYZ coordinates:</p><pre tabindex=0><code>  3
+  Water 
+  O   0.000000  0.000000   0.000000 
+  H   0.758602  0.000000   0.504284
+  H   0.758602  0.000000  -0.504284
+</code></pre><p>When using these modules, you can call an XYZ file, or you can include the data in the input file.</p><ul><li>Including the XYZ coordinates in the input file:</li></ul><pre tabindex=0><code>&amp;GATEWAY
+COORD  
+ 3  
+  Water  
+  O   0.000000  0.000000   0.000000 
+  H   0.758602  0.000000   0.504284
+  H   0.758602  0.000000  -0.504284 
+Basis = 6-31G  
+End of Input
+
+ &amp;SEWARD 
+ End of Input
+</code></pre><ul><li>Calling the XYZ file:</li></ul><pre tabindex=0><code>&amp;GATEWAY
+COORD = water.xyz
+Basis = 6-31G  
+End of Input
+
+ &amp;SEWARD 
+ End of Input
+</code></pre><ul><li>Or, you can merge the <code>&amp;GATEWAY</code> keywords into <code>&amp;SEWARD</code>, displaying all the XYZ coordinates in the input file:</li></ul><pre tabindex=0><code>&amp;SEWARD
+COORD  
+ 3  
+  Water  
+  O   0.000000  0.000000   0.000000 
+  H   0.758602  0.000000   0.504284
+  H   0.758602  0.000000  -0.504284 
+Basis = 6-31G  
+End of Input
+</code></pre><ul><li>Or, calling the XYZ coordinate:</li></ul><pre tabindex=0><code>&amp;SEWARD
+COORD = water.xyz
+Basis = 6-31G  
+End of Input
+</code></pre><p>By the way, it is not necessary to include <code>End of Input</code> once you have finished writing all the keywords associated with a module, but your input looks more organized, and it is useful to avoid mistakes.</p><p>In case you want to assign different basis functions depending on the atom type, you can try this:</p><pre tabindex=0><code>&amp;SEWARD
+COORD = water.xyz
+Basis = O.6-311G, H.3-21G 
+End of Input
+</code></pre><p>Where the oxygen atom is described using the 6-31G basis set, and the hydrogen atoms use the 3-21G basis set. Assuming you want to study a molecule containing Cr, C, H, and N atoms, you can specify the basis set for each atom as shown before, but now, in this example, let us suppose you want to use the <code>ANO-RCC-VTZP</code> basis set for all the atoms, except for H atoms, which will be described with <code>ANO-RCC-MB</code> basis set. There are two ways to specify the basis sets:</p><blockquote><ul><li>Option 1 (the hard way):</li></ul></blockquote><pre tabindex=0><code>&amp;SEWARD
+COORD = molecule.xyz
+Basis = Cr.ANO-RCC-VTZP, C.ANO-RCC-VTZP, N.ANO-RCC-VTZP, H.ANO-RCC-MB
+End of Input
+</code></pre><blockquote><ul><li>Option 2 (the easy way):</li></ul></blockquote><pre tabindex=0><code>&amp;SEWARD
+COORD = molecule.xyz
+Basis = ANO-RCC-VTZP, H.ANO-RCC-MB 
+End of Input
+</code></pre><p>In option 1, you specify for each atom the basis functions to use, but the string gets long really easy, and OpenMolcas has a bug associated to this, where it cannot read a long list of atoms and basis functions, in this case, the option 2 is preferred, where you specify with the <code>BASIS</code> keyword that you are using ANO-RCC-VTZP for everything, <strong>BUT</strong>, for the hydrogen atoms, you are using ANO-RCC-MB.</p><p>Another interesting example about basis functions is when you want to use a different basis set for different atoms, even if they are of the same kind. In this case of situations, I recommend including the XYZ coordinates of your molecule in the input file, for example:</p><pre tabindex=0><code>&amp;SEWARD
+Basis set
+O.6-31G....
+O1   0.000000  0.0000000   0.000000     /angstrom
+End of Basis
+
+Basis set
+H.3-21G....
+H1    0.758602 0.0000000   0.504284    /angstrom
+End of Basis
+
+Basis set
+H.4-31G....
+H2    0.758602 0.0000000  -0.504284    /angstrom
+End of Basis
+
+End of Input
+</code></pre><p>Be sure to rename the elements containing the XYZ coordinates. In this case, O for O1, H for H1, and H for H2. Another option is to do the same differentiation of basis sets directly in the <code>XYZ</code> coordinates:</p><pre tabindex=0><code>&amp;SEWARD
+COORD  
+ 3  
+  Water  
+  O.6-31G   0.000000  0.000000   0.000000     /angstrom
+  H.3-21G   0.758602  0.000000   0.504284     /angstrom
+  H.4-31G   0.758602  0.000000  -0.504284     /angstrom
+End of Input
+</code></pre><p>Next, I am leaving a <code>&amp;SEWARD</code> example for one of my inputs for more advanced calculations:</p><pre tabindex=0><code>&amp;SEWARD
+COORD =  molecule.xyz
+Group = Nosym
+Basis = U.ANO-RCC-VTZP, N.ANO-RCC-VTZP, C.ANO-RCC-MB, H.ANO-RCC-MB
+RICD
+Grid Input
+ Grid = Ultrafine
+End of Grid Input
+ANGM
+0.000000   0.000000   0.000000  Angstrom
+End of Input
+</code></pre><p>In this example, the studied <code>molecule</code> has uranium, carbon, nitrogen, and hydrogen atoms. Only U and N are described using the relativistic <code>ANO-RCC-VTZP</code> basis set, while C and H are described using the minimum basis <code>ANO-RCC-MB</code>. In OpenMolcas, when you use the <code>ANO-RCC</code> basis sets, the second-order Douglas-Kroll-Hess Hamiltonian (DKH2) to account for scalar relativistic corrections is automatically turned on. But if you are using other basis functions, be cautious and turn on the DKH Hamiltonian. Next, the <code>Group = Nosym</code> keyword implies that the molecule does not have any spatial point group symmetry (or C<sub>1</sub>). The <code>RICD</code> is to use the Cholesky Decomposition for the Resolution of the Identity, i.e., for density fitting and speed up your calculation. Then, I included the <code>Grid Input</code> and <code>Grid = Ultrafine</code> keywords because they are used for MC-PDFT calculations. MC-PDFT relies on the grid quality; that&rsquo;s why I use the best grid available. If you want to publish MC-PDFT results, you should use the best grid available. However, if you just want to explore what might be an MC-PDFT outcome, you can use <code>Grid = fine</code>. Finally, because I was planning to use this input for the computation of magnetic properties, with <code>ANGM</code>, it indicates the origin of angular momentum. In this case, it matches the XYZ coordinates of the Uranium center because that&rsquo;s the origin of the magnetic properties of that molecule.</p><h4 id=scf>&amp;SCF</h4><p>The <code>&amp;SCF</code> module is used to run single-point calculations with the Hartree-Fock (HF) method, or using DFT. Often, we use this module to generate an initial guess wave function for further multireference calculations. Therefore, only a few examples of this module will be provided; if you want to learn all the <code>&amp;SCF</code> features, you can check the official documentation.</p><p>With the <code>&amp;SCF</code> module, you can perform closed-shell or open-shell HF or DFT calculations. To perform a closed-shell HF calculation, you can try:</p><pre tabindex=0><code>&amp;SCF
+End of Input
+</code></pre><p>That&rsquo;s it, as simple as that. However, the <code>&amp;SCF</code> module takes some considerations, like the total charge is 0, and the initial guess orbitals are generated in the background. But you can specify the total charge and or use orbitals from a previous calculation with the <code>Lumorb</code> or <code>fileorb</code> keywords.</p><blockquote><ul><li>Using <code>Lumorb</code>, where you use the <code>COPY</code> command to manipulate an orbital file from a previous calculation, and generate the input orbitals (<code>INPORB</code>) for the new calculation (Oh!, and <code>$CurrDir</code> is a variable used to specify the path from the directory where you are submitting your calculation, check the Bash section of this webpage to check how to use environment variables, this is similar to that) :</li></ul></blockquote><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/previous_calculation.ScfOrb INPORB
+&amp;SCF
+Lumorb
+Charge = 0
+End of Input
+</code></pre><blockquote><ul><li>Using the <code>fileorb</code> keyword:</li></ul></blockquote><pre tabindex=0><code>&amp;SCF
+Fileorb=$CurrDir/previous_calculation.ScfOrb
+Charge = 0
+End of Input
+</code></pre><p>When dealing with open-shell molecules, like radical molecules, transition metal complexes, lanthanides, actinides, etc., you need to perform an unrestricted HF or DFT calculation. You have to include the <code>UHF</code> keyword and that&rsquo;s all. However, OpenMolcas might assume a different number of unpaired electrons. Therefore, I recommend you use the <code>ZSPIN</code> keyword to indicate the number of unpaired electrons (<code>ZSPIN = 1</code> for a doublet spin-state, <code>ZSPIN = 2</code> for a triplet state, <code>ZSPIN = 3</code> for a quartet, and so on&mldr;). An alternative is using the <code>SPIN</code> keyword to indicate the spin multiplicity for the calculation (<code>SPIN = 1</code> for a singlet state, <code>SPIN = 2</code> for a doublet, <code>SPIN = 3</code> for a triplet, <code>SPIN = 4</code> for a quartet, and so on&mldr;). Finally, you can select the maximum number of SCF cycles to perform with the <code>ITER</code> keyword.</p><p>Check the following example for an unrestricted HF calculation of an anion with a total charge of -2, considering a doublet spin-state:</p><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/previous_calculation.ScfOrb INPORB
+&amp;SCF
+Lumorb
+UHF
+Charge = -2
+Spin = 2
+Iterations = 300
+End of Input
+</code></pre><p>The previous example is equivalent to:</p><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/previous_calculation.ScfOrb INPORB
+&amp;SCF
+Lumorb
+UHF
+Charge = -2
+Zspin = 1
+Iterations = 300
+End of Input
+</code></pre><p>Finally, to perform a DFT calculation, you just need to use the <code>KSDFT</code> functional to specify the exchange-correlation functional to use. No further changes are needed. Also, another helpful keyword is <code>PRORbitals</code>, with which you can specify which HF or Kohn-Sham orbitals to be printed. Generally, the default values work well for me, but you can use <code>PRORbitals = n </code>, where <code>n=0</code> to not print orbitals, <code>n=1</code> for orbitals with energies smaller than 2E<sub>HOMO</sub> -E<sub>LUMO</sub> (For more printing options, check the official documentation).</p><p>This is an example of a DFT calculation using the PBE functional:</p><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/previous_calculation.ScfOrb INPORB
+&amp;SCF
+Lumorb
+UHF
+KSDFT = PBE
+Charge = -2
+Spin = 2
+Iterations = 300
+End of Input
+</code></pre><p>Finally, this is an example of a Hartree-Fock calculation in a triplet state:</p><pre tabindex=0><code>&amp;SEWARD
+COORD  
+ 3  
+  Water  
+  O   0.000000  0.000000   0.000000    
+  H   0.758602  0.000000   0.504284    
+  H   0.758602  0.000000  -0.504284
+Basis = ANO-RCC-VTZP
+Group = nosym
+RICD
+End of Input
+
+&amp;SCF
+UHF
+Spin = 3
+Charge = 0
+Iterations = 300
+End of Input 
+</code></pre><p>Some of the output files, once a calculation with this module is finished, are the <code>.ScfOrb</code> (canonical orbitals of a closed-shell HF calculation), <code>.UhfOrb</code> (canonical orbitals from an unrestricted HF calculation), and <code>.UnaOrb</code> (natural orbitals from an unrestricted HF calculation). These files can be used to restart other SCF calculations or as an initial guess for other modules, such as <code>&amp;RASSCF</code>, for multireference calculations using the <code>fileorb</code> or <code>Lumorb</code> keywords, as shown in some examples above.</p><h4 id=guessorb>&amp;GUESSORB</h4><p>The <code>&amp;GUESSORB</code> module generates guess orbitals for further calculations. The output file to be used has extension <code>.GssOrb</code>. When using this module, I always recommend to use the <code>PRMO = 3</code> keyword to print the guess orbitals in the output file. Without this keyword, no information is printed in the calculation output file. Sometimes it is also useful to request a population analysis using the guess orbitals. You can do that with the keyword <code>PrPopulation</code>.</p><pre tabindex=0><code>&amp;GUESSORB
+PRMO = 3 
+PrPopulation
+</code></pre><p>Something you should know is that <code>&amp;GUESSORB</code> does not take the total charge or spin multiplicity as input. It is always considered a neutral molecule.</p><p>This is an example of a calculation using the <code>&amp;GUESSORB</code> module:</p><pre tabindex=0><code>&amp;SEWARD
+COORD  
+ 3  
+  Water  
+  O   0.000000  0.000000   0.000000    
+  H   0.758602  0.000000   0.504284    
+  H   0.758602  0.000000  -0.504284
+Basis = ANO-RCC-VTZP
+Group = nosym
+RICD
+End of Input
+
+&amp;GUESSORB
+PRMO = 3 
+PrPopulation
+
+&gt;&gt; COPY $CurrDir/water.GssOrb INPORB
+
+&amp;SCF
+Lumorb
+UHF
+Spin = 3
+Charge = 0
+Iterations = 300
+End of Input 
+</code></pre><h4 id=rasscf>&amp;RASSCF</h4><p>The <code>&amp;RASSCF</code> module is used to perform multireference calculations using the CASSCF and RASSCF methods. This module accepts <code>INPORB</code>, <code>.GssOrb</code>, <code>.ScfOrb</code>, <code>.UhfOrb</code>, <code>.UnaOrb</code>, and <code>.RasOrb</code> orbital files as starting orbitals for the calculations. The <code>.RasOrb</code> output file is important for the type of calculations performed in the research group. This file contains the optimized CASSCF/RASSCF orbitals. Another important file is the <code>.JobIph</code> file, which contains the CASSCF/RASSCF CI-vector (the wave function). This last file is of importance for the <code>&amp;RASSI</code> module, keep that in mind.</p><p>As mentioned before, you can run CASSCF and RASSCF calculations. First, we are discussing how to perform CASSCF calculations. For all CASSCF calculations, remember that your orbital space is divided into three subspaces: (i) Inactive space (with only doubly occupied orbitals), virtual space (with empty orbitals), and the active space (orbitals for which fractional occupation numbers are allowed, and the orbitals are used for a Full CI calculation).</p><p>In the following examples, the <code>&amp;RASSCF</code> input structures will be discussed for molecules with C<sub>1</sub> symmetry in their wave function.
+For a state-specific CASSCF calculation of the water molecule in its singlet ground state, the input structure can be written as follows:</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/start_orbitals.ScfOrb  INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+Inactive = 1
+NACTEL = 8 
+RAS2 = 6
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100 
+End of Input
+</code></pre><p>In this example, the <code>Lumorb</code> keyword was used to indicate <code>&amp;RASSCF</code> must read an orbital file. <code>Symmetry</code> is used to specify the symmetry of the wave function (<code>Symmetry = 1</code> corresponds to the trivial symmetry representation, the identity). <code>SPIN</code> is used to specify the spin state to be computed, 1 for singlet, 2 for doublet, 3 for triplets, and so on. The <code>Inactive</code> keyword is used to specify the number of doubly occupied orbitals. Be aware that, depending on the number of Inactive orbitals you select, you can change the total charge of your molecule. Alternatively, only for CASSCF calculations without symmetry, you can use the keyword <code>CHARGE</code> to establish the total charge of your system, and OpenMolcas automatically determines the number of inactive orbitals. The active space is written in the literature as (n<sub>e</sub>, n<sub>o</sub>), where n<sub>e</sub> stands for the number of electrons included in the active space, and n<sub>o</sub> as the total number of orbitals in the active space. The <code>&amp;RASSCF</code> module uses the keywords <code>NACTEL</code> and <code>RAS2</code> to specify the number of electrons and orbitals in the active space, respectively. I recommend using the keywords <code>ORBListing</code> and <code>ORBAppear</code> to modify the way OpenMolcas prints the molecular orbitals. For different formatting, check the <code>&amp;RASSCF</code> module official documentation. Finally, the <code>ITERations</code> keyword is used to specify the number of CASSCF iterations (200 is the maximum) and the number of iterations for the orbital optimization (100 is the maximum).</p><p>The <code>&amp;RASSCF</code> module could be used to compute more than a single state at a time using the state-average formalism. To perform a SA-CASSCF calculation, you have to include the keyword <code>CIROOT</code> and then indicate the number of spin-states with the same spin multiplicity to be computed.</p><p>For example, to perform a SA-CASSCF calculation for the singlet ground-state of the water molecule, and three singlet excited states (a total of 4 states):</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/start_orbitals.ScfOrb  INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+Inactive = 1
+NACTEL = 8 
+RAS2 = 6
+CIROOT = 4 4 1 
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100 
+End of Input
+</code></pre><p>When using <code>CIROOT</code>, the meaning of the three numbers is: (i) the number of roots (states) to compute, (ii) from the total of roots, the number of states to be included in the orbital optimization, and (iii) in the case the last number is 1, then each root has the same weight for the SA-CASSCF calculation. Alternatively, when performing a SA-CASSCF with equal weights, you can use the keyword <code>STAVErage</code> followed by only the total number of states.</p><p>The computation of RASSCF wave functions is done following the same input structure for CASSCF, with a few differences. In the RASSCF method, we add the subspaces RAS1 and RAS3 to the methodology. RAS1 corresponds to a set of doubly occupied orbitals that allow electron excitations from the orbitals in RAS1 to the empty orbitals in RAS3. Similarly, RAS3 is a set of virtual orbitals that are allowed to hold electrons from RAS1. In the <code>&amp;RASSCF</code> module, we specify the number of orbitals in RAS1 and RAS3, with the keywords <code>RAS1</code> and <code>RAS3</code>, respectively (and obviously, though). Additionally, the <code>NACTEL</code> keyword should be written as <code>NACTEL = n h p</code>, where <code>n</code> is the total number of electrons in RAS2, <code>h</code> is the maximum number of &ldquo;holes&rdquo; in RAS1 (the maximum number of electrons that can be excited from RAS1 to RAS3), and <code>p</code> is the maximum number of particles (electrons) occupying the RAS3 orbitals. By the way, for a CASSCF calculation, you can write in your input <code>RAS1=0</code>, <code>RAS3=0</code>, and <code>NACTEL = n 0 0</code> (This is equivalent to the CASSCF example shown before).</p><p>Similar to CASSCF, you can run state-specific and state-average RASSCF calculations. An example of a SA-RASSCF calculation is:</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/uranium_complex_orbitals.RasOrb  INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 4
+Charge = 0 
+NACTEL = 3 2 2
+RAS1 = 3 
+RAS2 = 7
+RAS3 = 5
+CIROOT = 35 35 1 
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100 
+End of Input
+</code></pre><p>The methods CASSCF and RASSCF are not black-box methods. Sometimes, the CASSCF calculations converge with orbitals without chemical meaning to the phenomenon under study. For example, let us assume you are interested in calculating the energy differences between high- and low-spin configurations of transition metal complexes. In this case, you might need to include the metal d valence orbitals into the active space, but the CASSCF calculation you performed has only ligand orbitals. Thus, you need to substitute the ligand orbitals with those required. Then, you have to manually select the orbitals you want to include in the active space and those you want to replace. To do this, you need the <code>ALTER</code> keyword.</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/start_orbitals.ScfOrb  INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 3
+Charge = 0
+NACTEL = 2
+RAS2 = 10
+CIROOT = 10 10 1
+ALTER = 3
+1 35 43
+1 36 45
+1 38 46
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100 
+End of Input
+</code></pre><p>In the previous example, using <code>ALTER</code>, three pairs of orbitals have been selected for swapping. The first orbital pair has been rotated using symmetry 1, and the orbital indices for the orbitals to be swapped are 35 and 43. Then, the orbitals 36 and 45 are swapped with symmetry 1, and the final pair of orbitals has indexes 38 and 46.</p><p>When using the <code>CIONLY</code> keyword, you can perform CASCI and RASCI calculations where the orbital optimization is omitted. The example of a CASCI calculation is:</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/start_orbitals.ScfOrb  INPORB
+
+&amp;RASSCF
+Lumorb
+CIONLY
+Symmetry = 1
+Spin = 1
+Inactive = 1
+NACTEL = 8 
+RAS2 = 6
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100 
+End of Input
+</code></pre><p>Finally, an input example of a SA-CASSCF calculation is shown below:</p><pre tabindex=0><code>&amp;SEWARD
+RICD
+COORD = Cr_molecule.xyz
+group = nosym
+basis = Cr.ANO-RCC-VTZP, C.ANO-RCC-VDZ, H.ANO-RCC-VDZ
+End of Input
+
+&gt;&gt;COPY $CurrDir/previous_step.RasOrb INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 3
+NACTEL = 10 0 0
+CHARGE = 0
+RAS2 = 15
+ALTER = 1
+1 98 108
+CIROOT = 20 20 1
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100; CIMX = 500
+Sdav = 200; PRWF = 0.01
+End of Input
+
+&gt;&gt;COPY $WorkDir/$Project.RasOrb $CurrDir/$Project.JobIph
+&gt;&gt;COPY $CurrDir/$Project.RasOrb INPORB
+
+&amp;GRID_IT
+sparse
+all
+End of Input
+</code></pre><h4 id=grid_it>&amp;GRID_IT</h4><p>This module is used to generate a file containing molecular orbitals for visualization with the <a href=https://sourceforge.net/projects/luscus target=_blank rel=noopener>Luscus</a> program. This module takes as input the <code>INPORB</code> file to generate an output file with the extension <code>.lus</code>. Alternatively, you can use the keyword <code>FileOrb</code> to indicate your input orbitals to be plotted. You can use <code>&amp;GRID_IT</code> to generate Luscus files for HF, DFT, GUESSORB, CASSCF, and RASSCF output orbitals.</p><p>The luscus files contain grids for the computed orbitals. Therefore, depending on the number of orbitals and the number of points used to generate the grids, you can obtain huge Luscus files requiring hundreds of MB or even GB of disk space for storage.</p><p>You can use this module as follows:</p><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/molecule.RasOrb INPORB
+&amp;GRID_IT
+End of Input
+</code></pre><p>Exist keywords to control the number of orbitals to be plotted and the density of the grid. The keyword <code>SPARSE</code> is used to generate somewhat poor-quality orbitals. On the other hand, <code>DENSE</code> generates high-quality grids for your orbitals. To select the range of orbitals to be plotted, you have to include the <code>SELECT</code> keyword. For a wave function with only one symmetry, you specify the orbitals as follows:</p><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/molecule.RasOrb INPORB
+&amp;GRID_IT
+Dense
+Select = 1:30-40
+End of Input
+</code></pre><p>Or, to visualize all the orbitals, include the <code>ALL</code> keyword.</p><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/molecule.RasOrb INPORB
+&amp;GRID_IT
+Sparse
+All
+End of Input
+</code></pre><p>In case your wave function has a symmetry different than C<sub>1</sub>, for example, a C<sub>2</sub> point group with two irreducible representations, you can select the number of orbitals of each irrep to be plotted. In the next example, for the first irrep, the orbitals 15-20 included in the luscus file, and the orbitals 12-16 in the second irrep are also included in the luscus output file.</p><pre tabindex=0><code>&gt;&gt; COPY $CurrDir/molecule.RasOrb INPORB
+&amp;GRID_IT
+Dense
+Select = 1:15-20, 2:12-16
+End of Input
+</code></pre><p>This is an OpenMolcas input example where the <code>&amp;GRID_IT</code> module is used:</p><pre tabindex=0><code>&amp;SEWARD
+COORD  
+ 3  
+  Water  
+  O   0.000000  0.000000   0.000000    
+  H   0.758602  0.000000   0.504284    
+  H   0.758602  0.000000  -0.504284
+Basis = ANO-RCC-VTZP
+Group = nosym
+RICD
+End of Input
+
+&gt;&gt; COPY $CurrDir/water.ScfOrb INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+Charge = 0
+Nactel = 8 0 0
+RAS2 = 6 
+End of Input
+
+&gt;&gt;COPY $CurrDir/$Project.RasOrb INPORB
+
+&amp;GRID_IT
+Sparse
+All
+End of Input
+</code></pre><p>For this example, you are plotting all the computed MOs. For a CASSCF calculation, <code>&amp;GRID_IT</code> can plot only the orbitals in the active space by writing only the module name in the input, and of course you can add the keywords to improve the grid. You can do it like this:</p><pre tabindex=0><code>&amp;GRID_IT
+Dense
+End of Input
+</code></pre><p>As mentioned above, this will generate the MOs only for the active space orbitals with a high-quality grid.</p><h4 id=mcpdft>&amp;MCPDFT</h4><p>Computing MC-PDFT energies with OpenMolcas is incredibly easy. Here, we demonstrate how to calculate state-specific MC-PDFT and hybrid MC-PDFT (HMC-PDFT) energies. You have to include the <code>&amp;MCPDFT</code> module right after the <code>&amp;RASSCF</code> module, or you can use the <code>INPORB</code> file as shown in previous input examples. Depending on your OpenMolcas installation, you can use the keywords <code>KSDFT</code> or <code>FUNC</code> to select the translated functional for your calculation.</p><blockquote><ul><li>OpenMolcas v24:</li></ul></blockquote><pre tabindex=0><code>&amp;MCPDFT
+KSDFT = t:PBE
+End of Input
+</code></pre><blockquote><ul><li>OpenMolcas v25:</li></ul></blockquote><pre tabindex=0><code>&amp;MCPDFT
+FUNC = t:PBE
+End of Input
+</code></pre><p>To compute HMC-PDFT energies, you can include the <code>LAMBDA</code> keyword. For example, to compute energies with the translated functional tPBE0, it is necessary to include 25% of the CASSCF energy into the HMC-PDFT energy equation.</p><pre tabindex=0><code>&amp;MCPDFT
+KSDFT = t:PBE
+Lambda = 0.25
+End of Input
+</code></pre><p>An input example for an MC-PDFT calculation is the following:</p><pre tabindex=0><code>&amp;SEWARD
+COORD  
+ 3  
+  Water  
+  O   0.000000  0.000000   0.000000    
+  H   0.758602  0.000000   0.504284    
+  H   0.758602  0.000000  -0.504284
+Basis = ANO-RCC-VTZP
+Group = nosym
+RICD
+End of Input
+
+&gt;&gt; COPY $CurrDir/water.ScfOrb INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+Charge = 0
+Nactel = 8 0 0
+RAS2 = 6 
+End of Input
+
+&gt;&gt;COPY $CurrDir/$Project.RasOrb INPORB
+
+&amp;MCPDFT
+KSDFT = t:PBE
+End of Input 
+
+&amp;GRID_IT
+Sparse
+All
+End of Input
+</code></pre><p>As mentioned in the <strong>Modules</strong> section, the multistate MC-PDFT methods available in OpenMolcas, such as state-interaction PDFT (SI-PDFT), extended multistate PDFT (XMS-PDFT), and compressed multistate PDFT (CMS-PDFT), have limitations when describing excited-state potential energy surfaces, including conical intersections. Thus, you can use these methods at your own risk. However, on PySCF, there have been important developments in an accurate multistate MC-PDFT method, specifically the linearized PDFT (L-PDFT).</p><p>Now that the warning has been mentioned, we are describing how to perform XMS-PDFT calculations.</p><p>The computation of XMS-PDFT energies is divided into two steps:</p><blockquote><ol><li>Obtaining the correct active space and obtaining the reference states with SA-CASSCF.</li><li>Apply the XMS procedure to the CASSCF states by including the <code>XMSI</code> keyword into the <code>&amp;RASSCF</code> module, and then computing the XMS-PDFT energies by including the <code>MSPDft</code> in the <code>&amp;MCPDFT</code> module.</li></ol></blockquote><p>An easy example of how to run an XMS-PDFT calculation is shown as follows:</p><pre tabindex=0><code>&amp;SEWARD
+COORD
+ 3
+  Water
+  O   0.000000  0.000000   0.000000
+  H   0.758602  0.000000   0.504284
+  H   0.758602  0.000000  -0.504284
+Basis = ANO-RCC-VTZP
+Group = nosym
+RICD
+End of Input
+
+&gt;&gt; COPY $CurrDir/water.ScfOrb INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+Charge = 0
+Nactel = 8 0 0
+RAS2 = 6
+CIROOT = 5 5 1
+End of Input
+
+&gt;&gt;COPY $CurrDir/$Project.RasOrb INPORB
+
+&amp;RASSCF
+Lumorb 
+Symmetry = 1
+Spin = 1      
+Charge = 0
+Nactel = 8 0 0
+RAS2 = 6
+CIROOT = 5 5 1
+XMSI
+End of Input
+
+
+&amp;MCPDFT
+KSDFT = t:PBE
+MSPDFT
+WJOB
+End of Input
+
+&amp;GRID_IT
+Sparse
+All
+End of Input
+</code></pre><blockquote><p>In the previous example, I included the <code>WJOB</code> keyword to write the XMS-PDFT eigen states and energies into the <code>.JobIph</code> file instead of the SA-CASSCF energies, which might be useful for subsequent calculations with the <code>&amp;RASSI</code> module. Additionally, in case you are interested on testing CMS-PDFT calculations, you can follow exactly the same input structure, but in the second <code>&amp;RASSCF</code> module you have to substitute <code>XMSI</code> for <code>CMSI</code> instead.</p></blockquote><h4 id=caspt2>&amp;CASPT2</h4><p>The <code>&amp;CASPT2</code> module is used to perform perturbation theory over a CASSCF or RASSCF reference wave function. You can perform single-state, multistate, and extended multistate CASPT2, denoted as SS-CASPT2, MS-CASPT2, and XMS-CASPT2, respectively. In the following examples, we include the <code>IPEA</code> and <code>IMAGINARY</code> shifts, two empirical parameters used to address the intruder state problem in the CASPT2 formalism. An important output file from the <code>&amp;CASPT2</code> module is the <code>.JobMix</code> file, which contains the CASPT2 wave function and energies. This file is of importance for the <code>&amp;RASSI</code> module.</p><p>Considering a state-specific CASSCF reference wave function, to perform the CASPT2 calculation, we use the next input structure:</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/molecule.JobIph $WorkDir
+
+&amp;CASPT2
+MaxIter = 300
+Imaginary = 0.30
+IPEA = 0.25
+End of Input
+</code></pre><p>When the state-average CASSCF method was used to obtain the reference states for a CASPT2 calculation, you can perform different types of CASPT2 calculations. Let us assume the SA-CASSCF reference has 5 states, then, you can compute:</p><ul><li>Single-state CASPT2 (SS-CASPT2):</li></ul><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/molecule_sa-casscf_5-states.JobIph   $WorkDir
+
+&amp;CASPT2
+NoMult
+Multistate
+5 1 2 3 4 5
+MaxIter = 300
+Imaginary = 0.30
+IPEA = 0.25
+End of Input
+</code></pre><p>Where the <code>NOMULT</code> keyword turns off the multistate calculation, and the <code>MULTISTATE</code> keyword is used to indicate the total number of states to be corrected with perturbation theory, and which states. In the previous example, below the <code>MULTISTATE</code> keyword, we indicated that all five states are included in the CASPT2 calculation. Instead, we could use the keyword <code>ALL</code> to do the same task. However, you can select a smaller number of states, for example, three states out of the total 5, and the state numbers are 1, 2, and 5:</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/molecule_sa-casscf_5-states.JobIph   $WorkDir
+
+&amp;CASPT2
+NoMult
+Multistate
+3 1 2 5
+MaxIter = 300
+Imaginary = 0.30
+IPEA = 0.25
+End of Input
+</code></pre><p>Selecting states, as in the last input, can be done similarly for MS-CASPT2 and XMS-CASPT2.</p><blockquote><ul><li>Multistate CASPT2 (MS-CASPT2):</li></ul></blockquote><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/molecule_sa-casscf_5-states.JobIph   $WorkDir
+
+&amp;CASPT2
+Multistate
+5 1 2 3 4 5
+MaxIter = 300
+Imaginary = 0.30
+IPEA = 0.25
+End of Input
+</code></pre><blockquote><ul><li>Extended multistate CASPT2 (XMS-CASPT2):</li></ul></blockquote><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/molecule_sa-casscf_5-states.JobIph   $WorkDir
+
+&amp;CASPT2
+XMultistate
+5 1 2 3 4 5
+MaxIter = 300
+Imaginary = 0.30
+IPEA = 0.25
+End of Input
+</code></pre><p>An input example using the CASPT2 module is shown below:</p><pre tabindex=0><code>&amp;SEWARD
+COORD  
+ 3  
+  Water  
+  O   0.000000  0.000000   0.000000    
+  H   0.758602  0.000000   0.504284    
+  H   0.758602  0.000000  -0.504284
+Basis = ANO-RCC-VTZP
+Group = nosym
+RICD
+End of Input
+
+&gt;&gt; COPY $CurrDir/water.ScfOrb INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+Charge = 0
+Nactel = 8 0 0
+RAS2 = 6
+CIROOT = 3 3 1
+End of Input
+
+&amp;CASPT2
+XMultistate
+3 1 2 3 
+MaxIter = 300
+Imaginary = 0.30
+IPEA = 0.25
+End of Input
+</code></pre><h4 id=rassi>&amp;RASSI</h4><p>The <code>&amp;RASSI</code> program is an important part of OpenMolcas because with it, you can study excited states and the coupling between them. Also, you can mix spin-orbit free states using Spin-Orbit Coupling (SOC), and compute
+transition dipole moments, oscillator strengths, etc.
+This module requires the wave function files <code>.JobIph</code> or <code>.JobMix</code> obtained from the <code>&amp;RASSCF</code> and <code>&amp;CASPT2</code> modules, respectively. Therefore, after each of these calculations, it is important to save and keep track of the files. Also, <code>&amp;RASSI</code> requires you to <code>COPY</code> the <code>.JobIph</code> or <code>.JobMix</code> wave function files into <code>JOB00n</code>, where <code>n</code> depends on the number of spin-manifolds you want to include in the state-interaction calculation. Each wave function file must be obtained from separate CASSCF or CASPT2 calculations. For example, for an Fe(II) complex, you can compute quintet, triplet, and singlet state manifolds with state-average or multistate calculations. If you want to mix the three spin-state manifolds, then you should <code>COPY</code> the quintets <code>.JobIph</code> file into <code>JOB001</code>, the triplets <code>.JobIph</code> into <code>JOB002</code>, and the singlets wave function into <code>JOB003</code>.</p><p>A simple example is considering the interaction between spin-orbit-free states within the same spin manifold. For example, for a Ce<sup>3+</sup> complex, we use the (1e,7o) active space to compute all possible (7) doublet states. An input containing the <code>&amp;RASSI</code> program is shown below:</p><pre tabindex=0><code>&gt;&gt;&gt; COPY $CurrDir/cerium_7-doublets.JobIph   JOB001
+&amp;RASSI 
+NROF = 1 7
+1 2 3 4 5 6 7
+MEES
+SPINorbit
+EJOB
+DIPRint = 10-10
+End of Input
+</code></pre><p>This input example uses the <code>NROF</code> keyword to indicate the number of <code>.JobIph</code> files to be used for the state-interaction calculations followed by the total number of roots exist in the <code>.JobIph</code> file (7 doublets), and in the next line, it is enumerated the number of all the states that will be included in the state interaction. In this case, the seven doublets are considered for the RASSI calculations. The keyword <code>MEES</code> gives <code>&amp;RASSI</code> the instruction of computing the angular momentum matrix elements in a basis of spin-orbit-free states. The <code>SPINorbit</code> keyword is used to compute spin-orbit coupling. With <code>EJOB</code>, you read directly from the <code>.JobIph</code> file the energies of each root, and they are included in the spin-orbit-free effective Hamiltonian that will be diagonalized. The keyword <code>DIPRint</code> establishes that information regarding the dipole intensities will be printed, and the number is the threshold of the values to be printed in the output file.</p><p>Previously, an example of an Fe(II) complex was mentioned. For this complex, it was computed with the SA-CASSCF method, 5 quintets, 35 triplets, and 22 singlets. Assuming you already computed the SA-CASSCF wave functions and you have the separate <code>.JobIph</code> files, the <code>&amp;RASSI</code> input is the following:</p><pre tabindex=0><code>&gt;&gt;&gt; COPY $CurrDir/iron-complex_5-quintets.JobIph   JOB001
+&gt;&gt;&gt; COPY $CurrDir/iron-complex_35-triplets.JobIph   JOB002
+&gt;&gt;&gt; COPY $CurrDir/iron-complex_22-singlets.JobIph   JOB003
+&amp;RASSI
+NROF = 3 5 35 22
+1 2 3 4 5
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+SPIN
+EJOB
+SOCOupling = 0.0000001
+
+End of Input
+</code></pre><p>In the previous examples, you can substitute <code>.JobIph</code> for <code>.JobMix</code> files to use CASPT2 wave functions instead. However, if you want to use MC-PDFT energies for the computation of magnetic and spectroscopic properties, you must use the <code>HDIAG</code> keyword to substitute the CASSCF/RASSCF energies for MC-PDFT energies in the <code>.JobIph</code> file, followed by the <code>EJOB</code> keyword. Modifying the previous cerium example including MC-PDFT energies:</p><pre tabindex=0><code>&gt;&gt;&gt; COPY $CurrDir/cerium_7-doublets.JobIph   JOB001
+&amp;RASSI 
+NROF = 1 7
+1 2 3 4 5 6 7
+MEES
+SPINorbit
+HDIAG
+-3199.83912632
+-3199.78924142
+-3199.75080295
+-3199.65684400
+-3199.65959939
+-3199.60048863
+-3199.59549124
+EJOB
+DIPRint = 10-10
+End of Input
+</code></pre><p>When including more spin-states manifolds, you have to include the MC-PDFT energies following the same order as the <code>.JobIph</code> files were introduced for the <code>NROF</code> keyword.</p><p>The example of a calculation including the <code>&amp;RASSI</code> module is as follows:</p><pre tabindex=0><code>&amp;SEWARD
+RICD
+COORD = Fe-IV_molecule.xyz
+AMFI
+Douglas-Kroll
+group = nosym
+basis = Fe.ANO-RCC-VTZP, N.ANO-RCC-VDZ, C.ANO-RCC-VDZ,  H.ANO-RCC-VDZ.
+ANGM
+  0.00000005767923     -0.00138625131459      0.00000007053760  Angstrom
+End of Input
+
+&gt;&gt;&gt; COPY $CurrDir/quintets_casscf_sa5.JobMix JOB001
+&gt;&gt;&gt; COPY $CurrDir/triplets_casscf_sa35.JobMix JOB002
+&gt;&gt;&gt; COPY $CurrDir/singlets_casscf_sa22.JobMix JOB003
+
+&amp;RASSI
+Properties
+3
+&#39;AngMom &#39; 1
+&#39;AngMom &#39; 2
+&#39;AngMom &#39; 3
+NROF = 3 5 35 22
+1 2 3 4 5
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+SPIN
+EJOB
+End of Input
+</code></pre><h4 id=single_aniso>&amp;SINGLE_ANISO</h4><p>The <code>&amp;SINGLE_ANISO</code> module is used right after the <code>&amp;RASSI</code> module. Therefore, often we have both modules in the same OpenMolcas input. This module is used to compute magnetic properties, such as Zeeman splitting, zero-field splitting, and magnetic susceptibility. It is also used for the computation of ab initio Crystal Field parameters.</p><p>The computation of g- and D-tensors is done using the <code>MLTP</code> keyword. When using it, the program reads the information in two lines. The first line is the number of multiplets (number of spin-orbit states) for which the tensors will be computed, and the second line indicates the number of spin-orbit states for each multiplet. For example, let us consider that we are interested in three multiplets. Each multiplet has 2, 4, and 4 spin-orbit states, respectively.</p><pre tabindex=0><code>&amp;SINGLE_ANISO
+MLTP
+3
+2 4 4
+End of Input
+</code></pre><p>When computing the magnetic susceptibility tensor, we can establish the temperature range (<code>TINT</code>) and the magnitude of the applied magnetic field (<code>XFIE</code>) in Tesla units:</p><pre tabindex=0><code>&amp;SINGLE_ANISO
+XFIE = 0.1
+TINT = 0.0 300 51
+End of Input
+</code></pre><p>In the previous example, the temperature range for the magnetic susceptibility spans from 0 K to 300 K, with 51 evenly distributed points.</p><p>To obtain the ab initio Crystal Field parameters, it is necessary to use the <code>CRYS</code> keyword and then specify the metal center atomic symbol. The crystal field parameters can be computed only for first-row transition metals, lanthanides, and actinides. For lanthanides and actinides, only the atomic symbol is required, for example, for a Dysprosium complex, the input structure is:</p><pre tabindex=0><code>&amp;SINGLE_ANISO
+CRYS = Dy
+End of Input
+</code></pre><p>However, when computing the crystal field parameters for a transition metal complex, the atomic symbol and the oxidation state must be mentioned. For example, for an Fe(IV) complex:</p><pre tabindex=0><code>&amp;SINGLE_ANISO
+CRYS = Fe ; 4
+End of Input
+</code></pre><p>An OpenMolcas input for a calculation including the <code>&amp;SINGLE_ANISO</code> is as follows:</p><pre tabindex=0><code>&amp;SEWARD
+RICD
+COORD = Fe-IV_molecule.xyz
+AMFI
+Douglas-Kroll
+group = nosym
+basis = Fe.ANO-RCC-VTZP, N.ANO-RCC-VDZ, C.ANO-RCC-VDZ,  H.ANO-RCC-VDZ.
+ANGM
+  0.00000005767923     -0.00138625131459      0.00000007053760  Angstrom
+End of Input
+
+&gt;&gt;&gt; COPY $CurrDir/quintets_casscf_sa5.JobIph JOB001
+&gt;&gt;&gt; COPY $CurrDir/triplets_casscf_sa35.JobIph JOB002
+&gt;&gt;&gt; COPY $CurrDir/singlets_casscf_sa22.JobIph JOB003
+
+&amp;RASSI
+Properties
+3
+&#39;AngMom &#39; 1
+&#39;AngMom &#39; 2
+&#39;AngMom &#39; 3
+NROF = 3 5 35 22
+1 2 3 4 5
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+SPIN
+EJOB
+SOCOupling
+0.0000000001
+
+&amp;SINGLE_ANISO
+XFIE = 0.1
+TINT = 0.0 300.0 51
+CRYS = Fe ; 4
+MLTP
+2
+1 3
+End Of Input
+</code></pre><h3 id=helpful-tips>Helpful Tips</h3><p>In case you are interested in checking the dominant configuration for each computed root, you can open the output file with <code>vi</code> and search for the string <code>energy=</code>. Below the printed energy, check the second column, which shows the spin and occupation of each orbital in the active space. In the last column (under the weight header), the dominant configuration for each particular state is the configuration with the largest value.</p><p>In the OpenMolcas output, the row containing important information, like the energy computed for the quantum chemistry methods, starts with <code>::</code>. Thus, from the terminal, you can <code>grep</code> the computed energies:</p><ul><li>When using CASSCF/RASSCF methods, to obtain the energies, try:</li></ul><pre tabindex=0><code>grep &#34;::    RASSCF&#34;  openmolcas_casscf_calculation.output | awk &#39;{print $(NF)}&#39;
+</code></pre><ul><li>CASPT2 method:</li></ul><pre tabindex=0><code>grep &#34;::    CASPT2&#34;  openmolcas_caspt2_calculation.output | awk &#39;{print $(NF)}&#39;
+</code></pre><ul><li>XMS-CASPT2 method:</li></ul><pre tabindex=0><code>grep &#34;::    XMS-CASPT2&#34;  openmolcas_xms-caspt2_calculation.output | awk &#39;{print $(NF)}&#39;
+</code></pre><ul><li>MC-PDFT method:</li></ul><pre tabindex=0><code>grep &#34;::    MCPDFT&#34;  openmolcas_mcpdft_calculation.output | awk &#39;{print $(NF)}&#39;
+</code></pre><p>This might sound trivial, but when using CASSCF/RASSCF to compute many spin-state manifolds, like the previous example of an Fe(IV) complex were quintet, triplet, and singlet state manifolds were computed, you can compute the orbitals for one of the spin-state manifolds and use those converged orbitals for the computation of the other spin-states. For example:</p><pre tabindex=0><code>&amp;SEWARD
+RICD
+COORD = Fe-IV_molecule.xyz
+group = nosym
+basis = Fe.ANO-RCC-VTZP, N.ANO-RCC-VTZP, C.ANO-RCC-MB, H.ANO-RCC-MB
+End of Input
+
+&gt;&gt;COPY $CurrDir/fe-iv-starting_orbitals.ScfOrb INPORB
+
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 5
+NACTEL = 4 0 0
+CHARGE = 0
+RAS2 = 10
+CIROOT = 5 5 1
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100; CIMX = 500
+Sdav = 200; PRWF = 0.01
+End of Input
+
+&gt;&gt;COPY $WorkDir/$Project.RasOrb $CurrDir/${Project}_quintets.RasOrb
+&gt;&gt;COPY $WorkDir/$Project.JobIph $CurrDir/${Project}_quintets.JobIph
+
+&gt;&gt;COPY $CurrDir/${Project}_quintets.RasOrb INPORB
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 3
+NACTEL = 4 0 0
+CHARGE = 0
+RAS2 = 10
+CIROOT = 35 35 1
+End of Input
+
+&gt;&gt;COPY $WorkDir/$Project.RasOrb $CurrDir/${Project}_triplets.RasOrb
+&gt;&gt;COPY $WorkDir/$Project.JobIph $CurrDir/${Project}_triplets.JobIph
+
+&gt;&gt;COPY $CurrDir/${Project}_quintets.RasOrb INPORB
+&amp;RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+NACTEL = 4 0 0
+CHARGE = 0
+RAS2 = 10
+CIROOT = 22 22 1
+End of Input
+
+&gt;&gt;COPY $WorkDir/$Project.RasOrb $CurrDir/${Project}_singlets.RasOrb
+&gt;&gt;COPY $WorkDir/$Project.JobIph $CurrDir/${Project}_singlets.JobIph
+</code></pre><ul><li><p>When running a <code>&amp;RASSI</code> calculation, you can print the spin-orbit matrix elements with <code>SOCoupling </code>followed by the threshold. The tighter the threshold, the more complete the matrix element will be printed. However, this might affect your <code>&amp;RASSI</code> calculation. If you are mixing hundreds of states, it is possible that your <code>&amp;RASSI</code> calculation will never finish because it is working on printing an incredibly huge number of matrix elements, and by the end of your <code>&amp;RASSI</code> calculation, you will see only the following header:</p><pre tabindex=0><code>    ****************************************************************************************************
+    *                                                                                                  *
+    *                                         Spin-orbit section                                       *
+    *                                                                                                  *
+    ****************************************************************************************************
+</code></pre></li></ul><p>Therefore, it is better not to try to use the <code>SOCoupling</code> keyword unless you are computing a few dozen states.</p><div dir=rtl>All suggestions are welcome to improve this section, just send me a message.</div></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
+<a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fopenmolcas%2f" target=_blank><i class="fab fa-facebook"></i>
+</a><a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fopenmolcas%2f&text=OpenMolcas%20Manual&via=Arturo%20Sauza%20de%20la%20Vega%2c%20Ph.D." target=_blank><i class="fab fa-twitter"></i>
+</a><a class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fopenmolcas%2f&title=OpenMolcas%20Manual" target=_blank><i class="fab fa-reddit"></i>
+</a><a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fopenmolcas%2f&title=OpenMolcas%20Manual" target=_blank><i class="fab fa-linkedin"></i>
+</a><a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=OpenMolcas%20Manual https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fopenmolcas%2f" target=_blank><i class="fab fa-whatsapp"></i>
+</a><a class="btn icon-button" href="mailto:?subject=OpenMolcas%20Manual&body=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fopenmolcas%2f" target=_blank><i class="fas fa-envelope-open-text"></i></a></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/programs/openmolcas/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
+Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/programs/gaussian/ title="Gaussian 09/16" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Gaussian 09/16</div></a></div><div class="col-md-6 next-article"><a href=/posts/markdown-sample/ title="Markdown Samples" class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>Markdown Samples</div></a></div></div><hr></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#modules>Modules</a></li><li><a href=#submitting-jobs>Submitting Jobs</a></li><li><a href=#input-structure>Input Structure</a><ul><li><a href=#gateway-and-seward>&amp;GATEWAY and &amp;SEWARD</a></li><li><a href=#scf>&amp;SCF</a></li><li><a href=#guessorb>&amp;GUESSORB</a></li><li><a href=#rasscf>&amp;RASSCF</a></li><li><a href=#grid_it>&amp;GRID_IT</a></li><li><a href=#mcpdft>&amp;MCPDFT</a></li><li><a href=#caspt2>&amp;CASPT2</a></li><li><a href=#rassi>&amp;RASSI</a></li><li><a href=#single_aniso>&amp;SINGLE_ANISO</a></li></ul></li><li><a href=#helpful-tips>Helpful Tips</a></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#experiences>Experience</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#projects>Research</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#featured-posts>Featured Publications</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#publications>All Publications</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:arturo-sauzadelavega@uiowa.edu target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>arturo-sauzadelavega@uiowa.edu</span></a></li><li><a href=https://github.com/arturo-sauzadelavega target=_blank rel=noopener><span><i class="fab fa-github"></i></span> <span>arturo-sauzadelavega</span></a></li><li><a href=https://www.linkedin.com/in/asdlv target=_blank rel=noopener><span><i class="fab fa-linkedin"></i></span> <span>Arturo Sauza de la Vega</span></a></li><li><a href=https://www.researchgate.net/profile/Arturo-Sauza-De-La-Vega target=_blank rel=noopener><span><i class="fab fa-researchgate"></i></span> <span>Arturo Sauza de la Vega</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_be7279b2506ad3f1.png alt="Toha Theme Logo">
+Toha</a></div><div class="col-md-4 text-center">Copyright © 2026 Arturo Sauza de la Vega. All Rights Reserved.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
+<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.47b696b1d84c5bd791255169498f474886ac0221db232941b5f6493fba7b02c1.js integrity="sha256-R7aWsdhMW9eRJVFpSY9HSIasAiHbIylBtfZJP7p7AsE=" defer></script></body></html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic on Arturo Sauza de la Vega, Ph.D.</title><link>https://arturo-sauzadelavega.github.io/categories/basic/</link><description>Recent content in Basic on Arturo Sauza de la Vega, Ph.D.</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://arturo-sauzadelavega.github.io/categories/basic/index.xml" rel="self" type="application/rss+xml"/><item><title>Welcome to my Blog</title><link>https://arturo-sauzadelavega.github.io/posts/introduction/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/introduction/</guid><description>&lt;img src="arturo_cartoon_10.png"
+alt="AI image"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;Thank you for visiting this blog. This is the first time I spent some time writing a blog, and in this case, I am trying to write a useful blog for those working doing research with quantum chemistry calculations.&lt;/p&gt;
+&lt;p&gt;I am expecting to write posts about how to use some of the programs I use on my own research. Therefore, these posts are also a reminder for myself about some input files for such programs.&lt;/p&gt;</description></item></channel></rss>

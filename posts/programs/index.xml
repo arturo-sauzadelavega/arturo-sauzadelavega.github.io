@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Electronic Structure Programs on Arturo Sauza de la Vega, Ph.D.</title><link>https://arturo-sauzadelavega.github.io/posts/programs/</link><description>Recent content in Electronic Structure Programs on Arturo Sauza de la Vega, Ph.D.</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://arturo-sauzadelavega.github.io/posts/programs/index.xml" rel="self" type="application/rss+xml"/><item><title>Gaussian 09/16</title><link>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</guid><description>&lt;img src="arturo_cartoon_08.png"
+alt="Coding OpenMolcas"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Gaussian is a well-known electronic structure program in the chemistry community. Probably this introduction is unnecesary because most of the people I known they already know about its existance, its story, many of the methods implemented, etc.&lt;/p&gt;
+&lt;p&gt;In my opinion, Gaussian is one of the most friendly codes out there. However, there are many tools that are very useful and we don&amp;rsquo;t usually remember how to use them. This is my main motivation to write this post, to remember some of the input structures I use for special cases, or when the documentation is limited and I already figured out how to make the input run correctly.&lt;/p&gt;</description></item><item><title>OpenMolcas Manual</title><link>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</guid><description>&lt;img src="arturo_cartoon_08.png"
+alt="Coding OpenMolcas"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;p&gt;OpenMolcas is the open-source version of Molcas, the program that was initially developed by Jan Almlöf, Björn Roos, and Per Siegbahn in the late 1980s. The complete Molcas Documentation can be found &lt;a href="https://www.molcas.org/documentation/manual/node1.html" target="_blank" rel="noopener"&gt;HERE&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This software includes most of the methods that other programs like Gaussian or Orca have, for example, Hartree-Fock, density functional theory (DFT), coupled cluster, second-order Moller-Plesset, etc. However, OpenMolcas excels in the implementation of multiconfigurational self-consistent field (MCSCF) methods, such as complete active space self-consistent field (CASSCF), and has the capability to compute excited states, spin-orbit coupling (SOC), magnetic properties, etc., using MCSCF wave functions. This is of great importance for the study of transition metals, lanthanides, and heavy element chemistry, some of the topics of interest in the Vlaisavljevich and Miro research groups.&lt;/p&gt;</description></item></channel></rss>

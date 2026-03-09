@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Molecular Qubits on Arturo Sauza de la Vega, Ph.D.</title><link>https://arturo-sauzadelavega.github.io/tags/molecular-qubits/</link><description>Recent content in Molecular Qubits on Arturo Sauza de la Vega, Ph.D.</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://arturo-sauzadelavega.github.io/tags/molecular-qubits/index.xml" rel="self" type="application/rss+xml"/><item><title>Molecular Qubits</title><link>https://arturo-sauzadelavega.github.io/posts/molecular-qubits/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/molecular-qubits/</guid><description>&lt;p&gt;&lt;img src="https://arturo-sauzadelavega.github.io/images/sections/projects/molecular_qubits.png" alt=""&gt;&lt;/p&gt;
+&lt;!--
+&lt;div style="text-align: center;"&gt;
+&lt;img src="images/sections/projects/molecular_qubits.png" alt="Molecular qubit structure" width="500px"&gt;
+&lt;/div&gt;
+--&gt;
+&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Write a detailed summary of the project here. You can write as much
+as you need, including equations using $&amp;hellip;$ for inline math or
+$$&amp;hellip;$$ for display math.&lt;/p&gt;
+&lt;p&gt;For example: The spin Hamiltonian is given by $$\hat{H} = D\hat{S}_z^2$$&lt;/p&gt;
+&lt;h2 id="objectives"&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Investigate the electronic structure of transition metal complexes&lt;/li&gt;
+&lt;li&gt;Model magnetic properties using ab initio methods&lt;/li&gt;
+&lt;li&gt;Identify design principles for improved qubit coherence times&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="publications"&gt;Publications&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-1" target="_blank" rel="noopener"&gt;Title of Paper 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-2" target="_blank" rel="noopener"&gt;Title of Paper 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-3" target="_blank" rel="noopener"&gt;Title of Paper 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

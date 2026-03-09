@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arturo Sauza de la Vega, Ph.D.</title><link>https://arturo-sauzadelavega.github.io/</link><description>Recent content on Arturo Sauza de la Vega, Ph.D.</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://arturo-sauzadelavega.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Gaussian 09/16</title><link>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</guid><description>&lt;img src="arturo_cartoon_08.png"
+alt="Coding OpenMolcas"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Gaussian is a well-known electronic structure program in the chemistry community. Probably this introduction is unnecesary because most of the people I known they already know about its existance, its story, many of the methods implemented, etc.&lt;/p&gt;
+&lt;p&gt;In my opinion, Gaussian is one of the most friendly codes out there. However, there are many tools that are very useful and we don&amp;rsquo;t usually remember how to use them. This is my main motivation to write this post, to remember some of the input structures I use for special cases, or when the documentation is limited and I already figured out how to make the input run correctly.&lt;/p&gt;</description></item><item><title>Welcome to my Blog</title><link>https://arturo-sauzadelavega.github.io/posts/introduction/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/introduction/</guid><description>&lt;img src="arturo_cartoon_10.png"
+alt="AI image"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;Thank you for visiting this blog. This is the first time I spent some time writing a blog, and in this case, I am trying to write a useful blog for those working doing research with quantum chemistry calculations.&lt;/p&gt;
+&lt;p&gt;I am expecting to write posts about how to use some of the programs I use on my own research. Therefore, these posts are also a reminder for myself about some input files for such programs.&lt;/p&gt;</description></item><item><title>OpenMolcas Manual</title><link>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</guid><description>&lt;img src="arturo_cartoon_08.png"
+alt="Coding OpenMolcas"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;p&gt;OpenMolcas is the open-source version of Molcas, the program that was initially developed by Jan Almlöf, Björn Roos, and Per Siegbahn in the late 1980s. The complete Molcas Documentation can be found &lt;a href="https://www.molcas.org/documentation/manual/node1.html" target="_blank" rel="noopener"&gt;HERE&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This software includes most of the methods that other programs like Gaussian or Orca have, for example, Hartree-Fock, density functional theory (DFT), coupled cluster, second-order Moller-Plesset, etc. However, OpenMolcas excels in the implementation of multiconfigurational self-consistent field (MCSCF) methods, such as complete active space self-consistent field (CASSCF), and has the capability to compute excited states, spin-orbit coupling (SOC), magnetic properties, etc., using MCSCF wave functions. This is of great importance for the study of transition metals, lanthanides, and heavy element chemistry, some of the topics of interest in the Vlaisavljevich and Miro research groups.&lt;/p&gt;</description></item><item><title>Actinide and Lanthanide Chemistry</title><link>https://arturo-sauzadelavega.github.io/posts/heavy-elements/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/heavy-elements/</guid><description>&lt;p&gt;&lt;img src="https://arturo-sauzadelavega.github.io/images/sections/projects/heavy_elements.png" alt=""&gt;&lt;/p&gt;
+&lt;!--
+&lt;div style="text-align: center;"&gt;
+&lt;img src="images/sections/projects/molecular_qubits.png" alt="Molecular qubit structure" width="500px"&gt;
+&lt;/div&gt;
+--&gt;
+&lt;h4 id="summary"&gt;Summary&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Write a detailed summary of the project here. You can write as much
+as you need, including equations using $&amp;hellip;$ for inline math or
+$$&amp;hellip;$$ for display math.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For example: The spin Hamiltonian is given by $$\hat{H} = D\hat{S}_z^2$$&lt;/p&gt;
+&lt;h4 id="key-ideas"&gt;Key Ideas&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Investigate the electronic structure of transition metal complexes&lt;/li&gt;
+&lt;li&gt;Model magnetic properties using ab initio methods&lt;/li&gt;
+&lt;li&gt;Identify design principles for improved qubit coherence times&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="relevant-publications"&gt;Relevant Publications&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-1" target="_blank" rel="noopener"&gt;Title of Paper 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-2" target="_blank" rel="noopener"&gt;Title of Paper 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-3" target="_blank" rel="noopener"&gt;Title of Paper 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Cooperativity and Anticooperativity in Ion-Water Interactions: Implications for the Aqueous Solvation of Ions</title><link>https://arturo-sauzadelavega.github.io/posts/water-ions/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/water-ions/</guid><description>&lt;h4 id="graphical-abstract"&gt;Graphical Abstract&lt;/h4&gt;
+&lt;p&gt;Here, include the graphical abstract.&lt;/p&gt;
+&lt;h4 id="abstract"&gt;Abstract&lt;/h4&gt;
+&lt;p&gt;Non-additive effects in hydrogen bonds (HB) take place as a consequence of electronic charge transfers. Therefore, it is natural to expect cooperativity and anticooperativity in ion-water interactions. Nevertheless, investigations on this matter are scarce. This paper addresses the interactions of (i) the cations Lii$^+$, Na$^+$, K$^+$, Be$^{2+}$, Mg$^{2+}$, and Ca$^{2+}$ together with (ii) the anions F$^-$, Cl$^-$, Br$^-$, NO${_3}^{-}$ and SO${_4}^{2-}$ with water clusters (H${_2}$O)$_n$, $n=1-8$, and the effects of these ions on the HBs within the complete molecular adducts. We used quantum chemical topology tools, specifically the quantum theory of atoms in molecules and the interacting quantum atoms energy partition to investigate non-additive effects among the interactions studied herein. Our results show a decrease on the interaction energy between ions and the first neighbouring water molecules with an increment of the coordination number. We also found strong cooperative effects in the interplay between HBs and ion-dipole interactions within the studied systems. Such cooperativity affects considerably the interactions among ions with their first and second solvation shells in aqueous environments. Overall, we believe this article provides valuable information about how ion-dipole contacts interact with each other and how they relate to other interactions, such as HBs, in the framework of non-additive effects in aqueous media.&lt;/p&gt;</description></item><item><title>Electronically Tunable Low-Valent Uranium Metallacarboranes</title><link>https://arturo-sauzadelavega.github.io/posts/uranium-cages/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/uranium-cages/</guid><description>&lt;h4 id="graphical-abstract"&gt;Graphical Abstract&lt;/h4&gt;
+&lt;p&gt;Here, include the graphical abstract.&lt;/p&gt;
+&lt;h4 id="abstract"&gt;Abstract&lt;/h4&gt;
+&lt;p&gt;Uranium metallocenes have played a pivotal role in advancing the understanding of low-valent uranium chemistry since the inception of this field, and they still find continued use today. Functionalization strategies for cyclopentadienyl (Cp) ligands used in uranium metallocenes have predominately focused on modifying the steric properties of the ligand through the incorporation of alkyl or silyl groups, which offer limited control over the electronic properties. Moreover, due to the flat, two-dimensional nature of Cp, functional groups will affect the coordination geometry of the uranium metallocene and can potentially present challenges in decoupling steric and electronic effects. In comparison, uranium metallacarboranes, which are boron cluster-based metallocene analogues that feature three-dimensional dianionic dicarbollide (dc) ligands, present a versatile platform that is potentially capable of not only stabilizing the low-valent uranium center but also providing control over the electronic properties of the resulting complex without significantly modifying the coordination geometry through the incorporation of a diverse range of groups onto the dc ligand at vertices directed away from the uranium center. In this work, we synthesized a series of uranium metallacarboranes featuring B-functionalized dc ligands with increasingly electron withdrawing aryl groups. A combination of cyclic voltammetry and density functional theory studies confirms that this strategy offers predictable control over the electronic properties of the uranium center. More broadly, this work establishes uranium metallacarboranes as a highly tunable class of complexes potentially capable of unlocking new insights into low-valent uranium chemistry.&lt;/p&gt;</description></item><item><title>Molecular Clusters</title><link>https://arturo-sauzadelavega.github.io/posts/molecular-clusters/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/molecular-clusters/</guid><description>&lt;p&gt;&lt;img src="https://arturo-sauzadelavega.github.io/images/sections/projects/clusters.png" alt=""&gt;&lt;/p&gt;
+&lt;!--
+&lt;div style="text-align: center;"&gt;
+&lt;img src="images/sections/projects/molecular_qubits.png" alt="Molecular qubit structure" width="500px"&gt;
+&lt;/div&gt;
+--&gt;
+&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Write a detailed summary of the project here. You can write as much
+as you need, including equations using $&amp;hellip;$ for inline math or
+$$&amp;hellip;$$ for display math.&lt;/p&gt;
+&lt;p&gt;For example: The spin Hamiltonian is given by $$\hat{H} = D\hat{S}_z^2$$&lt;/p&gt;
+&lt;h2 id="objectives"&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Investigate the electronic structure of transition metal complexes&lt;/li&gt;
+&lt;li&gt;Model magnetic properties using ab initio methods&lt;/li&gt;
+&lt;li&gt;Identify design principles for improved qubit coherence times&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="publications"&gt;Publications&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-1" target="_blank" rel="noopener"&gt;Title of Paper 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-2" target="_blank" rel="noopener"&gt;Title of Paper 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-3" target="_blank" rel="noopener"&gt;Title of Paper 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Molecular Qubits</title><link>https://arturo-sauzadelavega.github.io/posts/molecular-qubits/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/molecular-qubits/</guid><description>&lt;p&gt;&lt;img src="https://arturo-sauzadelavega.github.io/images/sections/projects/molecular_qubits.png" alt=""&gt;&lt;/p&gt;
+&lt;!--
+&lt;div style="text-align: center;"&gt;
+&lt;img src="images/sections/projects/molecular_qubits.png" alt="Molecular qubit structure" width="500px"&gt;
+&lt;/div&gt;
+--&gt;
+&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Write a detailed summary of the project here. You can write as much
+as you need, including equations using $&amp;hellip;$ for inline math or
+$$&amp;hellip;$$ for display math.&lt;/p&gt;
+&lt;p&gt;For example: The spin Hamiltonian is given by $$\hat{H} = D\hat{S}_z^2$$&lt;/p&gt;
+&lt;h2 id="objectives"&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Investigate the electronic structure of transition metal complexes&lt;/li&gt;
+&lt;li&gt;Model magnetic properties using ab initio methods&lt;/li&gt;
+&lt;li&gt;Identify design principles for improved qubit coherence times&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="publications"&gt;Publications&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-1" target="_blank" rel="noopener"&gt;Title of Paper 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-2" target="_blank" rel="noopener"&gt;Title of Paper 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-3" target="_blank" rel="noopener"&gt;Title of Paper 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Multiconfiguration Pair-Density Functional Theory for Chromium(IV) Molecular Qubits</title><link>https://arturo-sauzadelavega.github.io/posts/qubits-jacs-au/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/qubits-jacs-au/</guid><description>&lt;h4 id="graphical-abstract"&gt;Graphical Abstract&lt;/h4&gt;
+&lt;img src="https://arturo-sauzadelavega.github.io/posts/molecular-qubits/toc6.jpeg"
+alt="Jacs-Au Toc"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="abstract"&gt;Abstract&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Pseudotetrahedral Cr(IV) aryl complexes have recently emerged as promising candidates for molecular spin qubits. In this work, we present a robust computational protocol based on multiconfiguration pair-density functional theory (MC-PDFT) to evaluate singlet–triplet gaps and zero-field splitting (ZFS) parameters in these systems. Our results demonstrate that multireference approaches—specifically complete active space second-order perturbation theory (CASPT2) and hybrid multiconfiguration pair-density functional theory (HMC-PDFT)—outperform standard Kohn-Sham density functional theory (KS-DFT) in predicting singlet-triplet energy gaps. Despite the inherently small magnitude of the ZFS parameters, both multireference methods provide high qualitative accuracy, particularly in capturing the trend of the rhombic-to-axial ratio, &lt;em&gt;|E/D|&lt;/em&gt;. Furthermore, we examine the sensitivity of ZFS predictions to active space selection and structural deviations. The methodologies established herein provide a reliable framework for the rational design and screening of future molecular spin qubit candidates.&lt;/p&gt;</description></item><item><title>Quantum Chemical Topology</title><link>https://arturo-sauzadelavega.github.io/posts/qct/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/qct/</guid><description>&lt;p&gt;&lt;img src="https://arturo-sauzadelavega.github.io/images/sections/projects/qct.png" alt=""&gt;&lt;/p&gt;
+&lt;!--
+&lt;div style="text-align: center;"&gt;
+&lt;img src="images/sections/projects/molecular_qubits.png" alt="Molecular qubit structure" width="500px"&gt;
+&lt;/div&gt;
+--&gt;
+&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Write a detailed summary of the project here. You can write as much
+as you need, including equations using $&amp;hellip;$ for inline math or
+$$&amp;hellip;$$ for display math.&lt;/p&gt;
+&lt;p&gt;For example: The spin Hamiltonian is given by $$\hat{H} = D\hat{S}_z^2$$&lt;/p&gt;
+&lt;h2 id="objectives"&gt;Objectives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Investigate the electronic structure of transition metal complexes&lt;/li&gt;
+&lt;li&gt;Model magnetic properties using ab initio methods&lt;/li&gt;
+&lt;li&gt;Identify design principles for improved qubit coherence times&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="publications"&gt;Publications&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-1" target="_blank" rel="noopener"&gt;Title of Paper 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-2" target="_blank" rel="noopener"&gt;Title of Paper 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://doi.org/your-doi-3" target="_blank" rel="noopener"&gt;Title of Paper 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Wave function analyses of scandium-doped aluminium clusters, Al$_n$Sc ($n = 1–24$), and their CO$_2$ fixation abilities</title><link>https://arturo-sauzadelavega.github.io/posts/al-clusters/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/al-clusters/</guid><description>&lt;h4 id="graphical-abstract"&gt;Graphical Abstract&lt;/h4&gt;
+&lt;p&gt;Here, include the graphical abstract.&lt;/p&gt;
+&lt;h4 id="abstract"&gt;Abstract&lt;/h4&gt;
+&lt;p&gt;Nanoclusters represent a connection between (i) solid state systems and (ii) species in the atomic and molecular domains. Additionally, nanoclusters can also have very interesting electronic, optical and magnetic properties. For example, some aluminium clusters behave as superatoms and the doping of these clusters might strengthen their adsorption capabilities. Thus, we address herein the structural, energetic and electronic characterisation of scandium-doped aluminium clusters (Al$&lt;em&gt;n$Sc ($n = 1–24$)) by means of density functional theory calculations and quantum chemical topology wave function analyses. We studied the effect of Sc-doping on the structure and charge distribution by considering pure Al clusters as well. The quantum theory of atoms in molecules (QTAIM) reveals that interior Al atoms have large negative atomic charges ($\sim$ 2 a.u.) and hence the atoms surrounding them are considerably electron deficient. The Interacting Quantum Atoms (IQA) energy partition allowed us to establish the nature of the interaction between the Al$&lt;/em&gt;{13}$ superatom and the Al$&lt;em&gt;{12}$Sc cluster with Al to form the complexes Al$&lt;/em&gt;{14}$ and Al$_{13}$Sc, respectively. We also used the IQA approach to examine (i) the influence of Sc on the geometry of the Al$_n$Sc complexes along with (ii) the cooperative effects in the binding of Al$&lt;em&gt;n$Sc and Al$&lt;/em&gt;{n+1}$ clusters. We also exploited the QTAIM and IQA approaches to study the interaction of the electrophilic surface of the examined systems with CO$_2$. Overall, we observe that the investigated Sc-doped Al complexes with a marked stability towards disproportionation reactions exhibit strong adsorption energies with CO$_2$. Concomitantly, the carbon dioxide molecule is considerably distorted and destabilised, conditions which might prepare it for further chemical reactions. Altogether, this paper gives valuable insights on the tuning of the properties of metallic clusters for their design and exploitation in custom-made materials.&lt;/p&gt;</description></item><item><title>Markdown Samples</title><link>https://arturo-sauzadelavega.github.io/posts/markdown-sample/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/markdown-sample/</guid><description>&lt;p&gt;This is a sample post intended to test the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A different post author.&lt;/li&gt;
+&lt;li&gt;Table of contents.&lt;/li&gt;
+&lt;li&gt;Markdown content rendering.&lt;/li&gt;
+&lt;li&gt;Math rendering.&lt;/li&gt;
+&lt;li&gt;Emoji rendering.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="markdown-syntax-rendering"&gt;Markdown Syntax Rendering&lt;/h1&gt;
+&lt;h2 id="headings"&gt;Headings&lt;/h2&gt;
+&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
+&lt;h1 id="h1"&gt;H1&lt;/h1&gt;
+&lt;h2 id="h2"&gt;H2&lt;/h2&gt;
+&lt;h3 id="h3"&gt;H3&lt;/h3&gt;
+&lt;h4 id="h4"&gt;H4&lt;/h4&gt;
+&lt;h5 id="h5"&gt;H5&lt;/h5&gt;
+&lt;h6 id="h6"&gt;H6&lt;/h6&gt;
+&lt;h2 id="paragraph"&gt;Paragraph&lt;/h2&gt;
+&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;</description></item><item><title>Shortcodes Samples</title><link>https://arturo-sauzadelavega.github.io/posts/shortcodes/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/shortcodes/</guid><description>&lt;p&gt;This is a sample post intended to test the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Default hero image.&lt;/li&gt;
+&lt;li&gt;Different shortcodes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="alert"&gt;Alert&lt;/h2&gt;
+&lt;p&gt;The following alerts are available in this theme.&lt;/p&gt;
+&lt;div class="alert success"&gt;
+&lt;span&gt;&lt;i data-feather="check-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;success&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert danger"&gt;
+&lt;span&gt;&lt;i data-feather="alert-octagon"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;danger&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert warning"&gt;
+&lt;span&gt;&lt;i data-feather="alert-triangle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;warning&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert info"&gt;
+&lt;span&gt;&lt;i data-feather="info"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;info&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert dark"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;dark&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert primary"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;primary&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert secondary"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;secondary&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;h2 id="image"&gt;Image&lt;/h2&gt;
+&lt;h4 id="a-sample-image-without-any-attribute"&gt;A sample image without any attribute.&lt;/h4&gt;
+&lt;img src="https://arturo-sauzadelavega.github.io/posts/shortcodes/boat.jpg"
+alt="A boat at the sea"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="a-sample-image-with-height-and-width-attributes"&gt;A sample image with &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; attributes.&lt;/h4&gt;
+&lt;img src="https://arturo-sauzadelavega.github.io/posts/shortcodes/boat.jpg"
+alt="A boat at the sea"
+width="600"
+height="400"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="a-center-aligned-image-with-height-and-width-attributes"&gt;A center aligned image with &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; attributes.&lt;/h4&gt;
+&lt;img src="https://arturo-sauzadelavega.github.io/posts/shortcodes/boat.jpg"
+alt="A boat at the sea"
+width="600"
+height="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="a-image-with-float-attribute"&gt;A image with &lt;code&gt;float&lt;/code&gt; attribute.&lt;/h4&gt;
+&lt;img src="https://arturo-sauzadelavega.github.io/posts/shortcodes/boat.jpg"
+alt="A boat at the sea"
+width="500"
+height="200"
+style="float: right;"
+&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies. Praesent tellus risus, eleifend vel efficitur ac, venenatis sit amet sem. Ut ut egestas erat. Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat. Suspendisse nec ipsum eu erat finibus dictum. Morbi volutpat nulla purus, vel maximus ex molestie id. Nullam posuere est urna, at fringilla eros venenatis quis.&lt;/p&gt;</description></item><item><title>Introduction</title><link>https://arturo-sauzadelavega.github.io/notes/go/basic/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/notes/go/basic/introduction/</guid><description>&lt;!-- A Sample Program --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Hello World&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;p&gt;A sample go program is show here.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;message&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;greetMe&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;world&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;message&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;greetMe&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;name&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;) &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello, &amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run the program as below:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ go run hello.go
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Declaring Variables --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Variables&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;p&gt;&lt;strong&gt;Normal Declaration:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;msg&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;msg&lt;/span&gt; = &lt;span style="color:#e6db74"&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;p&gt;&lt;strong&gt;Shortcut:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;msg&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Declaring Constants --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Constants&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Phi&lt;/span&gt; = &lt;span style="color:#ae81ff"&gt;1.618&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Basic Types</title><link>https://arturo-sauzadelavega.github.io/notes/go/basic/types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/notes/go/basic/types/</guid><description>&lt;!-- String Type --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Strings&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;str&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Multiline string&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;str&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`Multiline
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;string`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Number Types --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Numbers&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;p&gt;Typical types&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;num&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; &lt;span style="color:#75715e"&gt;// int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;num&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;3.&lt;/span&gt; &lt;span style="color:#75715e"&gt;// float64&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;num&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;3&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;4i&lt;/span&gt; &lt;span style="color:#75715e"&gt;// complex128&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;num&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; byte(&lt;span style="color:#e6db74"&gt;&amp;#39;a&amp;#39;&lt;/span&gt;) &lt;span style="color:#75715e"&gt;// byte (alias for uint8)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Other Types&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;u&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt; = &lt;span style="color:#ae81ff"&gt;7&lt;/span&gt; &lt;span style="color:#75715e"&gt;// uint (unsigned)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;p&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;float32&lt;/span&gt; = &lt;span style="color:#ae81ff"&gt;22.7&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 32-bit float&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!----------- Arrays ------&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Arrays&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// var numbers [5]int&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;numbers&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; [&lt;span style="color:#f92672"&gt;...&lt;/span&gt;]&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt;{&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Pointers --&gt;
+&lt;div class="note-card medium-note"&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Pointers&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;b&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;getPointer&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Value is&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;b&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;getPointer&lt;/span&gt; () (&lt;span style="color:#a6e22e"&gt;myPointer&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;a&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;234&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;a&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; new(&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;a&lt;/span&gt; = &lt;span style="color:#ae81ff"&gt;234&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pointers point to a memory location of a variable. Go is fully garbage-collected.&lt;/p&gt;</description></item><item><title>Flow Control</title><link>https://arturo-sauzadelavega.github.io/notes/go/basic/flow-control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/notes/go/basic/flow-control/</guid><description>&lt;!-- Condition --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Condition&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;day&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;sunday&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;day&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;saturday&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;rest&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;} &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;day&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;monday&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;isTired&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;groan&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;} &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;work&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;_&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;doThing&lt;/span&gt;(); &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Uh oh&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Switch --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Switch&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;switch&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;day&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;sunday&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// cases don&amp;#39;t &amp;#34;fall through&amp;#34; by default!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fallthrough&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;case&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;saturday&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;rest&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;default&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;work&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Loop --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Loop&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;count&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;count&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;10&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;count&lt;/span&gt;&lt;span style="color:#f92672"&gt;++&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;My counter is at&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;count&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;entry&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; []&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;{&lt;span style="color:#e6db74"&gt;&amp;#34;Jack&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;John&amp;#34;&lt;/span&gt;,&lt;span style="color:#e6db74"&gt;&amp;#34;Jones&amp;#34;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;val&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;range&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;entry&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;At position %d, the character %s is present\n&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;val&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;n&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;x&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;42&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;n&lt;/span&gt; &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;x&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;n&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;guess&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>File Manipulation</title><link>https://arturo-sauzadelavega.github.io/notes/go/advanced/files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/notes/go/advanced/files/</guid><description>&lt;!-- Condition --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Condition&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;day&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;sunday&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;day&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;saturday&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;rest&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;} &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;day&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;monday&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;isTired&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;groan&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;} &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;work&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;_&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;doThing&lt;/span&gt;(); &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Uh oh&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Bash Variables</title><link>https://arturo-sauzadelavega.github.io/notes/bash/basic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/notes/bash/basic/</guid><description>&lt;!-- Variable --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Variable&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;NAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;John&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo $NAME
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$NAME&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;NAME&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Condition --&gt;
+&lt;div class="note-card "&gt;
+&lt;div class="item"&gt;
+&lt;h5 class="note-title"&gt;&lt;span&gt;Condition&lt;/span&gt;&lt;/h5&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -z &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$string&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;String is empty&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;elif&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -n &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$string&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;String is not empty&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>

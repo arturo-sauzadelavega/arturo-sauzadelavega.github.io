@@ -1,0 +1,113 @@
+<!doctype html><html lang=en><head><title>Gaussian 09/16</title><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel=canonical href=https://arturo-sauzadelavega.github.io/posts/programs/gaussian/><link rel=stylesheet href=/application.6a687f87ddd729d8bcf3369951d97352be322d92d07f8a3dd883f291184f9995.css integrity="sha256-amh/h93XKdi88zaZUdlzUr4yLZLQf4o92IPykRhPmZU="><link rel=icon type=image/png href=/images/site/favicon_hu_619875a29a04944e.png><meta property="og:title" content="Arturo's Portfolio"><meta property="og:type" content="website"><meta property="og:description" content="Portfolio and personal blog of Arturo Sauza de la Vega."><meta property="og:image" content="/images/author/arturo_2.jpg"><meta property="og:url" content="https://arturo-sauzadelavega.github.io/"><meta name=description content="Gaussian Input Examples"><script async src="https://www.googletagmanager.com/gtag/js?id=G-H4LBG7NDFZ"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-H4LBG7NDFZ")}</script><script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">let theme=localStorage.getItem("theme-scheme")||localStorage.getItem("darkmode:color-scheme")||"light";theme==="system"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?theme="dark":theme="light"),document.documentElement.setAttribute("data-theme",theme)</script></head><body class="type-posts kind-page" data-bs-spy=scroll data-bs-target=#TableOfContents data-bs-offset=80><div class="container-fluid bg-secondary wrapper"><nav class="navbar navbar-expand-xl top-navbar shadow" id=top-navbar><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button>
+<i data-feather=sidebar></i>
+</button>
+<a class=navbar-brand href=/><img src=/images/site/main-logo_hu_619875a29a04944e.png id=logo alt=Logo>
+Arturo Sauza de la Vega, Ph.D.</a>
+<button class="navbar-toggler navbar-light" id=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#top-nav-items aria-label=menu>
+<i data-feather=menu></i></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="nav navbar-nav ms-auto"><li class=nav-item><a class=nav-link href=/#home>Home</a></li><li class=nav-item><a class=nav-link href=/#about>About</a></li><li class=nav-item><a class=nav-link href=/#experiences>Experience</a></li><li class=nav-item><a class=nav-link href=/#education>Education</a></li><li class=nav-item><a class=nav-link href=/#projects>Research</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>Publications</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=/#featured-posts>Featured Publications</a>
+<a class=dropdown-item href=/#publications>All Publications</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class=nav-item><a class=nav-link id=note-link href=/notes>Notes</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/main-logo_hu_619875a29a04944e.png class=d-none id=main-logo alt=Logo>
+<img src=/images/site/inverted-logo_hu_619875a29a04944e.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/introduction/ title="Welcome Message">Welcome Message</a></li><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/programs/> Programs</a><ul class=active><li><a class="active list-link" href=/posts/programs/gaussian/ title=Gaussian>Gaussian</a></li><li><a class=list-link href=/posts/programs/openmolcas/ title=OpenMolcas>OpenMolcas</a></li></ul></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/programs/gaussian/gaussian.png)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/arturo_formal_hu_850b779fe9a0974a.jpg alt="Author Image"><h5 class=author-name>Arturo Sauza de la Vega</h5><p class=text-muted>Sunday, March 8, 2026 | 4 minutes</p></div><div class=title><h1>Gaussian 09/16</h1></div><div class=tags><ul style=padding-left:0><li><a href=/tags/quantum-chemistry/ class="btn btn-sm btn-outline-info rounded">Quantum Chemistry</a></li><li><a href=/tags/dft/ class="btn btn-sm btn-outline-info rounded">DFT</a></li><li><a href=/tags/mp2/ class="btn btn-sm btn-outline-info rounded">MP2</a></li><li><a href=/tags/ccsd/ class="btn btn-sm btn-outline-info rounded">CCSD</a></li><li><a href=/tags/td-dft/ class="btn btn-sm btn-outline-info rounded">TD-DFT</a></li><li><a href=/tags/transition-state/ class="btn btn-sm btn-outline-info rounded">Transition State</a></li><li><a href=/tags/nbo/ class="btn btn-sm btn-outline-info rounded">NBO</a></li></ul></div><div class=post-content id=post-content><img src=arturo_cartoon_08.png alt="Coding OpenMolcas" width=400 class=center><div style=margin-top:3rem></div><h3 id=introduction>Introduction</h3><p>Gaussian is a well-known electronic structure program in the chemistry community. Probably this introduction is unnecesary because most of the people I known they already know about its existance, its story, many of the methods implemented, etc.</p><p>In my opinion, Gaussian is one of the most friendly codes out there. However, there are many tools that are very useful and we don&rsquo;t usually remember how to use them. This is my main motivation to write this post, to remember some of the input structures I use for special cases, or when the documentation is limited and I already figured out how to make the input run correctly.</p><h3 id=standard-input-file>Standard Input File</h3><p>Gaussian input files are incredibly friendly. The input files I use require in the very first few lines to include the variables <code>%nproc</code>, <code>%mem</code>, <code>%chk</code> to indicate the number of processors to be used in the calculation, the maximum memory allocated, and the name of a chekpoint file, respectively.</p><p>Checkpoint files are very useful because in this binary file is stored the geometry, basis functions and much more data useful to restart a calculation or to plot information of your interest. This information is not available only for the final optimized molecules, it is also written for all intermediate steps in a requested calculation.</p><p>The standard input file follows the structure shown below:</p><pre tabindex=0><code>%nproc=12
+%mem=10GB
+%chk=file.chk
+# keywords
+
+Title for your calculation
+
+charge multiplicity
+XYZ coordinates
+</code></pre><p>For a DFT geometry optimization and frequency calculation of the water molecule, this is an easy example:</p><pre tabindex=0><code>%nproc=4
+%mem=16GB
+%chk=water.chk
+
+#p opt freq tpsstpss aug-cc-pvtz scf=xqc pop=(full,nbo) output=wfn
+
+water
+
+0 1
+  O  0.000000  0.000000  0.000000
+  H  0.758602  0.000000  0.504284
+  H  0.758602  0.000000  -0.504284
+
+water.wfn
+</code></pre><h3 id=basis-set-files>Basis Set files</h3><p>The number and types of basis functions available in Gaussian is amazing. However, sometimes you need specific basis functions that are not availabe, like all-electron relativistic basis sets. In these situations, you have to download basis functions from external sources like <a href=https://www.basissetexchange.org target=_blank rel=noopener>Basis Set Exchange</a>, the <a href=https://basissets.turbomole.org target=_blank rel=noopener>Turbomole Basis Set Library</a>, or the <a href=http://www.grant-hill.group.shef.ac.uk/ccrepo/ target=_blank rel=noopener>Correlation Consistent Basis Set Repository</a>. Then, you copy from the previous websites and paste the basis functions into the gaussian input file. This is really easy to do and I think the example in the gaussian website is clear, but the example about how to invoque a file where the basis functions were written is not avaialable in the website.</p><p>This is an input example in which I use a gaussian basis function file (<code>.gbs</code>):</p><pre tabindex=0><code>%nproc=12
+%mem=10GB
+%chk=example_molecule.chk
+# geom=allcheck TPSSh/gen scrf=(smd,solvent=tetrahydrofuran) int=dkh2 guess=read  emp=gd3bj scf=xqc
+
+@./basis.gbs
+
+ 
+</code></pre><p>This is an example of for the geometry optimization and frequencies calculation of HgCl<sub>2</sub> in combination with dispersion D3-BJ for the TPSSh functional, and using Link1 to concatenate the calculations.</p><pre tabindex=0><code>%nproc=12
+%mem=10GB
+%chk=hgcl2_tpssh_crenbl-def2.chk
+#  opt  tpssh/genecp emp=gd3bj scf=xqc
+# iop(3/175=2238200,3/177=452900,3/178=4655000)
+
+HgCl2
+
+0 1
+Hg 2.166542 7.340627 0.000000
+Cl 4.306107 6.496803 0.000000
+Cl 0.026989 8.184446 0.000000
+
+@./basis_hgcl2.gbs
+
+--Link1--
+%chk=hgcl2_tpssh_crenbl-def2.chk
+# freq geom=allcheck guess=read tpssh emp=gd3bj genecp scf=xqc
+# iop(3/175=2238200,3/177=452900,3/178=4655000)
+
+@./basis_hgcl2.gbs
+  
+  
+  
+</code></pre><h3 id=dispersion-model-for-tpssh>Dispersion Model for TPSSh</h3><p>Sometimes you want to include dispersion correction into your calculations. The most famous functionals like PBE or B3LYP immediately loads all the empirical parameters for such functionals and you just need to include the keyword <code>emp=gd3bj</code> in case you want to run a D3-BJ dispersion calculation. However, for other functionals you have to indicate the values for the empirical parameters. To do this, you have to use the <code>iop</code> keywords. This is an example of a TPSSh-D3-BJ calculation where I need to indicate the empirical parameters:</p><pre tabindex=0><code>%nproc=12
+%mem=10GB
+%chk=water.chk
+# opt tpssh emp=gd3bj def2tzvp scf=xqc
+# iop(3/175=2238200,3/177=452900,3/178=4655000)
+
+water optimization
+
+0 1
+  O  0.000000  0.000000  0.000000
+  H  0.758602  0.000000  0.504284
+  H  0.758602  0.000000  -0.504284
+
+--Link1--
+%nproc=36
+%mem=100GB
+%chk=water.chk
+# freq geom=allcheck guess=read tpssh emp=gd3bj def2tzvp scf=xqc
+# iop(3/175=2238200,3/177=452900,3/178=4655000)
+  
+  
+</code></pre><p>In this example, to perform an optimization and frequencies calculation, you have to split the calculation into two parts, one for the optimization where the dispersion is indicated, the second part corresponds to the frequencies, where once again you have to specify the dispersion model and the empirical parameters.</p><p>If you are interested in another functional, you have to find the corresponding empirical parameters. You can try looking into Prof. Grimme&rsquo;s papers or in his reserach group webiste where he published the complete data set to train functionals and the obtained empirical parameters.</p><h3 id=natural-localized-molecular-orbitals-nlmo>Natural Localized Molecular Orbitals (NLMO)</h3><p>Gaussian includes an NBO version included within the many functionalities. In my research about actinide molecules, often I have to analyze NLMOs to check the bonding interaction between metal centers and ligands. We can obtain NLMOs directly with Gaussian in case you do not have other programs like ADF and NBO.</p><p>This is an input example to obtain NLMOs with Gaussian, where I use the Iop 6/73 to obtain the NLMOs:</p><pre tabindex=0><code>%nproc=4
+%mem=16GB
+%chk=water.chk
+
+#p  pbepbe aug-cc-pvtz scf=xqc output=wfnx emp=gd3bj
+# pop=nbo iop(6/73=1,6/73=2)
+
+water
+
+0 1
+  O  0.000000  0.000000  0.000000
+  H  0.758602  0.000000  0.504284
+  H  0.758602  0.000000  -0.504284
+
+water.wfx
+  
+  
+</code></pre></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
+<a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fgaussian%2f" target=_blank><i class="fab fa-facebook"></i>
+</a><a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fgaussian%2f&text=Gaussian%2009%2f16&via=Arturo%20Sauza%20de%20la%20Vega%2c%20Ph.D." target=_blank><i class="fab fa-twitter"></i>
+</a><a class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fgaussian%2f&title=Gaussian%2009%2f16" target=_blank><i class="fab fa-reddit"></i>
+</a><a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fgaussian%2f&title=Gaussian%2009%2f16" target=_blank><i class="fab fa-linkedin"></i>
+</a><a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Gaussian%2009%2f16 https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fgaussian%2f" target=_blank><i class="fab fa-whatsapp"></i>
+</a><a class="btn icon-button" href="mailto:?subject=Gaussian%2009%2f16&body=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2fgaussian%2f" target=_blank><i class="fas fa-envelope-open-text"></i></a></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/programs/gaussian/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
+Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/introduction/ title="Welcome to my Blog" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Welcome to my Blog</div></a></div><div class="col-md-6 next-article"><a href=/posts/programs/openmolcas/ title="OpenMolcas Manual" class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>OpenMolcas Manual</div></a></div></div><hr></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#introduction>Introduction</a></li><li><a href=#standard-input-file>Standard Input File</a></li><li><a href=#basis-set-files>Basis Set files</a></li><li><a href=#dispersion-model-for-tpssh>Dispersion Model for TPSSh</a></li><li><a href=#natural-localized-molecular-orbitals-nlmo>Natural Localized Molecular Orbitals (NLMO)</a></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#experiences>Experience</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#projects>Research</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#featured-posts>Featured Publications</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#publications>All Publications</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:arturo-sauzadelavega@uiowa.edu target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>arturo-sauzadelavega@uiowa.edu</span></a></li><li><a href=https://github.com/arturo-sauzadelavega target=_blank rel=noopener><span><i class="fab fa-github"></i></span> <span>arturo-sauzadelavega</span></a></li><li><a href=https://www.linkedin.com/in/asdlv target=_blank rel=noopener><span><i class="fab fa-linkedin"></i></span> <span>Arturo Sauza de la Vega</span></a></li><li><a href=https://www.researchgate.net/profile/Arturo-Sauza-De-La-Vega target=_blank rel=noopener><span><i class="fab fa-researchgate"></i></span> <span>Arturo Sauza de la Vega</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_be7279b2506ad3f1.png alt="Toha Theme Logo">
+Toha</a></div><div class="col-md-4 text-center">Copyright © 2026 Arturo Sauza de la Vega. All Rights Reserved.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
+<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.47b696b1d84c5bd791255169498f474886ac0221db232941b5f6493fba7b02c1.js integrity="sha256-R7aWsdhMW9eRJVFpSY9HSIasAiHbIylBtfZJP7p7AsE=" defer></script></body></html>

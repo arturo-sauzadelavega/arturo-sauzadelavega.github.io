@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TD-DFT on Arturo Sauza de la Vega, Ph.D.</title><link>https://arturo-sauzadelavega.github.io/tags/td-dft/</link><description>Recent content in TD-DFT on Arturo Sauza de la Vega, Ph.D.</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://arturo-sauzadelavega.github.io/tags/td-dft/index.xml" rel="self" type="application/rss+xml"/><item><title>Gaussian 09/16</title><link>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</guid><description>&lt;img src="arturo_cartoon_08.png"
+alt="Coding OpenMolcas"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Gaussian is a well-known electronic structure program in the chemistry community. Probably this introduction is unnecesary because most of the people I known they already know about its existance, its story, many of the methods implemented, etc.&lt;/p&gt;
+&lt;p&gt;In my opinion, Gaussian is one of the most friendly codes out there. However, there are many tools that are very useful and we don&amp;rsquo;t usually remember how to use them. This is my main motivation to write this post, to remember some of the input structures I use for special cases, or when the documentation is limited and I already figured out how to make the input run correctly.&lt;/p&gt;</description></item></channel></rss>
