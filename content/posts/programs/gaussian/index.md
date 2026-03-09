@@ -179,4 +179,63 @@ water.wfx
   
 ```
 
+### Time-Dependent DFT (TD-DFT) 
+
+When performing a TD-DFT calculation, you have to specify the number of excited states to be considered (roots) as shown in the next example:
+
+```
+%nproc=12
+%mem=10GB
+%chk=water.chk
+
+#p TD(Nstates=10) cam-b3lyp/def2tzp em=gd3bj scf=(xqc) pop=(Hirshfeld,NBO)
+
+water
+
+0 1
+  O  0.000000  0.000000  0.000000
+  H  0.758602  0.000000  0.504284
+  H  0.758602  0.000000  -0.504284
+  
+```
+Where 10 excited states will be computed as indicated with the `NStates` keyword.
+
+
+### Solvation Models
+
+There are  different solvation models available, like PCM and SMD. It is easy to indicate which solvation model and the solvent. However, sometimes you want to use a solvent dielectric constant that is not available in the native solvent list. In this case, you have to define the solvent and another parameters. This example considers the dielectric constant of 1,2-dimethosyethane (DME) solvent:
+
+```
+%nproc=12
+%mem=10GB
+%chk=water.chk
+
+#p TD(Nstates=10) cam-b3lyp/def2tzp emp=gd3bj scf=(xqc) pop=(Hirshfeld,NBO) 
+# scrf(pcm,solvent=generic,read)
+
+water
+
+0 1
+  O  0.000000  0.000000  0.000000
+  H  0.758602  0.000000  0.504284
+  H  0.758602  0.000000  -0.504284
+
+Stoichiometry=C4O2H10
+solventname=DimethoxyEthane
+eps=7.55
+epsinf=1.896129
+  
+```
+
+### Transition State Calculations
+
+(In Progress)
+#### TS Berny
+
+(In Progress)
+
+#### QST2 and QST3 
+
+(In Progress)
+
 
