@@ -1,18 +1,31 @@
 ---
-title: "Introduction"
-date: 2020-06-08T08:06:25+06:00
-description: Introduction to Sample Post
+title: "Welcome to my Blog"
+date: 2026-03-08
+description: Introduction to my Blog
 menu:
   sidebar:
-    name: Introduction
+    name: Welcome Message
     identifier: introduction
     weight: 10
-tags: ["Basic", "Multi-lingual"]
+tags: ["Basic", "Quantum Chemistry"]
 categories: ["Basic"]
 ---
 
-Greeting! This is an introduction post. This post tests the followings:
+{{< img src="arturo_cartoon_10.png"  width="400" align="center" title="AI image" >}}
 
-- Hero image is in the same directory as the post.
-- This post should be at top of the sidebar.
-- Post author should be the same as specified in `author.yaml` file.
+{{< vs 3 >}}
+
+
+Hello everybody!
+
+Thank you for visiting this blog. This is the first time I spent some time writing a blog, and in this case, I am trying to write a useful blog for those working doing research with quantum chemistry calculations.
+
+I am expecting to write posts about how to use some of the programs I use on my own research. Therefore, these posts are also a reminder for myself about some input files for such programs.
+
+Maybe I will write some extra posts where I include LaTeX templates I use when using TiKz to plot the data I obtain, but we'll see. 
+Oh, by the way, most of the pictures shared in this website were AI generated, except for the publications graphical abstracts.
+
+
+Anyway, I'll try to update the posts regularly.
+
+

@@ -6,8 +6,8 @@ menu:
   sidebar:
     name: Standard Input
     identifier: standard-input
-    parent: gaussian
-    weight: 10
+    #parent: gaussian
+    weight: 00
 hero: images/forest.jpg
 tags:
 - Markdown
