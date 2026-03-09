@@ -6,7 +6,44 @@ class="center"
 &lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
 &lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Gaussian is a well-known electronic structure program in the chemistry community. Probably this introduction is unnecesary because most of the people I known they already know about its existance, its story, many of the methods implemented, etc.&lt;/p&gt;
-&lt;p&gt;In my opinion, Gaussian is one of the most friendly codes out there. However, there are many tools that are very useful and we don&amp;rsquo;t usually remember how to use them. This is my main motivation to write this post, to remember some of the input structures I use for special cases, or when the documentation is limited and I already figured out how to make the input run correctly.&lt;/p&gt;</description></item><item><title>Welcome to my Blog</title><link>https://arturo-sauzadelavega.github.io/posts/introduction/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/introduction/</guid><description>&lt;img src="arturo_cartoon_10.png"
+&lt;p&gt;In my opinion, Gaussian is one of the most friendly codes out there. However, there are many tools that are very useful and we don&amp;rsquo;t usually remember how to use them. This is my main motivation to write this post, to remember some of the input structures I use for special cases, or when the documentation is limited and I already figured out how to make the input run correctly.&lt;/p&gt;</description></item><item><title>Orca 6.1.1</title><link>https://arturo-sauzadelavega.github.io/posts/programs/orca/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/orca/</guid><description>&lt;img src="arturo_cartoon_08.png"
+alt="Coding OpenMolcas"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;h3 id="standard-input-file"&gt;Standard Input File&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;%nproc=12
+%mem=10GB
+%chk=file.chk
+# keywords
+Title for your calculation
+charge multiplicity
+XYZ coordinates
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For a DFT geometry optimization and frequency calculation of the water molecule, this is an easy example:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;%nproc=4
+%mem=16GB
+%chk=water.chk
+#p opt freq tpsstpss aug-cc-pvtz scf=xqc pop=(full,nbo) output=wfn
+water
+0 1
+O 0.000000 0.000000 0.000000
+H 0.758602 0.000000 0.504284
+H 0.758602 0.000000 -0.504284
+water.wfn
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="basis-set-files"&gt;Basis Set files&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;%nproc=12
+%mem=10GB
+%chk=example_molecule.chk
+# geom=allcheck TPSSh/gen scrf=(smd,solvent=tetrahydrofuran) int=dkh2 guess=read emp=gd3bj scf=xqc
+@./basis.gbs
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="time-dependent-dft-td-dft"&gt;Time-Dependent DFT (TD-DFT)&lt;/h3&gt;
+&lt;h3 id="multireference-methods"&gt;Multireference Methods&lt;/h3&gt;
+&lt;h4 id="casscf-and-nevpt2"&gt;CASSCF and NEVPT2&lt;/h4&gt;
+&lt;h4 id="magnetic-properties"&gt;Magnetic Properties&lt;/h4&gt;
+&lt;h4 id="zfs-with-dft"&gt;ZFS with DFT&lt;/h4&gt;
+&lt;h4 id="ab-initio-ligand-field-theory-ailft"&gt;Ab Initio Ligand Field Theory (AILFT)&lt;/h4&gt;</description></item><item><title>Welcome to my Blog</title><link>https://arturo-sauzadelavega.github.io/posts/introduction/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/introduction/</guid><description>&lt;img src="arturo_cartoon_10.png"
 alt="AI image"
 width="400"
 class="center"
