@@ -1,7 +1,8 @@
 ---
 title: "Welcome to my Blog"
-date: 2026-03-08
+date: 2026-03-12
 description: Introduction to my Blog
+hero: portada.png
 menu:
   sidebar:
     name: Welcome Message
@@ -18,12 +19,14 @@ categories: ["Basic"]
 
 Hello everybody!
 
-Thank you for visiting this blog. This is the first time I spent some time writing a blog, and in this case, I am trying to write a useful blog for those working doing research with quantum chemistry calculations.
+Thank you for visiting this blog. This is the first time I have spent some time writing a blog; thus, this is a new experience for me.
 
-I am expecting to write posts about how to use some of the programs I use on my own research. Therefore, these posts are also a reminder for myself about some input files for such programs.
+In general, on this webpage/blog/academic portfolio, I am trying to showcase the kind of research I love doing. Additionally, I am making an extra effort to write useful posts about how to perform quantum chemistry calculations. Usually, I keep for myself the input examples I use on my research, and only in the latest papers I published I included in the supporting information some examples. Still, I think it is more useful to have all the examples available for me and for everyone interested in looking at them. For example, a mentee can check my website and verify he/she is using the correct input.
 
-Maybe I will write some extra posts where I include LaTeX templates I use when using TiKz to plot the data I obtain, but we'll see. 
-Oh, by the way, most of the pictures shared in this website were AI generated, except for the publications graphical abstracts.
+As stated before, I expect to write posts on how to use some of the programs I use in my own research. To this moment, I am considering only **OpenMolcas** because the online manual is not clear enough, **Orca 6**, **Gaussian 16**, and maybe I will prepare another post for **ADF** (now part of AMS) and **Aimall**, but for the last two, I am not sure, we'll see...
+
+Maybe I will write some extra posts that include LaTeX templates I use for plotting the data I obtain with TikZ.
+Oh, by the way, most of the pictures shared on this website were AI-generated, except for the publications' graphical abstracts.
 
 
 Anyway, I'll try to update the posts regularly.
