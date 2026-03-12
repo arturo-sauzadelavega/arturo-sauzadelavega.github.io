@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quantum Chemistry on Arturo Sauza de la Vega, Ph.D.</title><link>https://arturo-sauzadelavega.github.io/tags/quantum-chemistry/</link><description>Recent content in Quantum Chemistry on Arturo Sauza de la Vega, Ph.D.</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://arturo-sauzadelavega.github.io/tags/quantum-chemistry/index.xml" rel="self" type="application/rss+xml"/><item><title>Gaussian 09/16</title><link>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</guid><description>&lt;img src="arturo_cartoon_08.png"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quantum Chemistry on Arturo Sauza de la Vega, Ph.D.</title><link>https://arturo-sauzadelavega.github.io/tags/quantum-chemistry/</link><description>Recent content in Quantum Chemistry on Arturo Sauza de la Vega, Ph.D.</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 12 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://arturo-sauzadelavega.github.io/tags/quantum-chemistry/index.xml" rel="self" type="application/rss+xml"/><item><title>Welcome to my Blog</title><link>https://arturo-sauzadelavega.github.io/posts/introduction/</link><pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/introduction/</guid><description>&lt;img src="arturo_cartoon_10.png"
+alt="AI image"
+width="400"
+class="center"
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;Thank you for visiting this blog. This is the first time I have spent some time writing a blog; thus, this is a new experience for me.&lt;/p&gt;
+&lt;p&gt;In general, on this webpage/blog/academic portfolio, I am trying to showcase the kind of research I love doing. Additionally, I am making an extra effort to write useful posts about how to perform quantum chemistry calculations. Usually, I keep for myself the input examples I use on my research, and only in the latest papers I published I included in the supporting information some examples. Still, I think it is more useful to have all the examples available for me and for everyone interested in looking at them. For example, a mentee can check my website and verify he/she is using the correct input.&lt;/p&gt;</description></item><item><title>Gaussian 09/16</title><link>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/gaussian/</guid><description>&lt;img src="arturo_cartoon_08.png"
 alt="Coding OpenMolcas"
 width="400"
 class="center"
@@ -43,15 +51,7 @@ water.wfn
 &lt;h4 id="casscf-and-nevpt2"&gt;CASSCF and NEVPT2&lt;/h4&gt;
 &lt;h4 id="magnetic-properties"&gt;Magnetic Properties&lt;/h4&gt;
 &lt;h4 id="zfs-with-dft"&gt;ZFS with DFT&lt;/h4&gt;
-&lt;h4 id="ab-initio-ligand-field-theory-ailft"&gt;Ab Initio Ligand Field Theory (AILFT)&lt;/h4&gt;</description></item><item><title>Welcome to my Blog</title><link>https://arturo-sauzadelavega.github.io/posts/introduction/</link><pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/introduction/</guid><description>&lt;img src="arturo_cartoon_10.png"
-alt="AI image"
-width="400"
-class="center"
-&gt;
-&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
-&lt;p&gt;Hello everybody!&lt;/p&gt;
-&lt;p&gt;Thank you for visiting this blog. This is the first time I spent some time writing a blog, and in this case, I am trying to write a useful blog for those working doing research with quantum chemistry calculations.&lt;/p&gt;
-&lt;p&gt;I am expecting to write posts about how to use some of the programs I use on my own research. Therefore, these posts are also a reminder for myself about some input files for such programs.&lt;/p&gt;</description></item><item><title>OpenMolcas Manual</title><link>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</guid><description>&lt;img src="arturo_cartoon_08.png"
+&lt;h4 id="ab-initio-ligand-field-theory-ailft"&gt;Ab Initio Ligand Field Theory (AILFT)&lt;/h4&gt;</description></item><item><title>OpenMolcas Manual</title><link>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</guid><description>&lt;img src="arturo_cartoon_08.png"
 alt="Coding OpenMolcas"
 width="400"
 class="center"
