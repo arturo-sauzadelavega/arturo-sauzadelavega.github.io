@@ -1496,9 +1496,195 @@ coordinates {
 
 </details>
 
-> So far, I think you already noticed that the data I want to plot is included using the format `(x,y)`. This is fine when the number of data points is small. However, when plotting hundreds or thousands of points, the `.tex` file turns tedious and incredibly large. In these situations, it is better to plot the data written into a `.txt` or `.dat` file (I usually use these extensions). To do that, check the next example where I plot the UV-vis data and oscillator strengths computed for an actinide-based complex.
+> So far, I think you already noticed that the data I want to plot is included using the format `(x,y)`. This is fine when the number of data points is small. However, when plotting hundreds or thousands of points, the `.tex` file turns tedious and incredibly large. In these situations, it is better to plot the data written into a `.txt` or `.dat` file (I usually use these extensions). To do that, check the next example where I plot the absorption and emission spectra of an Americium (III) complex with their respective oscillator strengths. 
 
+{{< img src="americium_spectra.png"  width="600" align="center" title="Absorption/Emission Spectra of Am(H2O)9" >}}
 
+<details >
+<summary> Check code </summary>
+
+```
+\documentclass[tikz,border=1mm]{standalone}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage[version=3]{mhchem}
+
+% Paquetes TikZ
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{plotmarks}
+\usepgflibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}
+\LARGE
+
+% =========================================================
+% EJE PRINCIPAL (izquierdo): Espectros de absorción/emisión
+% =========================================================
+  \begin{axis}[
+    name   = main axis,       % <-- nombre para referenciar después
+    height = 12cm,
+    width  = 18cm,
+    x tick label style = {/pgf/number format/1000 sep=},
+    xticklabel style   = {rotate=0},
+    % Formato eje y izquierdo
+    yticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=1,
+    },
+    %scaled y ticks = false,
+    every outer y axis line/.append style={
+        -{Classical TikZ Rightarrow[length=1.3mm]}
+    },
+    % Etiquetas
+    ylabel = {Intensity (a.u.)},
+    xlabel = {Wavelength (nm)},
+    % Rango de ejes
+    x axis line style = {opacity=0.5},
+    ymin =  0.0,
+    xmin =  200,
+    xmax = 1600,
+    xtick distance = 200,
+    % Estilo de ejes
+    axis x line = bottom,
+    axis y line = left,
+    tickwidth   = 2pt,
+    % Márgenes
+    enlarge x limits = 0.01,
+    enlarge y limits = {0.04, upper},
+    % Leyenda
+    legend style = {
+        at            = {(0.78, 0.99)},
+        anchor        = north,
+        legend columns = 1,
+        legend cell align = left,
+    },
+  ]
+
+  % --- Absorción ---
+  \addplot[
+      smooth, color = red,
+      line width = 1.5pt,
+  ] file {rassi_am9w_caspt2_sa_7-31_SO_absorption_spectrum_nm.dat};
+  \addlegendentry{Abs (7Sept+31Quint)}
+
+  % --- Emisión ---
+  \addplot[
+      smooth, color = blue, solid,
+      line width = 1.5pt,
+  ] file {rassi_am9w_caspt2_sa_7-31_SO_emission_spectrum_nm.dat};
+  \addlegendentry{Em (7Sept+31Quint)}
+
+  % --- Experimento (comentado) ---
+  %\addplot[black, solid, line width=2.0pt]
+  %    file{am9w_expt_nm.dat};
+  %\addlegendentry{Experiment}
+
+  \end{axis}
+
+% =========================================================
+% EJE SECUNDARIO (derecho): Fuerza del oscilador (f)
+% =========================================================
+% Estructura del archivo .dat esperada:
+%   columna 1: longitud de onda (nm)
+%   columna 2: fuerza del oscilador (f)
+%
+% Ejemplo de contenido del archivo:
+%   350.0   0.0023
+%   420.5   0.0150
+%   580.2   0.0004
+%   750.0   0.0310
+%   ...
+% =========================================================
+  \begin{axis}[
+    % ---------------------------------------------------
+    % Comparte exactamente el mismo espacio que el eje principal
+    % ---------------------------------------------------
+    at     = {(main axis.south west)},   % misma posición
+    anchor = south west,
+    height = 12cm,
+    width  = 18cm,
+    % ---------------------------------------------------
+    % Mismo rango x que el eje principal
+    % ---------------------------------------------------
+    xmin = 200,
+    xmax = 1600,
+    xtick distance = 200,
+    % ---------------------------------------------------
+    % Eje x: completamente oculto (ya lo muestra el eje principal)
+    % ---------------------------------------------------
+    axis x line   = none,
+    xtick         = \empty,
+    xticklabels   = \empty,
+    xlabel        = {},
+    % ---------------------------------------------------
+    % Eje y DERECHO: fuerza del oscilador
+    % ---------------------------------------------------
+    axis y line*  = right,               % <-- eje y a la derecha
+    ylabel        = {Oscillator strength $f$},
+    %ylabel style  = {
+    %    at        = {(ticklabel* cs:1.02)},
+    %    anchor    = south,
+    %    rotate    = -90,
+    %},
+    % Formato del eje y derecho (3 decimales para f)
+    yticklabel style = {
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=1,
+    },
+    %scaled y ticks = false,
+    every outer y axis line/.append style={
+        -{Classical TikZ Rightarrow[length=1.3mm]}
+    },
+    ymin = 0.0,
+    ymax = 20E-5,
+    % ---------------------------------------------------
+    % Estilo de las barras
+    % ---------------------------------------------------
+    ycomb,                               % <-- barras verticales delgadas
+    enlarge x limits = 0.01,
+    enlarge y limits = {0.04, upper},
+    tickwidth = 2pt,
+    % ---------------------------------------------------
+    % Leyenda del eje secundario (se añade a la del principal)
+    % ---------------------------------------------------
+    legend style = {
+        at             = {(0.78, 0.99)},
+        anchor         = north,
+        legend columns = 1,
+        legend cell align = left,
+    },
+    clip = false,
+  ]
+
+  % --- Barras de fuerza del oscilador (Absorción) ---
+  \addplot[
+      ycomb,                             % barras verticales
+      color     = red!60!white,
+      line width = 1.2pt,                % grosor de cada barra
+  ] file {abs_oscillators.dat};
+  %\addlegendentry{$f$ Abs}
+
+  % --- Barras de fuerza del oscilador (Emisión) ---
+  % (Descomentar si se tienen datos de emisión)
+  \addplot[
+      ycomb,
+      color     = blue!60!white,
+      line width = 1.2pt,
+  ] file {ems_oscillators.dat};
+  %\addlegendentry{$f$ Em}
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}
+
+```
+</details>
 
 
 

@@ -76,6 +76,9 @@ Be sure you modified the `openmolcas-24.sh` submission script according to your 
 
 In case you are still interested on a launcher script for OpenMolcas calculations, this is the type of script I am using for an HPC with Sun Grid Engine.
 
+<details >
+<summary> Check code </summary>
+
 ```
 #!/bin/bash
 #$ -q BV
@@ -126,6 +129,7 @@ $MOLCAS/pymolcas openmolcas.input >> ${JOB_NAME}.log
 
 ```
 
+</details>
 
 
 ### Input Structure
@@ -580,6 +584,49 @@ End of Input
 
 ```
 
+> Sometimes I found useful using the `LEVSHFt` and `SUPSYM` keywords to obtain the active spaces you are looking for. It is a way to constrain the active space. The `LEVSHft` keyword is used to include a level shift in the molecular orbitals, while the `SUPSYM` keyword generates an artificial symmetry group, and the `&RASSCF` module tries to optimize the orbitals into that group of orbitals. To use this last keyword, you have to specify the number of artificial group of orbitals, then in the next line the total number of orbitals and their corresponding indexes.
+
+I am also including in the next example the keyword `OUTORBitals` that I use to generate Natural orbitals for the active space in the output and luscus files.
+
+```
+&SEWARD
+RICD
+COORD = Cr_molecule.xyz
+group = nosym
+basis = Cr.ANO-RCC-VTZP, C.ANO-RCC-VDZ, H.ANO-RCC-VDZ
+End of Input
+
+>>COPY $CurrDir/previous_step.RasOrb INPORB
+
+&RASSCF
+Lumorb
+Symmetry = 1
+Spin = 3
+NACTEL = 10 0 0
+CHARGE = 0
+RAS2 = 15
+CIROOT = 20 20 1
+Levshft = 2.0
+Supsym
+1
+15 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120
+OUTORBitals = Natural ; 15 
+ORBListing = ALL
+ORBAppear = COMPACT
+ITERations = 200 100; CIMX = 500
+Sdav = 200; PRWF = 0.01
+End of Input
+
+>>COPY $WorkDir/$Project.RasOrb $CurrDir/$Project.JobIph
+>>COPY $CurrDir/$Project.RasOrb INPORB
+
+&GRID_IT
+sparse
+all
+End of Input
+
+
+```
 
 
 #### &GRID_IT
@@ -1173,6 +1220,25 @@ End of Input
 >>COPY $WorkDir/$Project.JobIph $CurrDir/${Project}_singlets.JobIph
 
 ```
+
+> - When working with lanthanide or actinide systems, often you have to include hundreds of states into the SA-CASSCF calculation. In a few cases I deal with convergence problems, to solve this issue I use the `Sdav` keyword in the `&RASSCF` module. For example, assuming you are working with an Americium (III) complex, you can compute up to 588 triplet states. Then, you have to set the value for `Sdav` to be greater than that number of states, for example:
+
+```
+&RASSCF
+Lumorb
+Symmetry = 1
+Spin = 3
+NACTEL = 3 0 0
+CHARGE = 0
+RAS2 = 7
+CIROOT = 588 588 1
+Sdav = 700
+End of Input
+
+
+```
+
+
 - When running a `&RASSI` calculation, you can print the spin-orbit matrix elements with `SOCoupling ` followed by the threshold. The tighter the threshold, the more complete the matrix element will be printed. However, this might affect your `&RASSI` calculation. If you are mixing hundreds of states, it is possible that your `&RASSI` calculation will never finish because it is working on printing an incredibly huge number of matrix elements, and by the end of your `&RASSI` calculation, you will see only the following header:
 
   ```
