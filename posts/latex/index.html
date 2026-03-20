@@ -8,7 +8,7 @@ Arturo Sauza de la Vega, Ph.D.</a>
 <a class=dropdown-item href=/#publications>All Publications</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class=nav-item><a class=nav-link id=note-link href=/notes>Notes</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
 </a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
 </a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/main-logo_hu_619875a29a04944e.png class=d-none id=main-logo alt=Logo>
-<img src=/images/site/inverted-logo_hu_619875a29a04944e.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/introduction/ title="Welcome Message">Welcome Message</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/programs/> Programs</a><ul><li><a class=list-link href=/posts/programs/gaussian/ title=Gaussian>Gaussian</a></li><li><a class=list-link href=/posts/programs/openmolcas/ title=OpenMolcas>OpenMolcas</a></li><li><a class=list-link href=/posts/programs/orca/ title=Orca>Orca</a></li></ul></li><li><a class="active list-link" href=/posts/latex/ title=LaTeX/TikZ>LaTeX/TikZ</a></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/latex/latex_portada.png)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/arturo_formal_hu_850b779fe9a0974a.jpg alt="Author Image"><h5 class=author-name>Arturo Sauza de la Vega</h5><p class=text-muted>Thursday, March 12, 2026 | 22 minutes</p></div><div class=title><h1>Figures with LaTeX/TikZ</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><img src=arturo_cartoon_11.png alt="Figures with TikZ" width=400 class=center><div style=margin-top:3rem></div><p>I am not looking to get involve into the huge fight of <em>which software is the best for plotting</em>. Some people enjoy using <code>Microsoft Excel</code> to generate their plots, and that is fine for me. I even use <code>Microsoft Excel</code> or <code>Gnuplot</code> plots to quickly look into my data.</p><p>Some friends and collaborators plot withi <code>Origin</code> or python, using the <code>matplotlib</code> library, and in general those figures look fine. However, I love using <code>LaTeX/TikZ</code> for plotting data to be published in research papers, but I have to recognize that is not the fastest nor a friendly way to plot information.</p><p>Okay, let&rsquo;s get started.</p><h3 id=2d-plots>2D-Plots</h3><p>In general, I obtained two kind of plots, bar and XY plots. In the following sections, I am including the templates and resulting figures. Probably I am not including a wide discussion about every single line I added unless I think it is necessary.</p><h4 id=xy-graphs>XY Graphs</h4><blockquote><p>The first plot I am adding corresponds to the total QTAIM atomic charge of cations when adding water molecules into the molecular cluster.</p></blockquote><p>This is the plot:</p><img src=graficaChidaTikz.png alt="Atomic charge vs water molecules" width=600 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[border=1mm]{standalone}
+<img src=/images/site/inverted-logo_hu_619875a29a04944e.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/introduction/ title="Welcome Message">Welcome Message</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/programs/> Programs</a><ul><li><a class=list-link href=/posts/programs/gaussian/ title=Gaussian>Gaussian</a></li><li><a class=list-link href=/posts/programs/openmolcas/ title=OpenMolcas>OpenMolcas</a></li><li><a class=list-link href=/posts/programs/orca/ title=Orca>Orca</a></li></ul></li><li><a class="active list-link" href=/posts/latex/ title=LaTeX/TikZ>LaTeX/TikZ</a></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/latex/latex_portada.png)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/arturo_formal_hu_850b779fe9a0974a.jpg alt="Author Image"><h5 class=author-name>Arturo Sauza de la Vega</h5><p class=text-muted>Thursday, March 12, 2026 | 25 minutes</p></div><div class=title><h1>Figures with LaTeX/TikZ</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><img src=arturo_cartoon_11.png alt="Figures with TikZ" width=400 class=center><div style=margin-top:3rem></div><p>I am not looking to get involve into the huge fight of <em>which software is the best for plotting</em>. Some people enjoy using <code>Microsoft Excel</code> to generate their plots, and that is fine for me. I even use <code>Microsoft Excel</code> or <code>Gnuplot</code> plots to quickly look into my data.</p><p>Some friends and collaborators plot withi <code>Origin</code> or python, using the <code>matplotlib</code> library, and in general those figures look fine. However, I love using <code>LaTeX/TikZ</code> for plotting data to be published in research papers, but I have to recognize that is not the fastest nor a friendly way to plot information.</p><p>Okay, let&rsquo;s get started.</p><h3 id=2d-plots>2D-Plots</h3><p>In general, I obtained two kind of plots, bar and XY plots. In the following sections, I am including the templates and resulting figures. Probably I am not including a wide discussion about every single line I added unless I think it is necessary.</p><h4 id=xy-graphs>XY Graphs</h4><blockquote><p>The first plot I am adding corresponds to the total QTAIM atomic charge of cations when adding water molecules into the molecular cluster.</p></blockquote><p>This is the plot:</p><img src=graficaChidaTikz.png alt="Atomic charge vs water molecules" width=600 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[border=1mm]{standalone}
 \usepackage{amssymb,amsmath}
 \usepackage{siunitx}
 \usepackage[version=3]{mhchem}
@@ -1377,7 +1377,185 @@ coordinates {
 
 \end{tikzpicture}
 \end{document}
-</code></pre></details><blockquote><p>So far, I think you already noticed that the data I want to plot is included using the format <code>(x,y)</code>. This is fine when the number of data points is small. However, when plotting hundreds or thousands of points, the <code>.tex</code> file turns tedious and incredibly large. In these situations, it is better to plot the data written into a <code>.txt</code> or <code>.dat</code> file (I usually use these extensions). To do that, check the next example where I plot the UV-vis data and oscillator strengths computed for an actinide-based complex.</p></blockquote></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
+</code></pre></details><blockquote><p>So far, I think you already noticed that the data I want to plot is included using the format <code>(x,y)</code>. This is fine when the number of data points is small. However, when plotting hundreds or thousands of points, the <code>.tex</code> file turns tedious and incredibly large. In these situations, it is better to plot the data written into a <code>.txt</code> or <code>.dat</code> file (I usually use these extensions). To do that, check the next example where I plot the absorption and emission spectra of an Americium (III) complex with their respective oscillator strengths.</p></blockquote><img src=americium_spectra.png alt="Absorption/Emission Spectra of Am(H2O)9" width=600 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[tikz,border=1mm]{standalone}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage[version=3]{mhchem}
+
+% Paquetes TikZ
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{plotmarks}
+\usepgflibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}
+\LARGE
+
+% =========================================================
+% EJE PRINCIPAL (izquierdo): Espectros de absorción/emisión
+% =========================================================
+  \begin{axis}[
+    name   = main axis,       % &lt;-- nombre para referenciar después
+    height = 12cm,
+    width  = 18cm,
+    x tick label style = {/pgf/number format/1000 sep=},
+    xticklabel style   = {rotate=0},
+    % Formato eje y izquierdo
+    yticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=1,
+    },
+    %scaled y ticks = false,
+    every outer y axis line/.append style={
+        -{Classical TikZ Rightarrow[length=1.3mm]}
+    },
+    % Etiquetas
+    ylabel = {Intensity (a.u.)},
+    xlabel = {Wavelength (nm)},
+    % Rango de ejes
+    x axis line style = {opacity=0.5},
+    ymin =  0.0,
+    xmin =  200,
+    xmax = 1600,
+    xtick distance = 200,
+    % Estilo de ejes
+    axis x line = bottom,
+    axis y line = left,
+    tickwidth   = 2pt,
+    % Márgenes
+    enlarge x limits = 0.01,
+    enlarge y limits = {0.04, upper},
+    % Leyenda
+    legend style = {
+        at            = {(0.78, 0.99)},
+        anchor        = north,
+        legend columns = 1,
+        legend cell align = left,
+    },
+  ]
+
+  % --- Absorción ---
+  \addplot[
+      smooth, color = red,
+      line width = 1.5pt,
+  ] file {rassi_am9w_caspt2_sa_7-31_SO_absorption_spectrum_nm.dat};
+  \addlegendentry{Abs (7Sept+31Quint)}
+
+  % --- Emisión ---
+  \addplot[
+      smooth, color = blue, solid,
+      line width = 1.5pt,
+  ] file {rassi_am9w_caspt2_sa_7-31_SO_emission_spectrum_nm.dat};
+  \addlegendentry{Em (7Sept+31Quint)}
+
+  % --- Experimento (comentado) ---
+  %\addplot[black, solid, line width=2.0pt]
+  %    file{am9w_expt_nm.dat};
+  %\addlegendentry{Experiment}
+
+  \end{axis}
+
+% =========================================================
+% EJE SECUNDARIO (derecho): Fuerza del oscilador (f)
+% =========================================================
+% Estructura del archivo .dat esperada:
+%   columna 1: longitud de onda (nm)
+%   columna 2: fuerza del oscilador (f)
+%
+% Ejemplo de contenido del archivo:
+%   350.0   0.0023
+%   420.5   0.0150
+%   580.2   0.0004
+%   750.0   0.0310
+%   ...
+% =========================================================
+  \begin{axis}[
+    % ---------------------------------------------------
+    % Comparte exactamente el mismo espacio que el eje principal
+    % ---------------------------------------------------
+    at     = {(main axis.south west)},   % misma posición
+    anchor = south west,
+    height = 12cm,
+    width  = 18cm,
+    % ---------------------------------------------------
+    % Mismo rango x que el eje principal
+    % ---------------------------------------------------
+    xmin = 200,
+    xmax = 1600,
+    xtick distance = 200,
+    % ---------------------------------------------------
+    % Eje x: completamente oculto (ya lo muestra el eje principal)
+    % ---------------------------------------------------
+    axis x line   = none,
+    xtick         = \empty,
+    xticklabels   = \empty,
+    xlabel        = {},
+    % ---------------------------------------------------
+    % Eje y DERECHO: fuerza del oscilador
+    % ---------------------------------------------------
+    axis y line*  = right,               % &lt;-- eje y a la derecha
+    ylabel        = {Oscillator strength $f$},
+    %ylabel style  = {
+    %    at        = {(ticklabel* cs:1.02)},
+    %    anchor    = south,
+    %    rotate    = -90,
+    %},
+    % Formato del eje y derecho (3 decimales para f)
+    yticklabel style = {
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=1,
+    },
+    %scaled y ticks = false,
+    every outer y axis line/.append style={
+        -{Classical TikZ Rightarrow[length=1.3mm]}
+    },
+    ymin = 0.0,
+    ymax = 20E-5,
+    % ---------------------------------------------------
+    % Estilo de las barras
+    % ---------------------------------------------------
+    ycomb,                               % &lt;-- barras verticales delgadas
+    enlarge x limits = 0.01,
+    enlarge y limits = {0.04, upper},
+    tickwidth = 2pt,
+    % ---------------------------------------------------
+    % Leyenda del eje secundario (se añade a la del principal)
+    % ---------------------------------------------------
+    legend style = {
+        at             = {(0.78, 0.99)},
+        anchor         = north,
+        legend columns = 1,
+        legend cell align = left,
+    },
+    clip = false,
+  ]
+
+  % --- Barras de fuerza del oscilador (Absorción) ---
+  \addplot[
+      ycomb,                             % barras verticales
+      color     = red!60!white,
+      line width = 1.2pt,                % grosor de cada barra
+  ] file {abs_oscillators.dat};
+  %\addlegendentry{$f$ Abs}
+
+  % --- Barras de fuerza del oscilador (Emisión) ---
+  % (Descomentar si se tienen datos de emisión)
+  \addplot[
+      ycomb,
+      color     = blue!60!white,
+      line width = 1.2pt,
+  ] file {ems_oscillators.dat};
+  %\addlegendentry{$f$ Em}
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}
+</code></pre></details></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
 <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f" target=_blank><i class="fab fa-facebook"></i>
 </a><a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f&text=Figures%20with%20LaTeX%2fTikZ%20&via=Arturo%20Sauza%20de%20la%20Vega%2c%20Ph.D." target=_blank><i class="fab fa-twitter"></i>
 </a><a class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f&title=Figures%20with%20LaTeX%2fTikZ%20" target=_blank><i class="fab fa-reddit"></i>
