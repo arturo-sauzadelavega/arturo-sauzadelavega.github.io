@@ -1687,5 +1687,364 @@ coordinates {
 </details>
 
 
+> During my Ph.D. I saw that one of my friends prepared some plots when testing his developed method L-PDFT. The plots were potential energy curves related to conical intersections. I liked how they included a zoomed section in the plot and I learned that is called an `inset`. Now, as a postdoc, I am working on scanning orbital splittings using Ab Initio Ligand Field Theory on a potential energy surface and finally I have tha chance to include an inset in a plot. Here is the template to do such kind of plots.
+
+
+{{< img src="scan_ailft_inset-1.png"  width="600" align="center" title="Actinide 5f Orbital Splitting" >}}
+
+
+
+<details >
+<summary> Check code </summary>
+\documentclass[tikz,border=1mm]{standalone}
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage[version=3]{mhchem}
+
+% Paquetes TikZ
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{plotmarks}
+\usepgflibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\definecolor{sodium}{RGB}{221,221,25}
+\definecolor{iceblue}{RGB}{102,255,255}
+\definecolor{tan}{RGB}{210,180,140}
+\definecolor{wine}{RGB}{153,0,76}
+\definecolor{sulfur}{RGB}{255,160,0}
+
+
+\begin{document}
+
+\begin{tikzpicture}
+\Large
+  \begin{axis}[
+ height = 12cm,
+ width  = 20cm,
+ %bar width=0.7cm,
+ x tick label style={/pgf/number format/1000 sep=1pt},
+ xticklabel style={rotate=0}, %rotate labels in x axis 
+      xticklabel style={
+        /pgf/number format/.cd,
+        precision=2,
+        fixed,
+        fixed zerofill,
+    /tikz/.cd,    % <-- restaura el contexto pgfkeys a TikZ
+      },
+scaled x ticks = false,
+ yticklabel style={ /pgf/number format/.cd, fixed, fixed zerofill, precision=4 },
+ %every outer x axis line/.append style={-{Classical TikZ Rightarrow[length=1.3mm]}},
+ every outer y axis line/.append style={-{Classical TikZ Rightarrow[length=1.3mm]}},
+ %ybar,
+ ylabel={ $\varepsilon_i$ (Ha)   },
+ xlabel={$\Delta d(\textrm{U--NPR}_3) $  (\AA) },
+ x axis line style = { opacity = 0.5 },
+ ymin = -1.3300,
+ ymax = -1.2000,
+ xmin = -0.16,
+ xmax = 0.36,
+ %xtick={-2,-1,0,1,2},
+ axis x line       = bottom,
+ axis y line       = left,
+ tickwidth         = 2pt,
+ %ybar interval     = 0.5,
+ enlarge x limits  = 0.15,
+ enlarge y limits  = 0.02,
+ %nodes near coords align={vertical},
+ %nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=2,fixed,fixed zerofill,precision=2},
+ %every node near coord/.append style={anchor=west, rotate=90 }, %to rotate numbers over the columns
+ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align={left} },
+  ] 
+
+
+%NEVPT2 f0 (fz^3)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.29657) 
+(-0.10, -1.30662)
+(-0.05, -1.31263)
+(0.00 , -1.31428)
+(0.05 , -1.31263)
+(0.10 , -1.30668)
+(0.15 , -1.29653)
+(0.20 , -1.28246)
+(0.25 , -1.26586)
+(0.30 , -1.24710)
+(0.35 , -1.22030)
+};
+
+%NEVPT2 f+1 (fxz^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.28709)
+(-0.10, -1.29787)
+(-0.05, -1.30451)
+(0.00 , -1.30674)
+(0.05 , -1.30450)
+(0.10 , -1.29793)
+(0.15 , -1.28705)
+(0.20 , -1.27214)
+(0.25 , -1.25454)
+(0.30 , -1.23460)
+(0.35 , -1.20637)
+};
+
+
+%NEVPT2 f-1 (fyz^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.28768)
+(-0.10, -1.29838)
+(-0.05, -1.30488)
+(0.00 , -1.30674)
+(0.05 , -1.30487)
+(0.10 , -1.29845)
+(0.15 , -1.28764)
+(0.20 , -1.27265)
+(0.25 , -1.25487)
+(0.30 , -1.23446)
+(0.35 , -1.20549)
+};
+
+
+%NEVPT2 f+2 (fx^2-y^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.28768)
+(-0.10, -1.29838)
+(-0.05, -1.30421)
+(0.00 , -1.30674)
+(0.05 , -1.30487)
+(0.10 , -1.29845)
+(0.15 , -1.28764)
+(0.20 , -1.27265)
+(0.25 , -1.25487)
+(0.30 , -1.23299)
+(0.35 , -1.20549)
+};
+
+%NEVPT2 f-2 (fxyz)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.29327)
+(-0.10, -1.30393)
+(-0.05, -1.31057)
+(0.00 , -1.31288)
+(0.05 , -1.31057)
+(0.10 , -1.30400)
+(0.15 , -1.29323)
+(0.20 , -1.27849)
+(0.25 , -1.26112)
+(0.30 , -1.24133)
+(0.35 , -1.21317)
+};
+
+%NEVPT2 f+3 (fx^2-3y^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.29521)
+(-0.10, -1.30555)
+(-0.05, -1.31200)
+(0.00 , -1.31428)
+(0.05 , -1.31200)
+(0.10 , -1.30561)
+(0.15 , -1.29517)
+(0.20 , -1.28107)
+(0.25 , -1.26461)
+(0.30 , -1.24618)
+(0.35 , -1.20637)
+};
+
+%NEVPT2 f-3 (f3x^2-y^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.29657)
+(-0.10, -1.30662)
+(-0.05, -1.31263)
+(0.00 , -1.31428)
+(0.05 , -1.31263)
+(0.10 , -1.30668)
+(0.15 , -1.29653)
+(0.20 , -1.28246)
+(0.25 , -1.26586)
+(0.30 , -1.24710)
+(0.35 , -1.22030)
+};
+
+
+
+
+%Orbital Labels
+
+%f0
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2950)} node[above,font=\sffamily]{\large$f_{z^3}$} ;
+%f+1
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2500)} node[above,font=\sffamily]{\large$f_{xz^2}$} ;
+%f-1
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.15, -1.2600)} node[above,font=\sffamily]{\large$f_{yz^2}$} ;
+%f+2
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2600)} node[above,font=\sffamily]{\large$f_{z(x^2-y^2)}$} ;
+%f-2
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2700)} node[above,font=\sffamily]{\large$f_{xyz}$} ;
+%f+3
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2800)} node[above,font=\sffamily]{\large$f_{x(x^2-3y^2)}$} ;
+%f-3
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2900)} node[above,font=\sffamily]{\large$f_{y(3x^2-y^2)}$} ;
+
+%---------------------------------
+
+ % Recuadro de la región de zoom
+  \draw[black, dashed, line width=0.8pt]
+      (axis cs:-0.07,-1.3300) rectangle (axis cs:0.07,-1.2900);
+
+  % Guardar esquinas del recuadro como coordenadas TikZ
+  % para usarlas fuera del entorno axis en las líneas de conexión
+  \coordinate (zoom NW) at (axis cs:-0.07,-1.2900);
+  \coordinate (zoom NE) at (axis cs:0.07,-1.2900);
+  \coordinate (zoom SW) at (axis cs:-0.07,-1.3300);
+  \coordinate (zoom SE) at (axis cs:0.07,-1.3300);
+
+  \end{axis}
+
+  % ============================================================
+  %  INSET — esquina superior izquierda del eje principal
+  % ============================================================
+  \begin{axis}[
+    name   = inset axis,
+    at = {(rel axis cs:0.30, 0.99)},
+    anchor = north west,    
+    %xshift =  0.7cm,
+    %yshift = -0.7cm,
+    height = 6.5cm,
+    width  = 7.5cm,
+    xmin = -0.07,      
+    xmax = 0.07,
+    scaled x ticks = false,
+    %ymin = -1.3155, 
+    %ymax = -1.3045,
+    xtick distance = 0.02,
+    axis lines* = box,
+    %axis x line  = bottom,
+    %axis y line  = left,
+    tickwidth    = 1.5pt,
+    xticklabel style={font=\small, /pgf/number format/.cd, precision=2, fixed, fixed zerofill},
+    yticklabel style={font=\small, /pgf/number format/.cd, fixed, fixed zerofill, precision=4},
+    %xlabel={$\Delta\theta$ ($^\circ$)},
+    %ylabel={$\varepsilon_i$ (Ha)},
+    xlabel style={font=\small},
+    ylabel style={font=\small},
+    axis background/.style={fill=white},
+    axis line style={black, line width=0.8pt},
+    %enlarge x limits = 0.05,
+    %enlarge y limits = 0.05,
+    legend style={at={(0.97,0.03)}, anchor=south east,
+                  legend columns=1, font=\tiny, legend cell align=left},
+    clip = true,
+  ]
+
+  % ----------------------------------------------------------
+  % AÑADE AQUÍ TUS NUEVOS \addplot CON LOS DATOS DEL ZOOM
+  % Los de abajo son ejemplos — reemplázalos por los tuyos
+  % ----------------------------------------------------------
+
+%f0
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.31176) 
+(-0.04, -1.31328)
+(-0.02, -1.31423)
+(0.00 , -1.31428)
+(0.02 , -1.31423)
+(0.04 , -1.31333)
+(0.06 , -1.31166)
+};
+
+%f+1
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.30393)
+(-0.04, -1.30556)
+(-0.02, -1.30662)
+(0.00 , -1.30674)
+(0.02 , -1.30662)
+(0.04 , -1.30561)
+(0.06 , -1.30379)
+};
+
+%f-1
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.30352)
+(-0.04, -1.30527)
+(-0.02, -1.30648)
+(0.00 , -1.30674)
+(0.02 , -1.30648)
+(0.04 , -1.30532)
+(0.06 , -1.30343)
+};
+
+%f+2
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.30393)
+(-0.04, -1.30556)
+(-0.02, -1.30633)
+(0.00 , -1.30674)
+(0.02 , -1.30662)
+(0.04 , -1.30561)
+(0.06 , -1.30379)
+};
+
+%f-2
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.30955)
+(-0.04, -1.31133)
+(-0.02, -1.31258)
+(0.00 , -1.31288)
+(0.02 , -1.31258)
+(0.04 , -1.31138)
+(0.06 , -1.30945)
+};
+
+%f+3
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.31176)
+(-0.04, -1.31328)
+(-0.02, -1.31423)
+(0.00 , -1.31428)
+(0.02 , -1.31423)
+(0.04 , -1.31333)
+(0.06 , -1.31166)
+};
+
+%f-3
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.31102)
+(-0.04, -1.31277)
+(-0.02, -1.31397)
+(0.00 , -1.31428)
+(0.02 , -1.31397)
+(0.04 , -1.31281)
+(0.06 , -1.31092)
+};
+
+
+  % Guardar esquinas inferiores del inset para las líneas de conexión
+  \coordinate (inset SW) at (axis cs:-0.07,-1.3150);
+  \coordinate (inset SE) at (axis cs:0.07,-1.3150);
+  \coordinate (inset NW) at (axis cs:-0.07,-1.2900);
+  \coordinate (inset NE) at (axis cs:0.07,-1.2900);
+
+  \end{axis}
+
+  % ============================================================
+  %  LÍNEAS DE CONEXIÓN
+  %  Unen las esquinas inferiores del inset con las superiores
+  %  del recuadro de zoom en el eje principal
+  % ============================================================
+  \draw[black, dotted, line width=0.7pt] (inset SW) -- (zoom NW);
+  \draw[black, dotted, line width=0.7pt] (inset SE) -- (zoom NE);
+
+
+
+\end{tikzpicture}
+
+\end{document}
+
+
+</details>
+
 
 
