@@ -13,37 +13,7 @@ class="center"
 &gt;
 &lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
 &lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
-&lt;h3 id="standard-input-file"&gt;Standard Input File&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;%nproc=12
-%mem=10GB
-%chk=file.chk
-# keywords
-Title for your calculation
-charge multiplicity
-XYZ coordinates
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For a DFT geometry optimization and frequency calculation of the water molecule, this is an easy example:&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;%nproc=4
-%mem=16GB
-%chk=water.chk
-#p opt freq tpsstpss aug-cc-pvtz scf=xqc pop=(full,nbo) output=wfn
-water
-0 1
-O 0.000000 0.000000 0.000000
-H 0.758602 0.000000 0.504284
-H 0.758602 0.000000 -0.504284
-water.wfn
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="basis-set-files"&gt;Basis Set files&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;%nproc=12
-%mem=10GB
-%chk=example_molecule.chk
-# geom=allcheck TPSSh/gen scrf=(smd,solvent=tetrahydrofuran) int=dkh2 guess=read emp=gd3bj scf=xqc
-@./basis.gbs
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="time-dependent-dft-td-dft"&gt;Time-Dependent DFT (TD-DFT)&lt;/h3&gt;
-&lt;h3 id="multireference-methods"&gt;Multireference Methods&lt;/h3&gt;
-&lt;h4 id="casscf-and-nevpt2"&gt;CASSCF and NEVPT2&lt;/h4&gt;
-&lt;h4 id="magnetic-properties"&gt;Magnetic Properties&lt;/h4&gt;
-&lt;h4 id="zfs-with-dft"&gt;ZFS with DFT&lt;/h4&gt;
-&lt;h4 id="ab-initio-ligand-field-theory-ailft"&gt;Ab Initio Ligand Field Theory (AILFT)&lt;/h4&gt;</description></item><item><title>OpenMolcas Manual</title><link>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</guid><description>&lt;img src="arturo_cartoon_08.png"
+&lt;p&gt;I still remember my first approach to using Orca. I was an undergraduate student at UNAM, and more specifically, I was working at the Institute of Chemistry at UNAM under the supervision of Prof. Tomás Rocha Rinza, and José Manuel Guevara Vela was visiting us from Spain, I think he was in his last year of grad school at the University of Oviedo, working with Prof. Ángel Martín Pendás. Back then, I was working only with Gaussian 16 and GAMESS, but Manuel showed me how to use Orca 3.5 to compute DLPNO-CCSD(T) energies that I used for the computation of energy barriers and rate constants of my project consisting on exploring the &lt;a href="https://doi.org/10.1039/D1OB01026C" target="_blank" rel="noopener"&gt;hydrolisis reaction of epoxides using water clusters as bifunctional catalysts&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>OpenMolcas Manual</title><link>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://arturo-sauzadelavega.github.io/posts/programs/openmolcas/</guid><description>&lt;img src="arturo_cartoon_08.png"
 alt="Coding OpenMolcas"
 width="400"
 class="center"
