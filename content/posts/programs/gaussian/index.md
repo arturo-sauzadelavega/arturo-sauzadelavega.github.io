@@ -23,14 +23,14 @@ math: true
 
 ### Introduction
 
-Gaussian is a well-known electronic structure program in the chemistry community. Probably this introduction is unnecesary because most of the people I known they already know about its existance, its story, many of the methods implemented, etc.
+Gaussian is a well-known electronic structure program in the chemistry community. This introduction may be unnecessary, as most people I know are already aware of its existence, its story, and many of the methods implemented.
 
-In my opinion, Gaussian is one of the most friendly codes out there. However, there are many tools that are very useful and we don't usually remember how to use them. This is my main motivation to write this post, to remember some of the input structures I use for special cases, or when the documentation is limited and I already figured out how to make the input run correctly.
+In my opinion, Gaussian is one of the most friendly codes out there. However, there are many very useful tools, and we don't usually remember how to use them. This is my main motivation for writing this post: to remember some of the input structures I use for special cases or when the documentation is limited, and I have already figured out how to make the input run correctly.
 
 ### Standard Input File
-Gaussian input files are incredibly friendly. The input files I use require in the very first few lines to include the variables `%nproc`, `%mem`, `%chk` to indicate the number of processors to be used in the calculation, the maximum memory allocated, and the name of a chekpoint file, respectively.
+Gaussian input files are incredibly friendly. The input files I use require, in the very first few lines, to include the variables `%nproc`, `%mem`, `%chk` to indicate the number of processors to be used in the calculation, the maximum memory allocated, and the name of a checkpoint file, respectively.
 
-Checkpoint files are very useful because in this binary file is stored the geometry, basis functions and much more data useful to restart a calculation or to plot information of your interest. This information is not available only for the final optimized molecules, it is also written for all intermediate steps in a requested calculation.
+Checkpoint files are very useful because they store the geometry, basis functions, and much more data needed to restart a calculation or plot information of interest. This information is not only available for the final optimized molecules, but it is also written for all intermediate steps in a requested calculation.
 
 The standard input file follows the structure shown below:
 
@@ -73,9 +73,9 @@ water.wfn
 
 ### Basis Set files
 
-The number and types of basis functions available in Gaussian is amazing. However, sometimes you need specific basis functions that are not availabe, like all-electron relativistic basis sets. In these situations, you have to download basis functions from external sources like [Basis Set Exchange](https://www.basissetexchange.org), the [Turbomole Basis Set Library](https://basissets.turbomole.org), or the [Correlation Consistent Basis Set Repository](http://www.grant-hill.group.shef.ac.uk/ccrepo/). Then, you copy from the previous websites and paste the basis functions into the gaussian input file. This is really easy to do and I think the example in the gaussian website is clear, but the example about how to invoque a file where the basis functions were written is not avaialable in the website.
+The number and types of basis functions available in Gaussian are amazing. However, sometimes you need specific basis functions that are not available, like all-electron relativistic basis sets. In these situations, you have to download basis functions from external sources like [Basis Set Exchange](https://www.basissetexchange.org), the [Turbomole Basis Set Library](https://basissets.turbomole.org), or the [Correlation Consistent Basis Set Repository](http://www.grant-hill.group.shef.ac.uk/ccrepo/). Then, you copy from the previous websites and paste the basis functions into the Gaussian input file. This is really easy to do, and I think the example on the Gaussian website is clear, but the example on how to invoke a file where the basis functions were written is not available there.
 
-This is an input example in which I use a gaussian basis function file (`.gbs`):
+This is an input example in which I use a Gaussian basis function file (`.gbs`):
 
 ```
 %nproc=12
@@ -88,7 +88,7 @@ This is an input example in which I use a gaussian basis function file (`.gbs`):
  
 ```
 
-This is an example of for the geometry optimization and frequencies calculation of HgCl<sub>2</sub> in combination with dispersion D3-BJ for the TPSSh functional, and using Link1 to concatenate the calculations.
+This is an example of the geometry optimization and frequencies calculation of HgCl<sub>2</sub> in combination with dispersion D3-BJ for the TPSSh functional, and using Link1 to concatenate the calculations.
 
 ```
 %nproc=12
@@ -122,7 +122,7 @@ Cl 0.026989 8.184446 0.000000
 
 ### Dispersion Model for TPSSh
 
-Sometimes you want to include dispersion correction into your calculations. The most famous functionals like PBE or B3LYP immediately loads all the empirical parameters for such functionals and you just need to include the keyword `emp=gd3bj` in case you want to run a D3-BJ dispersion calculation. However, for other functionals you have to indicate the values for the empirical parameters. To do this, you have to use the `iop` keywords. This is an example of a TPSSh-D3-BJ calculation where I need to indicate the empirical parameters:
+Sometimes you want to include dispersion correction in your calculations. The most famous functionals, like PBE or B3LYP, immediately load all the empirical parameters for such functionals, and you just need to include the keyword `emp=gd3bj` in case you want to run a D3-BJ dispersion calculation. However, for other functionals, you have to indicate the values for the empirical parameters. To do this, you have to use the `iop` keywords. This is an example of a TPSSh-D3-BJ calculation where I need to indicate the empirical parameters:
 
 ```
 %nproc=12
@@ -148,15 +148,15 @@ water optimization
   
 ```
 
-In this example, to perform an optimization and frequencies calculation, you have to split the calculation into two parts, one for the optimization where the dispersion is indicated, the second part corresponds to the frequencies, where once again you have to specify the dispersion model and the empirical parameters.
+In this example, to perform an optimization and frequencies calculation, you have to split the calculation into two parts: one for the optimization, where the dispersion is indicated, and the second part corresponds to the frequencies, where once again you have to specify the dispersion model and the empirical parameters.
 
-If you are interested in another functional, you have to find the corresponding empirical parameters. You can try looking into Prof. Grimme's papers or in his reserach group webiste where he published the complete data set to train functionals and the obtained empirical parameters.
+If you are interested in another functional, you have to find the corresponding empirical parameters. You can try looking into Prof. Grimme's papers or on his research group website, where he published the complete data set to train functionals and the obtained empirical parameters.
 
 
 
 ### Natural Localized Molecular Orbitals (NLMO)
 
-Gaussian includes an NBO version included within the many functionalities. In my research about actinide molecules, often I have to analyze NLMOs to check the bonding interaction between metal centers and ligands. We can obtain NLMOs directly with Gaussian in case you do not have other programs like ADF and NBO. 
+Gaussian includes an NBO version among its many functionalities. In my research on actinide molecules, I often analyze NLMOs to examine bonding interactions between metal centers and ligands. We can obtain NLMOs directly using Gaussian if you do not have other programs like ADF and NBO. 
 
 This is an input example to obtain NLMOs with Gaussian, where I use the Iop 6/73 to obtain the NLMOs:
 ```
@@ -181,7 +181,7 @@ water.wfx
 
 ### Time-Dependent DFT (TD-DFT) 
 
-When performing a TD-DFT calculation, you have to specify the number of excited states to be considered (roots) as shown in the next example:
+When performing a TD-DFT calculation, you have to specify the number of excited states to be considered (roots), as shown in the next example:
 
 ```
 %nproc=12
@@ -203,7 +203,7 @@ Where 10 excited states will be computed as indicated with the `NStates` keyword
 
 ### Solvation Models
 
-There are  different solvation models available, like PCM and SMD. It is easy to indicate which solvation model and the solvent. However, sometimes you want to use a solvent dielectric constant that is not available in the native solvent list. In this case, you have to define the solvent and another parameters. This example considers the dielectric constant of 1,2-dimethosyethane (DME) solvent:
+There are  different solvation models available, like PCM and SMD. It is easy to indicate which solvation model and the solvent. However, sometimes you want to use a solvent dielectric constant that is not available in the native solvent list. In this case, you have to define the solvent and other parameters. This example considers the dielectric constant of 1,2-dimethoxyethane (DME) solvent:
 
 ```
 %nproc=12
