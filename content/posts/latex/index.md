@@ -19,19 +19,19 @@ math: true
 {{< vs 3 >}}
 
 
-I am not looking to get involve into the huge fight of *which software is the best for plotting*. Some people enjoy using `Microsoft Excel` to generate their plots, and that is fine for me. I even use `Microsoft Excel` or `Gnuplot` plots to quickly look into my data.
+I am not looking to get involved in the big debate over *which software is best for plotting*. Some people enjoy using `Microsoft Excel` to generate their plots, and that is fine for me. I even use `Microsoft Excel` or `Gnuplot` plots to quickly look into my data.
 
-Some friends and collaborators plot withi `Origin` or python, using the `matplotlib` library, and in general those figures look fine. However, I love using `LaTeX/TikZ` for plotting data to be published in research papers, but I have to recognize that is not the fastest nor a friendly way to plot information.
+Some friends and collaborators plot with `Origin` or Python, using the `matplotlib` library, and in general, those figures look fine. However, I love using `LaTeX/TikZ` for plotting data for research papers, but I have to recognize that it is neither the fastest nor the friendliest way to plot information.
 
 Okay, let's get started. 
 
 
 ### 2D-Plots
-In general, I obtained two kind of plots, bar and XY plots. In the following sections, I am including the templates and resulting figures. Probably I am not including a wide discussion about every single line I added unless I think it is necessary.  
+In general, I obtained two kinds of plots, bar and XY plots. In the following sections, I am including the templates and resulting figures. I won't include a detailed discussion of every line I added unless necessary.  
 
 #### XY Graphs
 
-> The first plot I am adding corresponds to the total QTAIM atomic charge of cations when adding water molecules into the molecular cluster.
+> The first plot I am adding shows the total QTAIM atomic charge of cations as water molecules are added to the molecular cluster.
 
 This is the plot:
 
@@ -130,7 +130,7 @@ coordinates {
 </details>
 
 
-> While working in my Ph.D., I was testing the Q-Chem capabilities related to CASSCF, v2RDM-CASSCF, and v2RDM-PDFT. I plotted some dissociation curves and compare with OpenMolcas code. This is another pretty example of 2D plots. I think this figure is helpful to check the different type of markers and lines you can use for your own plots. Additionally, in my template first few lines, I included the command `\definecolor` to use colors I define using RGB color code. 
+> While working on my Ph.D., I was testing Q-Chem's capabilities for CASSCF, v2RDM-CASSCF, and v2RDM-PDFT. I plotted some dissociation curves and compared them with the OpenMolcas code. This is another pretty example of 2D plots. I think this figure is helpful to check the different types of markers and lines you can use for your own plots. Additionally, in my template's first few lines, I included the command `\definecolor` to use colors I define using RGB color code. 
 
 
 
@@ -678,7 +678,7 @@ width = 1.2 pt]
 </details>
 
 
-> When I finished my undergraduate studies at UNAM, I had to plot some plots with discontinuities in the y-axis. You can look at those plots in my [undergraduate thesis](https://tesiunam.dgb.unam.mx/F/RTU7NTG8QB45RPYK71C42RQLLXXLIXYL57LQED9F7KKMAM7KQR-03664) or looking into this paper about [the hydrolisis of epoxides](https://doi.org/10.1039/D1OB01026C). To do that, I used the following code:
+> When I finished my undergraduate studies at UNAM, I had to plot some plots with discontinuities in the y-axis. You can look at those plots in my [undergraduate thesis](https://tesiunam.dgb.unam.mx/F/RTU7NTG8QB45RPYK71C42RQLLXXLIXYL57LQED9F7KKMAM7KQR-03664) or look into this paper about [the hydrolisis of epoxides](https://doi.org/10.1039/D1OB01026C). To do that, I used the following code:
 
 {{< img src="graficasCatalisis.png"  width="600" align="center" title="QTAIM charges and epoxides reactions " >}}
 
@@ -947,7 +947,7 @@ coordinates {
 </details>
 
 
-> During my internship at Los Alamos National Laboratory, I learned from my mentors María, Ping, and Ernesto, that when analyzing trends, not only plotting average data is important, we can extract or show important information when including error bars. This is really useful to demonstrate the calculations were done correctly. The next example shows the error bars to indicate the deviation of plotted bond distances.
+> During my internship at Los Alamos National Laboratory, I learned from my mentors María, Ping, and Ernesto that when analyzing trends, not only plotting average data is important, but we can also extract or show important information when including error bars. This is really useful to demonstrate that the calculations were done correctly. The next example shows error bars indicating the deviation of the plotted bond distances.
 
 {{< img src="plot_xy_error-lines.png"  width="600" align="center" title="Error bars for each point" >}}
 
@@ -1112,7 +1112,7 @@ coordinates {
 
 </details>
 
-> Since I started using multireference methods to study transition metal, lanthanide, and actinide complexes, I am using relative energy plots to visually assess the ground state and the excited state manifolds of such complexes. I found particularly very useful these kind of plots to decide the number of spin-states when I cannot include all spin states and I need to truncate the expensive calculations. In the following example I plotted 5 quintets, 44 triplets, and 50 singlets states of an Fe(IV) complex I studied [here](https://doi.org/10.1039/D4SC04880F) with many multireference methods, but in this plot I am showing relative NEVPT2 energies.
+> Since I started using multireference methods to study transition-metal, lanthanide, and actinide complexes, I have been using relative energy plots to visually assess the ground- and excited-state manifolds of these complexes. I found these kinds of plots particularly useful for deciding the number of spin states when I cannot include all spin states and need to truncate the expensive calculations. In the following example, I plotted 5 quintets, 44 triplets, and 50 singlet states of an Fe(IV) complex I studied [here](https://doi.org/10.1039/D4SC04880F) with many multireference methods, but in this plot I am showing relative NEVPT2 energies.
 
 {{< img src="spin-states_energy-ladder.png"  width="300" align="center" title="Relative energies plot" >}}
 
@@ -1277,7 +1277,7 @@ coordinates {
 </details>
 
 
-> I am very proud of this plot, where I am including the frontier molecular orbitals of a series of [Uranium (III) bisdicarbollide complexes]() I studied with collaboratoris in Prof. Omar Farha's group. Unfortunately, this plot was not included in the final manuscript and supporting information, but it was an amazing \TikZ / $\LaTeX$ coding experience. 
+> I am very proud of this plot, where I am including the frontier molecular orbitals of a series of [Uranium (III) bisdicarbollide complexes]() I studied with collaborators in Prof. Omar Farha's group. Unfortunately, this plot was not included in the final manuscript or the supporting information, but it was an amazing \TikZ/ $\LaTeX$ coding experience. 
 
 {{< img src="diagram_homo-lumo_sarc-dkh_b3lyp.png"  width="600" align="center" title="Uranium III FMOs" >}}
 
@@ -1496,7 +1496,7 @@ coordinates {
 
 </details>
 
-> So far, I think you already noticed that the data I want to plot is included using the format `(x,y)`. This is fine when the number of data points is small. However, when plotting hundreds or thousands of points, the `.tex` file turns tedious and incredibly large. In these situations, it is better to plot the data written into a `.txt` or `.dat` file (I usually use these extensions). To do that, check the next example where I plot the absorption and emission spectra of an Americium (III) complex with their respective oscillator strengths. 
+> So far, I think you already noticed that the data I want to plot is included using the format `(x,y)`. This is fine when the number of data points is small. However, when plotting hundreds or thousands of points, the `.tex` file turns tedious and incredibly large. In these situations, it is better to plot data stored in a `.txt` or `.dat` file (I usually use these extensions). To do that, check the next example, where I plot the absorption and emission spectra of an Americium(III) complex with their respective oscillator strengths. 
 
 {{< img src="americium_spectra.png"  width="600" align="center" title="Absorption/Emission Spectra of Am(H2O)9" >}}
 
@@ -1687,7 +1687,7 @@ coordinates {
 </details>
 
 
-> During my Ph.D. I saw that one of my friends prepared some plots when testing his developed method L-PDFT. The plots were potential energy curves related to conical intersections. I liked how they included a zoomed section in the plot and I learned that is called an `inset`. Now, as a postdoc, I am working on scanning orbital splittings using Ab Initio Ligand Field Theory on a potential energy surface and finally I have tha chance to include an inset in a plot. Here is the template to do such kind of plots.
+> During my Ph.D. I saw that one of my friends prepared some plots when testing his developed method, L-PDFT. The plots were potential-energy curves associated with conical intersections. I liked how they included a zoomed section in the plot, and I learned that it is called an `inset`. Now, as a postdoc, I am working on scanning orbital splittings using Ab Initio Ligand Field Theory on a potential energy surface, and finally, I have the chance to include an inset in a plot. Here is the template for such plots.
 
 
 {{< img src="scan_ailft_inset-1.png"  width="600" align="center" title="Actinide 5f Orbital Splitting" >}}
