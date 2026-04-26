@@ -3,7 +3,7 @@ title: "Multiconfiguration Pair-Density Functional Theory for Chromium(IV) Molec
 date: 2026-02-22 
 hero: "images/sections/projects/bloch.png"   #Blog post
 image: "images/sections/projects/toc_qubits1.jpeg"  #Carrrusel 
-description: "We developed a computational protocol based on the MC-PDFT method for the computation of triplet-singlet energy gaps, and the Zero-Field Splitting parameters of molecular spin qubits. The importance of molecular geometry is highlighted for the calculation of the axial and rhombic parameters. Bulk-optimized molecules display geometries that reproduce the *|E|* parameter while gas-phase optimized molecules are better for *|D|*. "
+description: "We developed a computational protocol based on the MC-PDFT method for the computation of triplet-singlet energy gaps, and the Zero-Field Splitting parameters of molecular spin qubits. The importance of molecular geometry is highlighted for the calculation of the axial and rhombic parameters. Bulk-optimized molecules display geometries that reproduce the *|E|* parameter, while gas-phase optimized molecules are better for *|D|*. "
 publishedIn:
   name: "JACS Au, 2022, 2, 9, 2029–2037"
   url: "https://doi.org/10.1021/jacsau.2c00306"
@@ -30,9 +30,9 @@ authors:
 
 #### Key Ideas
 
-> - **Structural Precision**: Molecular geometry is critical for the accurate reproduction of Zero-Field Splitting (ZFS) parameters in the GHz regime, where even minor distortions significantly impact the electronic manifold.
+- **Structural Precision**: Molecular geometry is critical for accurately reproducing Zero-Field Splitting (ZFS) parameters in the GHz regime, where even minor distortions can significantly affect the electronic manifold.
 > - **Active Space Convergence**: To achieve a semi-quantitative description of both axial (*|D|*) and rhombic (*|E|*) parameters, the use of expanded active spaces consistently yields superior results for both CASPT2 and MC-PDFT frameworks.
-> - **Energy Gap Accuracy**: The hybrid MC-PDFT functional effectively captures the singlet–triplet energy gaps across all studied complexes, proving its reliability for describing the low-lying spin states of Cr(IV) systems.
+- **Energy Gap Accuracy**: The hybrid MC-PDFT functional effectively captures singlet–triplet energy gaps across all studied complexes, demonstrating its reliability in describing the low-lying spin states of Cr(IV) systems.
 > - **Methodological Consistency**: Both MS-CASPT2 and hybrid MC-PDFT recover consistent semi-quantitative trends for the axial parameter and the rhombic-to-axial ratio (*|E/D|*), validating their use for the rational screening of molecular qubits.
 
 #### Relevant Publications
