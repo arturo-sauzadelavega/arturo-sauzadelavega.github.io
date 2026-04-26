@@ -179,7 +179,7 @@ end
 I am not entirely sure, but I think that since `Orca 5`, the multireference methods implemented in `Orca` became really good, but probably I am wrong because I barely used `Orca 4` and I used it only for DFT and DLPNO-CCSD(T) calculations (I was not completely aware of multireference methods back then). Anyway, maybe Orca does not have all the methods and tools implemented in `OpenMolcas`, but at least I  know their CASSCF and NEVPT2 implementations are amazing and really fast! Compared with OpenMolcas, you can perform calculations with more than 1 processor, and you don't have to struggle with the OpenMolcas installation to run in parallel. But Orca lacks methods such as RASSCF and GASSCF (as far as I know). 
 
 
-#### CASSCF and NEVPT2
+#### CASSCF
 
 To perform CASSCF calculations, you need to include the `%casscf` block in the input file. Some important keywords are `nel` and `norb` to set the number of electrons and orbitals in the active space, respectively. Additionally, the `mult` keyword sets the spin multiplicity to consider. The following is an easy example of a single-state CASSCF calculation.
 
@@ -356,6 +356,7 @@ end
 
 ```
 
+#### NEVPT2 and CASPT2 
 
 
 Finally, to compute NEVPT2 or CASPT2 energies, you have to include the keyword `PTMethod SC_NEVPT2 ` for NEVPT2, and `  PTMethod SC_NEVPT2 `. For CASPT2 calculations, there are two options: the canonical CASPT2 formulation and the revised formulation that uses a different zeroth-order Hamiltonian, called `Orca` as CASPT2-K. To use these methods, you have to include the following keywords:
