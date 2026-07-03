@@ -1,6 +1,6 @@
 ---
 title: "Figures with LaTeX/TikZ "
-date: 2026-03-12 
+date: 2026-07-03
 description: Example of TikZ templates I use to plot data for my research papers and for presentations.
 hero: latex_portada.png
 menu:
