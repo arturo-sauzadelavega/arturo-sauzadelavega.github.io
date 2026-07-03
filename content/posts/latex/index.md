@@ -2,6 +2,7 @@
 title: "Figures with LaTeX/TikZ "
 date: 2026-07-03
 description: Example of TikZ templates I use to plot data for my research papers and for presentations.
+tags: [ "LaTeX", "TikZ", "PDFLaTeX", "Quantum Chemistry" ]
 hero: latex_portada.png
 menu:
   sidebar:
