@@ -446,6 +446,7 @@ NACTEL = 8
 RAS2 = 6
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 6
 ITERations = 200 100 
 End of Input
 
@@ -469,6 +470,7 @@ RAS2 = 6
 CIROOT = 4 4 1 
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 6
 ITERations = 200 100 
 End of Input
 
@@ -495,6 +497,7 @@ RAS3 = 5
 CIROOT = 35 35 1 
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 15
 ITERations = 200 100 
 End of Input
 
@@ -519,6 +522,7 @@ ALTER = 3
 1 38 46
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 10
 ITERations = 200 100 
 End of Input
 
@@ -541,6 +545,7 @@ NACTEL = 8
 RAS2 = 6
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 6
 ITERations = 200 100 
 End of Input
 
@@ -570,6 +575,7 @@ ALTER = 1
 CIROOT = 20 20 1
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 15
 ITERations = 200 100; CIMX = 500
 Sdav = 200; PRWF = 0.01
 End of Input
@@ -699,6 +705,7 @@ Spin = 1
 Charge = 0
 Nactel = 8 0 0
 RAS2 = 6 
+OUTOrbital = Natural ; 6
 End of Input
 
 >>COPY $CurrDir/$Project.RasOrb INPORB
@@ -768,6 +775,7 @@ Spin = 1
 Charge = 0
 Nactel = 8 0 0
 RAS2 = 6 
+OUTOrbital = Natural ; 6
 End of Input
 
 >>COPY $CurrDir/$Project.RasOrb INPORB
@@ -827,6 +835,7 @@ Spin = 1
 Charge = 0
 Nactel = 8 0 0
 RAS2 = 6
+OUTOrbital = Natural ; 6
 CIROOT = 5 5 1
 XMSI
 End of Input
@@ -946,6 +955,7 @@ Charge = 0
 Nactel = 8 0 0
 RAS2 = 6
 CIROOT = 3 3 1
+OUTOrbital = Natural ; 6
 End of Input
 
 &CASPT2
@@ -993,6 +1003,7 @@ NROF = 3 5 35 22
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
 SPIN
 EJOB
+DIPRint = 10-10
 SOCOupling = 0.0000001
 
 End of Input
@@ -1050,6 +1061,7 @@ NROF = 3 5 35 22
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
 SPIN
+DIPRint = 10-10
 EJOB
 End of Input
 
@@ -1123,6 +1135,7 @@ NROF = 3 5 35 22
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
 SPIN
+DIPRint = 10-10
 EJOB
 SOCOupling
 0.0000000001
@@ -1184,6 +1197,7 @@ RAS2 = 10
 CIROOT = 5 5 1
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 10
 ITERations = 200 100; CIMX = 500
 Sdav = 200; PRWF = 0.01
 End of Input
