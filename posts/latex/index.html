@@ -8,7 +8,7 @@ Arturo Sauza de la Vega, Ph.D.</a>
 <a class=dropdown-item href=/#publications>All Publications</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class=nav-item><a class=nav-link id=note-link href=/notes>Notes</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
 </a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
 </a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/main-logo_hu_619875a29a04944e.png class=d-none id=main-logo alt=Logo>
-<img src=/images/site/inverted-logo_hu_619875a29a04944e.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/introduction/ title="Welcome Message">Welcome Message</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/programs/> Programs</a><ul><li><a class=list-link href=/posts/programs/gaussian/ title=Gaussian>Gaussian</a></li><li><a class=list-link href=/posts/programs/openmolcas/ title=OpenMolcas>OpenMolcas</a></li><li><a class=list-link href=/posts/programs/orca/ title=Orca>Orca</a></li></ul></li><li><a class="active list-link" href=/posts/latex/ title=LaTeX/TikZ>LaTeX/TikZ</a></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/latex/latex_portada.png)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/arturo_formal_hu_850b779fe9a0974a.jpg alt="Author Image"><h5 class=author-name>Arturo Sauza de la Vega</h5><p class=text-muted>Thursday, March 12, 2026 | 31 minutes</p></div><div class=title><h1>Figures with LaTeX/TikZ</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><img src=arturo_cartoon_11.png alt="Figures with TikZ" width=400 class=center><div style=margin-top:3rem></div><p>I am not looking to get involved in the big debate over <em>which software is best for plotting</em>. Some people enjoy using <code>Microsoft Excel</code> to generate their plots, and that is fine for me. I even use <code>Microsoft Excel</code> or <code>Gnuplot</code> plots to quickly look into my data.</p><p>Some friends and collaborators plot with <code>Origin</code> or Python, using the <code>matplotlib</code> library, and in general, those figures look fine. However, I love using <code>LaTeX/TikZ</code> for plotting data for research papers, but I have to recognize that it is neither the fastest nor the friendliest way to plot information.</p><p>Okay, let&rsquo;s get started.</p><h3 id=2d-plots>2D-Plots</h3><p>In general, I obtained two kinds of plots, bar and XY plots. In the following sections, I am including the templates and resulting figures. I won&rsquo;t include a detailed discussion of every line I added unless necessary.</p><h4 id=xy-graphs>XY Graphs</h4><blockquote><p>The first plot I am adding shows the total QTAIM atomic charge of cations as water molecules are added to the molecular cluster.</p></blockquote><p>This is the plot:</p><img src=graficaChidaTikz.png alt="Atomic charge vs water molecules" width=600 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[border=1mm]{standalone}
+<img src=/images/site/inverted-logo_hu_619875a29a04944e.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/introduction/ title="Welcome Message">Welcome Message</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/programs/> Programs</a><ul><li><a class=list-link href=/posts/programs/gaussian/ title=Gaussian>Gaussian</a></li><li><a class=list-link href=/posts/programs/openmolcas/ title=OpenMolcas>OpenMolcas</a></li><li><a class=list-link href=/posts/programs/orca/ title=Orca>Orca</a></li></ul></li><li><a class="active list-link" href=/posts/latex/ title=LaTeX/TikZ>LaTeX/TikZ</a></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/latex/latex_portada.png)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/arturo_formal_hu_850b779fe9a0974a.jpg alt="Author Image"><h5 class=author-name>Arturo Sauza de la Vega</h5><p class=text-muted>Thursday, March 12, 2026 | 35 minutes</p></div><div class=title><h1>Figures with LaTeX/TikZ</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><img src=arturo_cartoon_11.png alt="Figures with TikZ" width=400 class=center><div style=margin-top:3rem></div><p>I am not looking to get involved in the big debate over <em>which software is best for plotting</em>. Some people enjoy using <code>Microsoft Excel</code> to generate their plots, and that is fine for me. I even use <code>Microsoft Excel</code> or <code>Gnuplot</code> plots to quickly look into my data.</p><p>Some friends and collaborators plot with <code>Origin</code> or Python, using the <code>matplotlib</code> library, and in general, those figures look fine. However, I love using <code>LaTeX/TikZ</code> for plotting data for research papers, but I have to recognize that it is neither the fastest nor the friendliest way to plot information.</p><p>Okay, let&rsquo;s get started.</p><h3 id=2d-plots>2D-Plots</h3><p>In general, I obtained two kinds of plots, bar and XY plots. In the following sections, I am including the templates and resulting figures. I won&rsquo;t include a detailed discussion of every line I added unless necessary.</p><h4 id=xy-graphs>XY Graphs</h4><blockquote><p>The first plot I am adding shows the total QTAIM atomic charge of cations as water molecules are added to the molecular cluster.</p></blockquote><p>This is the plot:</p><img src=graficaChidaTikz.png alt="Atomic charge vs water molecules" width=600 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[border=1mm]{standalone}
 \usepackage{amssymb,amsmath}
 \usepackage{siunitx}
 \usepackage[version=3]{mhchem}
@@ -1555,9 +1555,13 @@ coordinates {
 
 \end{tikzpicture}
 \end{document}
-</code></pre></details><blockquote><p>During my Ph.D. I saw that one of my friends prepared some plots when testing his developed method, L-PDFT. The plots were potential-energy curves associated with conical intersections. I liked how they included a zoomed section in the plot, and I learned that it is called an <code>inset</code>. Now, as a postdoc, I am working on scanning orbital splittings using Ab Initio Ligand Field Theory on a potential energy surface, and finally, I have the chance to include an inset in a plot. Here is the template for such plots.</p></blockquote><img src=scan_ailft_inset-1.png alt="Actinide 5f Orbital Splitting" width=600 class=center><details><summary>Check code</summary>\documentclass[tikz,border=1mm]{standalone}<p>\usepackage{amsmath}
+</code></pre></details><blockquote><p>During my Ph.D. I saw that one of my friends prepared some plots when testing his developed method, L-PDFT. The plots were potential-energy curves associated with conical intersections. I liked how they included a zoomed section in the plot, and I learned that it is called an <code>inset</code>. Now, as a postdoc, I am working on scanning orbital splittings using Ab Initio Ligand Field Theory on a potential energy surface, and finally, I have the chance to include an inset in a plot. Here is the template for such plots.</p></blockquote><img src=scan_ailft_inset-1.png alt="Actinide 5f Orbital Splitting" width=600 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[tikz,border=1mm]{standalone}
+
+\usepackage{amsmath}
 \usepackage{siunitx}
-\usepackage[version=3]{mhchem}</p><p>% Paquetes TikZ
+\usepackage[version=3]{mhchem}
+
+% Paquetes TikZ
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.11}
 \usepgfplotslibrary{groupplots}
@@ -1569,47 +1573,55 @@ coordinates {
 \definecolor{iceblue}{RGB}{102,255,255}
 \definecolor{tan}{RGB}{210,180,140}
 \definecolor{wine}{RGB}{153,0,76}
-\definecolor{sulfur}{RGB}{255,160,0}</p><p>\begin{document}</p><p>\begin{tikzpicture}
+\definecolor{sulfur}{RGB}{255,160,0}
+
+
+\begin{document}
+
+\begin{tikzpicture}
 \Large
-\begin{axis}[
-height = 12cm,
-width = 20cm,
-%bar width=0.7cm,
-x tick label style={/pgf/number format/1000 sep=1pt},
-xticklabel style={rotate=0}, %rotate labels in x axis
-xticklabel style={
-/pgf/number format/.cd,
-precision=2,
-fixed,
-fixed zerofill,
-/tikz/.cd, % &lt;&ndash; restaura el contexto pgfkeys a TikZ
-},
+  \begin{axis}[
+ height = 12cm,
+ width  = 20cm,
+ %bar width=0.7cm,
+ x tick label style={/pgf/number format/1000 sep=1pt},
+ xticklabel style={rotate=0}, %rotate labels in x axis 
+      xticklabel style={
+        /pgf/number format/.cd,
+        precision=2,
+        fixed,
+        fixed zerofill,
+    /tikz/.cd,    % &lt;-- restaura el contexto pgfkeys a TikZ
+      },
 scaled x ticks = false,
-yticklabel style={ /pgf/number format/.cd, fixed, fixed zerofill, precision=4 },
-%every outer x axis line/.append style={-{Classical TikZ Rightarrow[length=1.3mm]}},
-every outer y axis line/.append style={-{Classical TikZ Rightarrow[length=1.3mm]}},
-%ybar,
-ylabel={ $\varepsilon_i$ (Ha) },
-xlabel={$\Delta d(\textrm{U&ndash;NPR}_3) $ (\AA) },
-x axis line style = { opacity = 0.5 },
-ymin = -1.3300,
-ymax = -1.2000,
-xmin = -0.16,
-xmax = 0.36,
-%xtick={-2,-1,0,1,2},
-axis x line = bottom,
-axis y line = left,
-tickwidth = 2pt,
-%ybar interval = 0.5,
-enlarge x limits = 0.15,
-enlarge y limits = 0.02,
-%nodes near coords align={vertical},
-%nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=2,fixed,fixed zerofill,precision=2},
-%every node near coord/.append style={anchor=west, rotate=90 }, %to rotate numbers over the columns
-legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align={left} },
-]</p><p>%NEVPT2 f0 (fz^3)
-\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt, ] coordinates {
-(-0.15, -1.29657)
+ yticklabel style={ /pgf/number format/.cd, fixed, fixed zerofill, precision=4 },
+ %every outer x axis line/.append style={-{Classical TikZ Rightarrow[length=1.3mm]}},
+ every outer y axis line/.append style={-{Classical TikZ Rightarrow[length=1.3mm]}},
+ %ybar,
+ ylabel={ $\varepsilon_i$ (Ha)   },
+ xlabel={$\Delta d(\textrm{U--NPR}_3) $  (\AA) },
+ x axis line style = { opacity = 0.5 },
+ ymin = -1.3300,
+ ymax = -1.2000,
+ xmin = -0.16,
+ xmax = 0.36,
+ %xtick={-2,-1,0,1,2},
+ axis x line       = bottom,
+ axis y line       = left,
+ tickwidth         = 2pt,
+ %ybar interval     = 0.5,
+ enlarge x limits  = 0.15,
+ enlarge y limits  = 0.02,
+ %nodes near coords align={vertical},
+ %nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=2,fixed,fixed zerofill,precision=2},
+ %every node near coord/.append style={anchor=west, rotate=90 }, %to rotate numbers over the columns
+ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align={left} },
+  ] 
+
+
+%NEVPT2 f0 (fz^3)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
+(-0.15, -1.29657) 
 (-0.10, -1.30662)
 (-0.05, -1.31263)
 (0.00 , -1.31428)
@@ -1620,8 +1632,10 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 (0.25 , -1.26586)
 (0.30 , -1.24710)
 (0.35 , -1.22030)
-};</p><p>%NEVPT2 f+1 (fxz^2)
-\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt, ] coordinates {
+};
+
+%NEVPT2 f+1 (fxz^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
 (-0.15, -1.28709)
 (-0.10, -1.29787)
 (-0.05, -1.30451)
@@ -1633,8 +1647,11 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 (0.25 , -1.25454)
 (0.30 , -1.23460)
 (0.35 , -1.20637)
-};</p><p>%NEVPT2 f-1 (fyz^2)
-\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt, ] coordinates {
+};
+
+
+%NEVPT2 f-1 (fyz^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
 (-0.15, -1.28768)
 (-0.10, -1.29838)
 (-0.05, -1.30488)
@@ -1646,8 +1663,11 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 (0.25 , -1.25487)
 (0.30 , -1.23446)
 (0.35 , -1.20549)
-};</p><p>%NEVPT2 f+2 (fx^2-y^2)
-\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt, ] coordinates {
+};
+
+
+%NEVPT2 f+2 (fx^2-y^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
 (-0.15, -1.28768)
 (-0.10, -1.29838)
 (-0.05, -1.30421)
@@ -1659,8 +1679,10 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 (0.25 , -1.25487)
 (0.30 , -1.23299)
 (0.35 , -1.20549)
-};</p><p>%NEVPT2 f-2 (fxyz)
-\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt, ] coordinates {
+};
+
+%NEVPT2 f-2 (fxyz)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
 (-0.15, -1.29327)
 (-0.10, -1.30393)
 (-0.05, -1.31057)
@@ -1672,8 +1694,10 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 (0.25 , -1.26112)
 (0.30 , -1.24133)
 (0.35 , -1.21317)
-};</p><p>%NEVPT2 f+3 (fx^2-3y^2)
-\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt, ] coordinates {
+};
+
+%NEVPT2 f+3 (fx^2-3y^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
 (-0.15, -1.29521)
 (-0.10, -1.30555)
 (-0.05, -1.31200)
@@ -1685,8 +1709,10 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 (0.25 , -1.26461)
 (0.30 , -1.24618)
 (0.35 , -1.20637)
-};</p><p>%NEVPT2 f-3 (f3x^2-y^2)
-\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt, ] coordinates {
+};
+
+%NEVPT2 f-3 (f3x^2-y^2)
+\addplot[color = red,mark = -, mark size = 12pt, mark options ={blue,solid,line width=1.5pt}, dotted , line width = 1pt,  ] coordinates {
 (-0.15, -1.29657)
 (-0.10, -1.30662)
 (-0.05, -1.31263)
@@ -1698,7 +1724,14 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 (0.25 , -1.26586)
 (0.30 , -1.24710)
 (0.35 , -1.22030)
-};</p><p>%Orbital Labels</p><p>%f0
+};
+
+
+
+
+%Orbital Labels
+
+%f0
 \addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2950)} node[above,font=\sffamily]{\large$f_{z^3}$} ;
 %f+1
 \addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2500)} node[above,font=\sffamily]{\large$f_{xz^2}$} ;
@@ -1711,59 +1744,77 @@ legend style={at={(0.50,1.08)}, anchor=north,legend columns=3, legend cell align
 %f+3
 \addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2800)} node[above,font=\sffamily]{\large$f_{x(x^2-3y^2)}$} ;
 %f-3
-\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2900)} node[above,font=\sffamily]{\large$f_{y(3x^2-y^2)}$} ;</p><p>%&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p><p>% Recuadro de la región de zoom
-\draw[black, dashed, line width=0.8pt]
-(axis cs:-0.07,-1.3300) rectangle (axis cs:0.07,-1.2900);</p><p>% Guardar esquinas del recuadro como coordenadas TikZ
-% para usarlas fuera del entorno axis en las líneas de conexión
-\coordinate (zoom NW) at (axis cs:-0.07,-1.2900);
-\coordinate (zoom NE) at (axis cs:0.07,-1.2900);
-\coordinate (zoom SW) at (axis cs:-0.07,-1.3300);
-\coordinate (zoom SE) at (axis cs:0.07,-1.3300);</p><p>\end{axis}</p><p>% ============================================================
-% INSET — esquina superior izquierda del eje principal
-% ============================================================
-\begin{axis}[
-name = inset axis,
-at = {(rel axis cs:0.30, 0.99)},
-anchor = north west,<br>%xshift = 0.7cm,
-%yshift = -0.7cm,
-height = 6.5cm,
-width = 7.5cm,
-xmin = -0.07,<br>xmax = 0.07,
-scaled x ticks = false,
-%ymin = -1.3155,
-%ymax = -1.3045,
-xtick distance = 0.02,
-axis lines* = box,
-%axis x line = bottom,
-%axis y line = left,
-tickwidth = 1.5pt,
-xticklabel style={font=\small, /pgf/number format/.cd, precision=2, fixed, fixed zerofill},
-yticklabel style={font=\small, /pgf/number format/.cd, fixed, fixed zerofill, precision=4},
-%xlabel={$\Delta\theta$ ($^\circ$)},
-%ylabel={$\varepsilon_i$ (Ha)},
-xlabel style={font=\small},
-ylabel style={font=\small},
-axis background/.style={fill=white},
-axis line style={black, line width=0.8pt},
-%enlarge x limits = 0.05,
-%enlarge y limits = 0.05,
-legend style={at={(0.97,0.03)}, anchor=south east,
-legend columns=1, font=\tiny, legend cell align=left},
-clip = true,
-]</p><p>% &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-% AÑADE AQUÍ TUS NUEVOS \addplot CON LOS DATOS DEL ZOOM
-% Los de abajo son ejemplos — reemplázalos por los tuyos
-% &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p><p>%f0
-\addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
-(-0.06, -1.31176)
+\addplot[black,line width=0.7mm,line legend,sharp plot] coordinates{ (-0.20, -1.2900)} node[above,font=\sffamily]{\large$f_{y(3x^2-y^2)}$} ;
+
+%---------------------------------
+
+ % Recuadro de la región de zoom
+  \draw[black, dashed, line width=0.8pt]
+      (axis cs:-0.07,-1.3300) rectangle (axis cs:0.07,-1.2900);
+
+  % Guardar esquinas del recuadro como coordenadas TikZ
+  % para usarlas fuera del entorno axis en las líneas de conexión
+  \coordinate (zoom NW) at (axis cs:-0.07,-1.2900);
+  \coordinate (zoom NE) at (axis cs:0.07,-1.2900);
+  \coordinate (zoom SW) at (axis cs:-0.07,-1.3300);
+  \coordinate (zoom SE) at (axis cs:0.07,-1.3300);
+
+  \end{axis}
+
+  % ============================================================
+  %  INSET — esquina superior izquierda del eje principal
+  % ============================================================
+  \begin{axis}[
+    name   = inset axis,
+    at = {(rel axis cs:0.30, 0.99)},
+    anchor = north west,    
+    %xshift =  0.7cm,
+    %yshift = -0.7cm,
+    height = 6.5cm,
+    width  = 7.5cm,
+    xmin = -0.07,      
+    xmax = 0.07,
+    scaled x ticks = false,
+    %ymin = -1.3155, 
+    %ymax = -1.3045,
+    xtick distance = 0.02,
+    axis lines* = box,
+    %axis x line  = bottom,
+    %axis y line  = left,
+    tickwidth    = 1.5pt,
+    xticklabel style={font=\small, /pgf/number format/.cd, precision=2, fixed, fixed zerofill},
+    yticklabel style={font=\small, /pgf/number format/.cd, fixed, fixed zerofill, precision=4},
+    %xlabel={$\Delta\theta$ ($^\circ$)},
+    %ylabel={$\varepsilon_i$ (Ha)},
+    xlabel style={font=\small},
+    ylabel style={font=\small},
+    axis background/.style={fill=white},
+    axis line style={black, line width=0.8pt},
+    %enlarge x limits = 0.05,
+    %enlarge y limits = 0.05,
+    legend style={at={(0.97,0.03)}, anchor=south east,
+                  legend columns=1, font=\tiny, legend cell align=left},
+    clip = true,
+  ]
+
+  % ----------------------------------------------------------
+  % AÑADE AQUÍ TUS NUEVOS \addplot CON LOS DATOS DEL ZOOM
+  % Los de abajo son ejemplos — reemplázalos por los tuyos
+  % ----------------------------------------------------------
+
+%f0
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+(-0.06, -1.31176) 
 (-0.04, -1.31328)
 (-0.02, -1.31423)
 (0.00 , -1.31428)
 (0.02 , -1.31423)
 (0.04 , -1.31333)
 (0.06 , -1.31166)
-};</p><p>%f+1
-\addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+};
+
+%f+1
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
 (-0.06, -1.30393)
 (-0.04, -1.30556)
 (-0.02, -1.30662)
@@ -1771,8 +1822,10 @@ clip = true,
 (0.02 , -1.30662)
 (0.04 , -1.30561)
 (0.06 , -1.30379)
-};</p><p>%f-1
-\addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+};
+
+%f-1
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
 (-0.06, -1.30352)
 (-0.04, -1.30527)
 (-0.02, -1.30648)
@@ -1780,8 +1833,10 @@ clip = true,
 (0.02 , -1.30648)
 (0.04 , -1.30532)
 (0.06 , -1.30343)
-};</p><p>%f+2
-\addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+};
+
+%f+2
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
 (-0.06, -1.30393)
 (-0.04, -1.30556)
 (-0.02, -1.30633)
@@ -1789,8 +1844,10 @@ clip = true,
 (0.02 , -1.30662)
 (0.04 , -1.30561)
 (0.06 , -1.30379)
-};</p><p>%f-2
-\addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+};
+
+%f-2
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
 (-0.06, -1.30955)
 (-0.04, -1.31133)
 (-0.02, -1.31258)
@@ -1798,8 +1855,10 @@ clip = true,
 (0.02 , -1.31258)
 (0.04 , -1.31138)
 (0.06 , -1.30945)
-};</p><p>%f+3
-\addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+};
+
+%f+3
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
 (-0.06, -1.31176)
 (-0.04, -1.31328)
 (-0.02, -1.31423)
@@ -1807,8 +1866,10 @@ clip = true,
 (0.02 , -1.31423)
 (0.04 , -1.31333)
 (0.06 , -1.31166)
-};</p><p>%f-3
-\addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
+};
+
+%f-3
+  \addplot[color=red, mark=-, mark size=5pt, mark options={blue,solid,line width=1.2pt}, dotted, line width=1pt] coordinates {
 (-0.06, -1.31102)
 (-0.04, -1.31277)
 (-0.02, -1.31397)
@@ -1816,23 +1877,293 @@ clip = true,
 (0.02 , -1.31397)
 (0.04 , -1.31281)
 (0.06 , -1.31092)
-};</p><p>% Guardar esquinas inferiores del inset para las líneas de conexión
-\coordinate (inset SW) at (axis cs:-0.07,-1.3150);
-\coordinate (inset SE) at (axis cs:0.07,-1.3150);
-\coordinate (inset NW) at (axis cs:-0.07,-1.2900);
-\coordinate (inset NE) at (axis cs:0.07,-1.2900);</p><p>\end{axis}</p><p>% ============================================================
-% LÍNEAS DE CONEXIÓN
-% Unen las esquinas inferiores del inset con las superiores
-% del recuadro de zoom en el eje principal
+};
+
+
+  % Guardar esquinas inferiores del inset para las líneas de conexión
+  \coordinate (inset SW) at (axis cs:-0.07,-1.3150);
+  \coordinate (inset SE) at (axis cs:0.07,-1.3150);
+  \coordinate (inset NW) at (axis cs:-0.07,-1.2900);
+  \coordinate (inset NE) at (axis cs:0.07,-1.2900);
+
+  \end{axis}
+
+  % ============================================================
+  %  LÍNEAS DE CONEXIÓN
+  %  Unen las esquinas inferiores del inset con las superiores
+  %  del recuadro de zoom en el eje principal
+  % ============================================================
+  \draw[black, dotted, line width=0.7pt] (inset SW) -- (zoom NW);
+  \draw[black, dotted, line width=0.7pt] (inset SE) -- (zoom NE);
+
+
+
+\end{tikzpicture}
+
+\end{document}
+</code></pre></details><h4 id=bar-plots>Bar Plots</h4><blockquote><p>Now, it is time to show how to make some barplots with <code>LaTeX</code>. I usually make this type of plots to compare geometric parameters like the RMSD between an optimized structure and the X-ray geometry when testing different DFT functuonals, but in the past I also used it to compare the energies between different spin-states. Anyway, you can decide how to use it depending on your needs.</p><p>In the following example, I am showing the RMSD plots when testing different DFT functionals.</p></blockquote><img src=rmsd_pu_pt-1.png alt="RMSD of Pu-PT complex" width=800 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[tikz,border=2mm]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    width=18cm,
+    height=9cm,
+    ybar,
+    bar width=14pt,
+    ymin=0.0, 
+    ymax=1.6,
+    axis on top,
+    %ymajorgrids=true,
+    grid style={black!20, line width=0.3pt},
+    axis line style={black},
+    tick style={black},
+    tick align=inside,
+    xtick=data,
+    symbolic x coords={PBE-D4,PBE0-D4,B3LYP-D4,TPSS-D4,TPSSh-D4,M06,M06-2X,M06-L},
+    xticklabel style={text height=1.5ex, text depth=.25ex, font=\bfseries\color{black}},
+    yticklabel style={font=\color{black}},
+    ylabel near ticks,
+    ylabel style={font=\large\color{black}},
+    xlabel style={font=\large\color{black}},
+    ylabel={RMSD  (\AA) },
+    nodes near coords,
+    nodes near coords align={vertical},
+    nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=3},
+    legend style={
+        at={(0.8,0.90)},
+        anchor=south,
+        legend columns=-1,
+        font=\normalsize\color{black},
+        fill=none,
+        draw=none
+    },
+    enlarge x limits = 0.1,
+    enlarge y limits = {upper=0.2}, 
+    every axis/.append style={font=\large},
+]
+
+% === RMSD (all) ===
+\addplot[
+    ybar,
+    draw=yellow!60!black,
+    area legend,
+    bar shift=-0.30cm,
+    postaction={
+        shade,
+        bottom color=yellow!95!white,
+        top color=yellow!70!orange,
+        %shading angle=90
+    }
+] coordinates {
+(PBE-D4,   0.5732) 
+(PBE0-D4,  0.4552)
+(B3LYP-D4, 0.4460)
+(TPSS-D4,  0.7080)
+(TPSSh-D4, 0.6469)
+(M06,      0.4407)
+(M06-2X,   0.4417)
+(M06-L,    0.8679)
+};
+
+% === RMSD (M--O) ===
+\addplot[
+    ybar,
+    draw=gray!60!black,
+    area legend,
+    bar shift=0.30cm,
+    postaction={
+        shade,
+        bottom color=gray!15!white,
+        top color=gray!90!black,
+        %shading angle=90
+    }
+] coordinates {
+(PBE-D4,   0.2695) 
+(PBE0-D4,  0.3150)
+(B3LYP-D4, 0.2953)
+(TPSS-D4,  0.2987)
+(TPSSh-D4, 0.2893)
+(M06,      0.2381)
+(M06-2X,   0.2853)
+(M06-L,    0.3269)
+};
+
+\legend{RMSD (all), RMSD (M--O/S)}
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
+</code></pre></details><blockquote><p>When studying chemical bonding of actinide and lanthanide systems, I usually perform <code>NBO</code> analysis of the bonding interactions. When doing this analysis, I decompose the bonding molecular orbitals between the metal and the ligands into atomic contributions, with particular focus on the contributions from the metal atomic orbitals. In general, the NBO analysis gives the overall percentage of <code>s</code>, <code>p</code>, <code>d</code>, and <code>f</code> type of orbitals, and I plot these contributions with stacked bars to compare the atomic contributions across a series of metal complexes.</p></blockquote><img src=barplot_ln_pt_alpha-1.png alt="Ln-PT alpha contributions" width=800 class=center><details><summary>Check code</summary><pre tabindex=0><code>\documentclass[border=4pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepackage{pgfplotstable}
+\usetikzlibrary{patterns}
+
+\definecolor{scol}{RGB}{178,125,0}
+\definecolor{dcol}{RGB}{220,165,30}
+\definecolor{fcol}{RGB}{245,236,140}
+\definecolor{bline}{RGB}{130,70,0}
+
+
+\begin{document}
+\begin{tikzpicture}
+% ---- TABLA Metal-Oxígeno ----
+% Columnas precalculadas para el apilamiento manual:
+%   s_O        = contribución s
+%   sd_O       = s + d  (base de la barra f)
+%   sdf_O      = s + d + f (altura total)
+\pgfplotstableread[col sep=space]{
+metal  s_O   sd_O   sdf_O
+La    0.38   2.12   2.59
+Ce    0.33   2.00   2.88
+Pr    0.34   1.69   2.29
+Nd    0.43   2.08   2.93
+Sm    0.46   2.16   2.81
+Eu    0.42   1.78   1.85
+Gd    0.45   1.99   2.00
+Tb    0.53   2.40   2.41
+Dy    0.46   1.91   1.92
+Ho    0.52   1.99   1.99
+Er    0.51   1.94   2.09
+Tm    0.49   1.81   1.82
+Yb    0.51   1.77   1.77
+Lu    0.66   2.10   2.11
+}\dataO
+
+% ---- TABLA Metal-Azufre ----
+% Sustituye estos valores por los tuyos (misma estructura)
+\pgfplotstableread[col sep=space]{
+metal  s_S   sd_S   sdf_S
+La     1.87  8.14   8.96
+Ce     1.83  9.31   12.55
+Pr     1.81  8.52   11.18
+Nd     1.94  8.62   11.47
+Sm     1.84  7.54   11.82
+Eu     1.47  5.34   8.10
+Gd     2.21  8.57   8.58
+Tb     2.21  9.56   9.58
+Dy     2.29  8.51   8.52
+Ho     2.19  7.96   7.97
+Er     2.32  8.42   8.42
+Tm     2.40  8.07   8.08
+Yb     2.35  7.61   7.61
+Lu     2.53  8.15   8.15
+}\dataS
+
+\begin{axis}[
+  width=21cm, height=7cm,
+  % SIN ybar stacked: gestionamos el apilamiento manualmente
+  % con &#34;ybar&#34; simple y coordenadas base/altura explícitas
+  xbar=0pt,   % placeholder; usaremos ybar por addplot
+  ybar,
+  bar width=12pt,
+  enlarge x limits=0.10,
+  ymin=0, ymax=15,
+  symbolic x coords={La,Ce,Pr,Nd,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu},
+  xtick=data,
+  tick label style={font=\sffamily},
+  label style={font=\sffamily},
+  xticklabel style={font=\bfseries\Large},
+  xlabel={\bfseries\Large Metal},
+  ylabel={\bfseries\Large $\alpha$ NLMO composition ($\%$)},
+  yticklabel style={font=\bfseries\Large},
+  axis line style={very thick},
+  tick style={very thick},
+  grid=both,
+  grid style={dashed, gray!45},
+  legend style={
+    at={(0.5,1.20)},
+    anchor=south,
+    legend columns=5,
+    draw=gray!50,
+    fill=white,
+    font=\Large,
+    /tikz/every even column/.append style={column sep=8pt},
+  },
+]
+
+% ---- Leyenda --- 
+%Using area legend below, adds a rectangle in the legend section instead of two small bars (when using ybar).-
+\addlegendimage{area legend, fill=scol, draw=bline, line width=0.8pt, bar width=6pt }
+\addlegendentry{s}
+\addlegendimage{area legend, fill=dcol, draw=bline, line width=0.8pt}
+\addlegendentry{d}
+\addlegendimage{area legend, fill=fcol, draw=bline, line width=0.8pt}
+\addlegendentry{f}
+\addlegendimage{area legend, fill=gray!30, draw=bline, line width=0.8pt}
+\addlegendentry{M--O}
+\addlegendimage{area legend, fill=gray!30, draw=bline, line width=0.8pt,
+  postaction={pattern=north east lines, pattern color=bline}}
+\addlegendentry{M--S}
+
 % ============================================================
-\draw[black, dotted, line width=0.7pt] (inset SW) &ndash; (zoom NW);
-\draw[black, dotted, line width=0.7pt] (inset SE) &ndash; (zoom NE);</p><p>\end{tikzpicture}</p><p>\end{document}</p></details></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
+% BARRAS Metal-Oxígeno (izquierda, bar shift negativo)
+% Apilamiento manual: cada segmento usa &#34;ybar interval&#34; con
+% coordenada y = altura del segmento, y su base = acumulado anterior.
+% Se logra con: fill between / o simplemente dibujando rectángulos.
+%
+% ESTRATEGIA SIMPLE Y ROBUSTA:
+% Dibujamos 3 barras con alturas totales decrecientes,
+% la de abajo tapa a la de arriba → efecto de apilado.
+% ============================================================
+
+% --- Metal-O: segmento f (barra completa, color f) ---
+\addplot+[
+  ybar, fill=fcol, draw=bline, line width=0.8pt,
+  bar shift=-8pt,
+] table[x=metal, y=sdf_O] {\dataO};
+
+% --- Metal-O: segmento d (encima de s, tapa la parte f) ---
+\addplot+[
+  ybar, fill=dcol, draw=bline, line width=0.8pt,
+  bar shift=-8pt,
+] table[x=metal, y=sd_O] {\dataO};
+
+% --- Metal-O: segmento s (base) ---
+\addplot+[
+  ybar, fill=scol, draw=bline, line width=0.8pt,
+  bar shift=-8pt,
+] table[x=metal, y=s_O] {\dataO};
+
+% ============================================================
+% BARRAS Metal-Azufre (derecha, con trama)
+% ============================================================
+
+% --- Metal-S: segmento f ---
+\addplot+[
+  ybar, fill=fcol, draw=bline, line width=0.8pt,
+  bar shift=+8pt,
+  postaction={pattern=north east lines, pattern color=bline},
+] table[x=metal, y=sdf_S] {\dataS};
+
+% --- Metal-S: segmento d ---
+\addplot+[
+  ybar, fill=dcol, draw=bline, line width=0.8pt,
+  bar shift=+8pt,
+  postaction={pattern=north east lines, pattern color=bline},
+] table[x=metal, y=sd_S] {\dataS};
+
+% --- Metal-S: segmento s ---
+\addplot+[
+  ybar, fill=scol, draw=bline, line width=0.8pt,
+  bar shift=+8pt,
+  postaction={pattern=north east lines, pattern color=bline},
+] table[x=metal, y=s_S] {\dataS};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
+</code></pre></details></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
 <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f" target=_blank><i class="fab fa-facebook"></i>
 </a><a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f&text=Figures%20with%20LaTeX%2fTikZ%20&via=Arturo%20Sauza%20de%20la%20Vega%2c%20Ph.D." target=_blank><i class="fab fa-twitter"></i>
 </a><a class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f&title=Figures%20with%20LaTeX%2fTikZ%20" target=_blank><i class="fab fa-reddit"></i>
 </a><a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f&title=Figures%20with%20LaTeX%2fTikZ%20" target=_blank><i class="fab fa-linkedin"></i>
 </a><a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Figures%20with%20LaTeX%2fTikZ%20 https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f" target=_blank><i class="fab fa-whatsapp"></i>
 </a><a class="btn icon-button" href="mailto:?subject=Figures%20with%20LaTeX%2fTikZ%20&body=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2flatex%2f" target=_blank><i class="fas fa-envelope-open-text"></i></a></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/latex/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
-Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/programs/orca/ title="Orca 6.1.1" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Orca 6.1.1</div></a></div><div class="col-md-6 next-article"><a href=/posts/markdown-sample/ title="Markdown Samples" class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>Markdown Samples</div></a></div></div><hr></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#2d-plots>2D-Plots</a><ul><li><a href=#xy-graphs>XY Graphs</a></li></ul></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#experiences>Experience</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#projects>Research</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#featured-posts>Featured Publications</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#publications>All Publications</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:arturo-sauzadelavega@uiowa.edu target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>arturo-sauzadelavega@uiowa.edu</span></a></li><li><a href=https://github.com/arturo-sauzadelavega target=_blank rel=noopener><span><i class="fab fa-github"></i></span> <span>arturo-sauzadelavega</span></a></li><li><a href=https://www.linkedin.com/in/asdlv target=_blank rel=noopener><span><i class="fab fa-linkedin"></i></span> <span>Arturo Sauza de la Vega</span></a></li><li><a href=https://www.researchgate.net/profile/Arturo-Sauza-De-La-Vega target=_blank rel=noopener><span><i class="fab fa-researchgate"></i></span> <span>Arturo Sauza de la Vega</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_be7279b2506ad3f1.png alt="Toha Theme Logo">
+Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/programs/orca/ title="Orca 6.1.1" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Orca 6.1.1</div></a></div><div class="col-md-6 next-article"><a href=/posts/markdown-sample/ title="Markdown Samples" class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>Markdown Samples</div></a></div></div><hr></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#2d-plots>2D-Plots</a><ul><li><a href=#xy-graphs>XY Graphs</a></li><li><a href=#bar-plots>Bar Plots</a></li></ul></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#experiences>Experience</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#projects>Research</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#featured-posts>Featured Publications</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#publications>All Publications</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:arturo-sauzadelavega@uiowa.edu target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>arturo-sauzadelavega@uiowa.edu</span></a></li><li><a href=https://github.com/arturo-sauzadelavega target=_blank rel=noopener><span><i class="fab fa-github"></i></span> <span>arturo-sauzadelavega</span></a></li><li><a href=https://www.linkedin.com/in/asdlv target=_blank rel=noopener><span><i class="fab fa-linkedin"></i></span> <span>Arturo Sauza de la Vega</span></a></li><li><a href=https://www.researchgate.net/profile/Arturo-Sauza-De-La-Vega target=_blank rel=noopener><span><i class="fab fa-researchgate"></i></span> <span>Arturo Sauza de la Vega</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_be7279b2506ad3f1.png alt="Toha Theme Logo">
 Toha</a></div><div class="col-md-4 text-center">Copyright © 2026 Arturo Sauza de la Vega. All Rights Reserved.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
 <img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.47b696b1d84c5bd791255169498f474886ac0221db232941b5f6493fba7b02c1.js integrity="sha256-R7aWsdhMW9eRJVFpSY9HSIasAiHbIylBtfZJP7p7AsE=" defer></script></body></html>
