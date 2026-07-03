@@ -1696,6 +1696,8 @@ coordinates {
 
 <details >
 <summary> Check code </summary>
+
+```
 \documentclass[tikz,border=1mm]{standalone}
 
 \usepackage{amsmath}
@@ -2043,8 +2045,309 @@ scaled x ticks = false,
 
 \end{document}
 
+```
 
 </details>
+
+
+#### Bar Plots
+
+
+
+
+> Now, it is time to show how to make some barplots with `LaTeX`. I usually make this type of plots to compare geometric parameters like the RMSD between an optimized structure and the X-ray geometry when testing different DFT functuonals, but in the past I also used it to compare the energies between different spin-states. Anyway, you can decide how to use it depending on your needs.
+> 
+> In the following example, I am showing the RMSD plots when testing different DFT functionals.
+
+
+{{< img src="rmsd_pu_pt-1.png"  width="800" align="center" title="RMSD of Pu-PT complex" >}}
+
+
+<details >
+<summary> Check code </summary>
+
+```
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    width=18cm,
+    height=9cm,
+    ybar,
+    bar width=14pt,
+    ymin=0.0, 
+    ymax=1.6,
+    axis on top,
+    %ymajorgrids=true,
+    grid style={black!20, line width=0.3pt},
+    axis line style={black},
+    tick style={black},
+    tick align=inside,
+    xtick=data,
+    symbolic x coords={PBE-D4,PBE0-D4,B3LYP-D4,TPSS-D4,TPSSh-D4,M06,M06-2X,M06-L},
+    xticklabel style={text height=1.5ex, text depth=.25ex, font=\bfseries\color{black}},
+    yticklabel style={font=\color{black}},
+    ylabel near ticks,
+    ylabel style={font=\large\color{black}},
+    xlabel style={font=\large\color{black}},
+    ylabel={RMSD  (\AA) },
+    nodes near coords,
+    nodes near coords align={vertical},
+    nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=3},
+    legend style={
+        at={(0.8,0.90)},
+        anchor=south,
+        legend columns=-1,
+        font=\normalsize\color{black},
+        fill=none,
+        draw=none
+    },
+    enlarge x limits = 0.1,
+    enlarge y limits = {upper=0.2}, 
+    every axis/.append style={font=\large},
+]
+
+% === RMSD (all) ===
+\addplot[
+    ybar,
+    draw=yellow!60!black,
+    area legend,
+    bar shift=-0.30cm,
+    postaction={
+        shade,
+        bottom color=yellow!95!white,
+        top color=yellow!70!orange,
+        %shading angle=90
+    }
+] coordinates {
+(PBE-D4,   0.5732) 
+(PBE0-D4,  0.4552)
+(B3LYP-D4, 0.4460)
+(TPSS-D4,  0.7080)
+(TPSSh-D4, 0.6469)
+(M06,      0.4407)
+(M06-2X,   0.4417)
+(M06-L,    0.8679)
+};
+
+% === RMSD (M--O) ===
+\addplot[
+    ybar,
+    draw=gray!60!black,
+    area legend,
+    bar shift=0.30cm,
+    postaction={
+        shade,
+        bottom color=gray!15!white,
+        top color=gray!90!black,
+        %shading angle=90
+    }
+] coordinates {
+(PBE-D4,   0.2695) 
+(PBE0-D4,  0.3150)
+(B3LYP-D4, 0.2953)
+(TPSS-D4,  0.2987)
+(TPSSh-D4, 0.2893)
+(M06,      0.2381)
+(M06-2X,   0.2853)
+(M06-L,    0.3269)
+};
+
+\legend{RMSD (all), RMSD (M--O/S)}
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+```
+
+</details>
+
+
+> When studying chemical bonding of actinide and lanthanide systems, I usually perform `NBO` analysis of the bonding interactions. When doing this analysis, I decompose the bonding molecular orbitals between the metal and the ligands into atomic contributions, with particular focus on the contributions from the metal atomic orbitals. In general, the NBO analysis gives the overall percentage of `s`, `p`, `d`, and `f` type of orbitals, and I plot these contributions with stacked bars to compare the atomic contributions across a series of metal complexes.
+
+
+
+{{< img src="barplot_ln_pt_alpha-1.png"  width="800" align="center" title="Ln-PT alpha contributions" >}}
+
+
+<details >
+<summary> Check code </summary>
+
+```
+\documentclass[border=4pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepackage{pgfplotstable}
+\usetikzlibrary{patterns}
+
+\definecolor{scol}{RGB}{178,125,0}
+\definecolor{dcol}{RGB}{220,165,30}
+\definecolor{fcol}{RGB}{245,236,140}
+\definecolor{bline}{RGB}{130,70,0}
+
+
+\begin{document}
+\begin{tikzpicture}
+% ---- TABLA Metal-Oxígeno ----
+% Columnas precalculadas para el apilamiento manual:
+%   s_O        = contribución s
+%   sd_O       = s + d  (base de la barra f)
+%   sdf_O      = s + d + f (altura total)
+\pgfplotstableread[col sep=space]{
+metal  s_O   sd_O   sdf_O
+La    0.38   2.12   2.59
+Ce    0.33   2.00   2.88
+Pr    0.34   1.69   2.29
+Nd    0.43   2.08   2.93
+Sm    0.46   2.16   2.81
+Eu    0.42   1.78   1.85
+Gd    0.45   1.99   2.00
+Tb    0.53   2.40   2.41
+Dy    0.46   1.91   1.92
+Ho    0.52   1.99   1.99
+Er    0.51   1.94   2.09
+Tm    0.49   1.81   1.82
+Yb    0.51   1.77   1.77
+Lu    0.66   2.10   2.11
+}\dataO
+
+% ---- TABLA Metal-Azufre ----
+% Sustituye estos valores por los tuyos (misma estructura)
+\pgfplotstableread[col sep=space]{
+metal  s_S   sd_S   sdf_S
+La     1.87  8.14   8.96
+Ce     1.83  9.31   12.55
+Pr     1.81  8.52   11.18
+Nd     1.94  8.62   11.47
+Sm     1.84  7.54   11.82
+Eu     1.47  5.34   8.10
+Gd     2.21  8.57   8.58
+Tb     2.21  9.56   9.58
+Dy     2.29  8.51   8.52
+Ho     2.19  7.96   7.97
+Er     2.32  8.42   8.42
+Tm     2.40  8.07   8.08
+Yb     2.35  7.61   7.61
+Lu     2.53  8.15   8.15
+}\dataS
+
+\begin{axis}[
+  width=21cm, height=7cm,
+  % SIN ybar stacked: gestionamos el apilamiento manualmente
+  % con "ybar" simple y coordenadas base/altura explícitas
+  xbar=0pt,   % placeholder; usaremos ybar por addplot
+  ybar,
+  bar width=12pt,
+  enlarge x limits=0.10,
+  ymin=0, ymax=15,
+  symbolic x coords={La,Ce,Pr,Nd,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu},
+  xtick=data,
+  tick label style={font=\sffamily},
+  label style={font=\sffamily},
+  xticklabel style={font=\bfseries\Large},
+  xlabel={\bfseries\Large Metal},
+  ylabel={\bfseries\Large $\alpha$ NLMO composition ($\%$)},
+  yticklabel style={font=\bfseries\Large},
+  axis line style={very thick},
+  tick style={very thick},
+  grid=both,
+  grid style={dashed, gray!45},
+  legend style={
+    at={(0.5,1.20)},
+    anchor=south,
+    legend columns=5,
+    draw=gray!50,
+    fill=white,
+    font=\Large,
+    /tikz/every even column/.append style={column sep=8pt},
+  },
+]
+
+% ---- Leyenda --- 
+%Using area legend below, adds a rectangle in the legend section instead of two small bars (when using ybar).-
+\addlegendimage{area legend, fill=scol, draw=bline, line width=0.8pt, bar width=6pt }
+\addlegendentry{s}
+\addlegendimage{area legend, fill=dcol, draw=bline, line width=0.8pt}
+\addlegendentry{d}
+\addlegendimage{area legend, fill=fcol, draw=bline, line width=0.8pt}
+\addlegendentry{f}
+\addlegendimage{area legend, fill=gray!30, draw=bline, line width=0.8pt}
+\addlegendentry{M--O}
+\addlegendimage{area legend, fill=gray!30, draw=bline, line width=0.8pt,
+  postaction={pattern=north east lines, pattern color=bline}}
+\addlegendentry{M--S}
+
+% ============================================================
+% BARRAS Metal-Oxígeno (izquierda, bar shift negativo)
+% Apilamiento manual: cada segmento usa "ybar interval" con
+% coordenada y = altura del segmento, y su base = acumulado anterior.
+% Se logra con: fill between / o simplemente dibujando rectángulos.
+%
+% ESTRATEGIA SIMPLE Y ROBUSTA:
+% Dibujamos 3 barras con alturas totales decrecientes,
+% la de abajo tapa a la de arriba → efecto de apilado.
+% ============================================================
+
+% --- Metal-O: segmento f (barra completa, color f) ---
+\addplot+[
+  ybar, fill=fcol, draw=bline, line width=0.8pt,
+  bar shift=-8pt,
+] table[x=metal, y=sdf_O] {\dataO};
+
+% --- Metal-O: segmento d (encima de s, tapa la parte f) ---
+\addplot+[
+  ybar, fill=dcol, draw=bline, line width=0.8pt,
+  bar shift=-8pt,
+] table[x=metal, y=sd_O] {\dataO};
+
+% --- Metal-O: segmento s (base) ---
+\addplot+[
+  ybar, fill=scol, draw=bline, line width=0.8pt,
+  bar shift=-8pt,
+] table[x=metal, y=s_O] {\dataO};
+
+% ============================================================
+% BARRAS Metal-Azufre (derecha, con trama)
+% ============================================================
+
+% --- Metal-S: segmento f ---
+\addplot+[
+  ybar, fill=fcol, draw=bline, line width=0.8pt,
+  bar shift=+8pt,
+  postaction={pattern=north east lines, pattern color=bline},
+] table[x=metal, y=sdf_S] {\dataS};
+
+% --- Metal-S: segmento d ---
+\addplot+[
+  ybar, fill=dcol, draw=bline, line width=0.8pt,
+  bar shift=+8pt,
+  postaction={pattern=north east lines, pattern color=bline},
+] table[x=metal, y=sd_S] {\dataS};
+
+% --- Metal-S: segmento s ---
+\addplot+[
+  ybar, fill=scol, draw=bline, line width=0.8pt,
+  bar shift=+8pt,
+  postaction={pattern=north east lines, pattern color=bline},
+] table[x=metal, y=s_S] {\dataS};
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+
+```
+
+</details>
+
+
+
 
 
 
