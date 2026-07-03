@@ -236,6 +236,7 @@ NACTEL = 8
 RAS2 = 6
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 6
 ITERations = 200 100 
 End of Input
 </code></pre><p>In this example, the <code>Lumorb</code> keyword was used to indicate <code>&amp;RASSCF</code> must read an orbital file. <code>Symmetry</code> is used to specify the symmetry of the wave function (<code>Symmetry = 1</code> corresponds to the trivial symmetry representation, the identity). <code>SPIN</code> is used to specify the spin state to be computed, 1 for singlet, 2 for doublet, 3 for triplets, and so on. The <code>Inactive</code> keyword is used to specify the number of doubly occupied orbitals. Be aware that, depending on the number of Inactive orbitals you select, you can change the total charge of your molecule. Alternatively, only for CASSCF calculations without symmetry, you can use the keyword <code>CHARGE</code> to establish the total charge of your system, and OpenMolcas automatically determines the number of inactive orbitals. The active space is written in the literature as (n<sub>e</sub>, n<sub>o</sub>), where n<sub>e</sub> stands for the number of electrons included in the active space, and n<sub>o</sub> as the total number of orbitals in the active space. The <code>&amp;RASSCF</code> module uses the keywords <code>NACTEL</code> and <code>RAS2</code> to specify the number of electrons and orbitals in the active space, respectively. I recommend using the keywords <code>ORBListing</code> and <code>ORBAppear</code> to modify the way OpenMolcas prints the molecular orbitals. For different formatting, check the <code>&amp;RASSCF</code> module official documentation. Finally, the <code>ITERations</code> keyword is used to specify the number of CASSCF iterations (200 is the maximum) and the number of iterations for the orbital optimization (100 is the maximum).</p><p>The <code>&amp;RASSCF</code> module could be used to compute more than a single state at a time using the state-average formalism. To perform a SA-CASSCF calculation, you have to include the keyword <code>CIROOT</code> and then indicate the number of spin-states with the same spin multiplicity to be computed.</p><p>For example, to perform a SA-CASSCF calculation for the singlet ground-state of the water molecule, and three singlet excited states (a total of 4 states):</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/start_orbitals.ScfOrb  INPORB
@@ -250,6 +251,7 @@ RAS2 = 6
 CIROOT = 4 4 1 
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 6
 ITERations = 200 100 
 End of Input
 </code></pre><p>When using <code>CIROOT</code>, the meaning of the three numbers is: (i) the number of roots (states) to compute, (ii) from the total of roots, the number of states to be included in the orbital optimization, and (iii) in the case the last number is 1, then each root has the same weight for the SA-CASSCF calculation. Alternatively, when performing a SA-CASSCF with equal weights, you can use the keyword <code>STAVErage</code> followed by only the total number of states.</p><p>The computation of RASSCF wave functions is done following the same input structure for CASSCF, with a few differences. In the RASSCF method, we add the subspaces RAS1 and RAS3 to the methodology. RAS1 corresponds to a set of doubly occupied orbitals that allow electron excitations from the orbitals in RAS1 to the empty orbitals in RAS3. Similarly, RAS3 is a set of virtual orbitals that are allowed to hold electrons from RAS1. In the <code>&amp;RASSCF</code> module, we specify the number of orbitals in RAS1 and RAS3, with the keywords <code>RAS1</code> and <code>RAS3</code>, respectively (and obviously, though). Additionally, the <code>NACTEL</code> keyword should be written as <code>NACTEL = n h p</code>, where <code>n</code> is the total number of electrons in RAS2, <code>h</code> is the maximum number of &ldquo;holes&rdquo; in RAS1 (the maximum number of electrons that can be excited from RAS1 to RAS3), and <code>p</code> is the maximum number of particles (electrons) occupying the RAS3 orbitals. By the way, for a CASSCF calculation, you can write in your input <code>RAS1=0</code>, <code>RAS3=0</code>, and <code>NACTEL = n 0 0</code> (This is equivalent to the CASSCF example shown before).</p><p>Similar to CASSCF, you can run state-specific and state-average RASSCF calculations. An example of a SA-RASSCF calculation is:</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/uranium_complex_orbitals.RasOrb  INPORB
@@ -266,6 +268,7 @@ RAS3 = 5
 CIROOT = 35 35 1 
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 15
 ITERations = 200 100 
 End of Input
 </code></pre><p>The methods CASSCF and RASSCF are not black-box methods. Sometimes, the CASSCF calculations converge with orbitals without chemical meaning to the phenomenon under study. For example, let us assume you are interested in calculating the energy differences between high- and low-spin configurations of transition metal complexes. In this case, you might need to include the metal d valence orbitals into the active space, but the CASSCF calculation you performed has only ligand orbitals. Thus, you need to substitute the ligand orbitals with those required. Then, you have to manually select the orbitals you want to include in the active space and those you want to replace. To do this, you need the <code>ALTER</code> keyword.</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/start_orbitals.ScfOrb  INPORB
@@ -284,6 +287,7 @@ ALTER = 3
 1 38 46
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 10
 ITERations = 200 100 
 End of Input
 </code></pre><p>In the previous example, using <code>ALTER</code>, three pairs of orbitals have been selected for swapping. The first orbital pair has been rotated using symmetry 1, and the orbital indices for the orbitals to be swapped are 35 and 43. Then, the orbitals 36 and 45 are swapped with symmetry 1, and the final pair of orbitals has indexes 38 and 46.</p><p>When using the <code>CIONLY</code> keyword, you can perform CASCI and RASCI calculations where the orbital optimization is omitted. The example of a CASCI calculation is:</p><pre tabindex=0><code>&gt;&gt;COPY $CurrDir/start_orbitals.ScfOrb  INPORB
@@ -298,6 +302,7 @@ NACTEL = 8
 RAS2 = 6
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 6
 ITERations = 200 100 
 End of Input
 </code></pre><p>Finally, an input example of a SA-CASSCF calculation is shown below:</p><pre tabindex=0><code>&amp;SEWARD
@@ -321,6 +326,7 @@ ALTER = 1
 CIROOT = 20 20 1
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 15
 ITERations = 200 100; CIMX = 500
 Sdav = 200; PRWF = 0.01
 End of Input
@@ -406,6 +412,7 @@ Spin = 1
 Charge = 0
 Nactel = 8 0 0
 RAS2 = 6 
+OUTOrbital = Natural ; 6
 End of Input
 
 &gt;&gt;COPY $CurrDir/$Project.RasOrb INPORB
@@ -448,6 +455,7 @@ Spin = 1
 Charge = 0
 Nactel = 8 0 0
 RAS2 = 6 
+OUTOrbital = Natural ; 6
 End of Input
 
 &gt;&gt;COPY $CurrDir/$Project.RasOrb INPORB
@@ -493,6 +501,7 @@ Spin = 1
 Charge = 0
 Nactel = 8 0 0
 RAS2 = 6
+OUTOrbital = Natural ; 6
 CIROOT = 5 5 1
 XMSI
 End of Input
@@ -575,6 +584,7 @@ Charge = 0
 Nactel = 8 0 0
 RAS2 = 6
 CIROOT = 3 3 1
+OUTOrbital = Natural ; 6
 End of Input
 
 &amp;CASPT2
@@ -605,6 +615,7 @@ NROF = 3 5 35 22
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
 SPIN
 EJOB
+DIPRint = 10-10
 SOCOupling = 0.0000001
 
 End of Input
@@ -651,6 +662,7 @@ NROF = 3 5 35 22
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
 SPIN
+DIPRint = 10-10
 EJOB
 End of Input
 </code></pre><h4 id=single_aniso>&amp;SINGLE_ANISO</h4><p>The <code>&amp;SINGLE_ANISO</code> module is used right after the <code>&amp;RASSI</code> module. Therefore, often we have both modules in the same OpenMolcas input. This module is used to compute magnetic properties, such as Zeeman splitting, zero-field splitting, and magnetic susceptibility. It is also used for the computation of ab initio Crystal Field parameters.</p><p>The computation of g- and D-tensors is done using the <code>MLTP</code> keyword. When using it, the program reads the information in two lines. The first line is the number of multiplets (number of spin-orbit states) for which the tensors will be computed, and the second line indicates the number of spin-orbit states for each multiplet. For example, let us consider that we are interested in three multiplets. Each multiplet has 2, 4, and 4 spin-orbit states, respectively.</p><pre tabindex=0><code>&amp;SINGLE_ANISO
@@ -694,6 +706,7 @@ NROF = 3 5 35 22
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
 SPIN
+DIPRint = 10-10
 EJOB
 SOCOupling
 0.0000000001
@@ -729,6 +742,7 @@ RAS2 = 10
 CIROOT = 5 5 1
 ORBListing = ALL
 ORBAppear = COMPACT
+OUTOrbital = Natural ; 10
 ITERations = 200 100; CIMX = 500
 Sdav = 200; PRWF = 0.01
 End of Input
