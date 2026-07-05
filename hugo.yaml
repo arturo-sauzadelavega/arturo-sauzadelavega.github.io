@@ -22,8 +22,8 @@ module:
 # For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
 languages:
   en:
-    languageCode: en
-    languageName: English
+    locale: en-US
+    label: English
     title: "Arturo Sauza de la Vega, Ph.D."
     weight: 1
 #  bn:
