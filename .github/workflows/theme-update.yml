@@ -24,6 +24,8 @@ jobs:
           mise run update-to-main
 
       - name: Build
+        env:
+          hugo_version: 'latest'
         run: |
           # build the site
           hugo --minify
