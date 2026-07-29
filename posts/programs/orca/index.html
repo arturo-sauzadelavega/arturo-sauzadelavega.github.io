@@ -598,7 +598,17 @@ end
 end
 
 * xyzfile 0 2 ce_pt_m06l.xyz 
-</code></pre><blockquote><p>Well&mldr; to this moment, I used the DFT-ZORA orbitals, but then I used DKH and DKH recontracted basis functions and I successfully obtained the active space. I am testing continue using ZORA for the multireference calculations. I changed Hamiltonian and basis functions because previously I had a lot of troubles converging simple CASSCF calculations with only ZORA. Once my test is done, I&rsquo;ll update this comment.</p></blockquote><div dir=rtl>All suggestions to improve this section are welcome, just send me a message.</div></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
+</code></pre><p>There are situations where the <code>AVAS</code> scheme fails in selecting the desired active space (it failed to me on selecting the 6 electrons in the $4f$ orbitals of an Eu(III) complex). In those situations, you can use the <code>%scf</code> block to indicate the number of electrons and orbitals, similar as in the <code>%casscf</code> block. You need to add the following into your calculation:</p><pre tabindex=0><code>%scf
+ avas
+  system
+   center 0
+   type f
+   nel 6
+   norb 7
+  end
+ end
+end
+</code></pre><p>Where <code>center</code> indicates the number of atom in the xyz coordinates list, and <code>type</code> could take values of <code>d</code>, <code>f</code>, <code>pz</code> or whatever, depending on your molecule.</p><div dir=rtl>All suggestions to improve this section are welcome, just send me a message.</div></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
 <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f" target=_blank><i class="fab fa-facebook"></i>
 </a><a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f&text=Orca%206.1.1&via=Arturo%20Sauza%20de%20la%20Vega%2c%20Ph.D." target=_blank><i class="fab fa-twitter"></i>
 </a><a class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f&title=Orca%206.1.1" target=_blank><i class="fab fa-reddit"></i>
