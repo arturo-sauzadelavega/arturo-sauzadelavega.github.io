@@ -174,6 +174,64 @@ end
 
 ```
 
+### ZFS with DFT
+
+Previously, I showed how to compute the Zero-Field Splitting parameters using multireference wave functions. However, in `Orca`, you can compute the ZFS using linear-response DFT using the coupled-perturbed method.
+
+This is an input for computing the ZFS parameters using DFT.
+
+```
+! DKH DKH-def2-TZVP autoaux  KDIIS SOSCF
+!NormalPrint printbasis largeprint
+
+
+%pal
+nprocs 32
+end
+
+%scf
+MaxIter 600
+end
+
+%MaxCore 4000
+
+%output
+Print[P_Basis]2
+Print[P_MOs]1
+end
+
+
+%eprnmr
+ DTensor ssandso
+ DSOC cp #qro,pk, cvw
+ DSS uno #direct
+end
+
+* xyz 0 3
+ Cr                -0.03151260    0.27836135    0.00000000
+ C                  0.60183169    1.17402169    1.55134379
+ H                  1.67183167    1.17383912    1.55144126
+ H                  0.24533664    2.18288802    1.55124621
+ H                  0.24499943    0.66973588    2.42499508
+ C                  0.60179899   -1.51298351    0.00000000
+ H                  0.24514256   -2.01737590    0.87366155
+ H                  0.24510974   -2.01738750   -0.87364146
+ H                  1.67179899   -1.51299670   -0.00002009
+ C                 -1.93151260    0.27838476    0.00000000
+ H                 -2.28816652    1.28719305    0.00195626
+ H                 -2.28818515   -0.22431884   -0.87462780
+ H                 -2.28818570   -0.22770676    0.87267157
+ C                  0.60183169    1.17402169   -1.55134379
+ H                  0.24509799    2.18280366   -1.55139234
+ H                  1.67183169    1.17409223   -1.55129511
+ H                  0.24523807    0.66956712   -2.42499508
+*
+
+```
+
+Where `DTensor ssandso` indicates that the computation of the D-tensor involves including spin-orbit and spin-spin coupling. `DSOC` is the method used for the computation of spin-orbit coupling; in this case, the coupled-perturbed method (`cp`) is used, and to compute the spin-spin coupling, the previous input uses unrestricted natural orbitals (`uno`).
+
+
 
 ### Multireference Methods
 I am not entirely sure, but I think that since `Orca 5`, the multireference methods implemented in `Orca` became really good, but probably I am wrong because I barely used `Orca 4` and I used it only for DFT and DLPNO-CCSD(T) calculations (I was not completely aware of multireference methods back then). Anyway, maybe Orca does not have all the methods and tools implemented in `OpenMolcas`, but at least I  know their CASSCF and NEVPT2 implementations are amazing and really fast! Compared with OpenMolcas, you can perform calculations with more than 1 processor, and you don't have to struggle with the OpenMolcas installation to run in parallel. But Orca lacks methods such as RASSCF and GASSCF (as far as I know). 
@@ -643,63 +701,107 @@ The AILFT analysis can be performed using CASSCF and NEVPT2 values.
 I have only performed AILFT using a single shell of d or f orbitals; in `Orca 6`, you can include a second shell, but I have not tried those calculations. Also, it is possible to assign different types of orbitals to `ActOrbs`, even including ligand orbitals into the AILFT calculation, but I haven't tried those calculations yet. So I expect to update this section in the near future with more `Orca` examples of these calculations.
 
 
+#### AVAS
 
-### ZFS with DFT
+Currently, I had the necessity to move from `OpenMolcas` to `Orca` for the computation of absorption and emission for almost the complete lanthanide series, and many actinides (up to Cf). Why am I using Orca if I already know how to do these type of calculations with `OpenMolcas`? Well, the problem is the available all electron basis functions for the actinide series. Unfortunately, the `ANO-RCC` basis functions are available up to Cm. In the case of looking to continue with `OpenMolcas`, I would have to justify using another set of basis functions for Bk and Cf, and a lot of testing calculations to identify the basis functions that are closer to the `ANO-RCC` I am already using for the rest of actinide and lanthanide complexes. This is interesting, but it is a lot of unnecessary work for a collaboration project with experimentalists who want to advance as quick as possible in their research. The optimal solution is using `Orca` instead, because right there we have available the all-electron basis functions `ZORA-def2` and `DKH-def2` for light elements, and `SARC-ZORA` and `SARC-DKH` for all lanthanides and actinides. 
 
-Previously, I showed how to compute the Zero-Field Splitting parameters using multireference wave functions. However, in `Orca`, you can compute the ZFS using linear-response DFT using the coupled-perturbed method.
+I already mastered how to obtain active spaces with `OpenMolcas` (or I have a better developed skill). However, when using `Orca` I am still struggling with that. That's why I decided to give it a try to the active space selector `AVAS` that is finally available in `Orca`. To this moment, it worked for obtaining the correct active space for a Ce(III) complex, i.e., one electron in the $4f$ orbitals. Previously, I converged a DFT calculation as follows:
 
-This is an input for computing the ZFS parameters using DFT.
+
+<details >
+<summary> Check code </summary>
+
 
 ```
-! DKH DKH-def2-TZVP autoaux  KDIIS SOSCF
-!NormalPrint printbasis largeprint
+!ZORA RIJCOSX M06L NoTRAH Mulliken Loewdin Mayer AIM NBO
 
-
-%pal
-nprocs 32
+%basis NewGTO Ce "SARC-ZORA-TZVP" end
+       newauxgto Ce "autoaux" end
+       newGTO C "ZORA-def2-TZVP" end
+       newauxgto C "def2-SVP/C" end
+       newGTO O "ZORA-def2-TZVP" end
+       newauxgto O "def2-SVP/C" end
+       newGTO N "ZORA-def2-TZVP" end
+       newauxgto N "def2-SVP/C" end
+       newGTO H "ZORA-def2-TZVP" end
+       newauxgto H "def2-SVP/C" end
+       newGTO S "ZORA-def2-TZVP" end
+       newauxgto S "def2-SVP/C" end
 end
 
-%scf
-MaxIter 600
+%pal
+nprocs 24
 end
 
 %MaxCore 4000
+
+%scf
+MaxIter 1600
+end
+
+* xyzfile 0 2 ce_pt_m06l.xyz 
+
+```
+
+</details>
+
+> Once the DFT calculation converged, I used the `.gbw` file as initial guess for the `SA-CASSCF` calculations with the next input file:
+
+```
+! ZORA   Mulliken Loewdin Mayer AutoAux PModel 
+! AVAS(Valence-F)
+! MOREAD
+
+%moinp "doub_ce_pt_m06l.gbw" 
+
+%basis NewGTO Ce "SARC-ZORA-TZVP" end
+       newauxgto Ce "autoaux" end
+       newGTO C "ZORA-def2-TZVP" end
+       newauxgto C "def2-SVP/C" end
+       newGTO O "ZORA-def2-TZVP" end
+       newauxgto O "def2-SVP/C" end
+       newGTO N "ZORA-def2-TZVP" end
+       newauxgto N "def2-SVP/C" end
+       newGTO H "ZORA-def2-TZVP" end
+       newauxgto H "def2-SVP/C" end
+       newGTO S "ZORA-def2-TZVP" end
+       newauxgto S "def2-SVP/C" end
+end
+
+%pal
+nprocs 24
+end
+
+%MaxCore 10000
 
 %output
 Print[P_Basis]2
 Print[P_MOs]1
 end
 
-
-%eprnmr
- DTensor ssandso
- DSOC cp #qro,pk, cvw
- DSS uno #direct
+%casscf
+  nel 1
+  norb 7
+  mult 2
+  nroots 7
+  maxiter 1000
+#  rel 
+#    dosoc true
+#  end
+  trafostep ri
+  CIStep ACCCI
+  OrbStep SuperCI_PT
+  ActConstraints 4
+  ActOrbs NatOrbs #fOrbs
+#  PTMethod SC_NEVPT2
 end
 
-* xyz 0 3
- Cr                -0.03151260    0.27836135    0.00000000
- C                  0.60183169    1.17402169    1.55134379
- H                  1.67183167    1.17383912    1.55144126
- H                  0.24533664    2.18288802    1.55124621
- H                  0.24499943    0.66973588    2.42499508
- C                  0.60179899   -1.51298351    0.00000000
- H                  0.24514256   -2.01737590    0.87366155
- H                  0.24510974   -2.01738750   -0.87364146
- H                  1.67179899   -1.51299670   -0.00002009
- C                 -1.93151260    0.27838476    0.00000000
- H                 -2.28816652    1.28719305    0.00195626
- H                 -2.28818515   -0.22431884   -0.87462780
- H                 -2.28818570   -0.22770676    0.87267157
- C                  0.60183169    1.17402169   -1.55134379
- H                  0.24509799    2.18280366   -1.55139234
- H                  1.67183169    1.17409223   -1.55129511
- H                  0.24523807    0.66956712   -2.42499508
-*
+* xyzfile 0 2 ce_pt_m06l.xyz 
 
 ```
 
-Where `DTensor ssandso` indicates that the computation of the D-tensor involves including spin-orbit and spin-spin coupling. `DSOC` is the method used for the computation of spin-orbit coupling; in this case, the coupled-perturbed method (`cp`) is used, and to compute the spin-spin coupling, the previous input uses unrestricted natural orbitals (`uno`).
+> Well... to this moment, I used the DFT-ZORA orbitals, but then I used DKH and DKH recontracted basis functions and I successfully obtained the active space. I am testing continue using ZORA for the multireference calculations. I changed Hamiltonian and basis functions because previously I had a lot of troubles converging simple CASSCF calculations with only ZORA. Once my test is done, I'll update this comment.
+
 
 
 
