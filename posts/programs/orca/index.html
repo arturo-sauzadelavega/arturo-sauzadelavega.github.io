@@ -117,7 +117,52 @@ end
 %MaxCore 4000
 
 * xyzfile 0 1 mol1_la_opt.xyz
-</code></pre><h3 id=multireference-methods>Multireference Methods</h3><p>I am not entirely sure, but I think that since <code>Orca 5</code>, the multireference methods implemented in <code>Orca</code> became really good, but probably I am wrong because I barely used <code>Orca 4</code> and I used it only for DFT and DLPNO-CCSD(T) calculations (I was not completely aware of multireference methods back then). Anyway, maybe Orca does not have all the methods and tools implemented in <code>OpenMolcas</code>, but at least I know their CASSCF and NEVPT2 implementations are amazing and really fast! Compared with OpenMolcas, you can perform calculations with more than 1 processor, and you don&rsquo;t have to struggle with the OpenMolcas installation to run in parallel. But Orca lacks methods such as RASSCF and GASSCF (as far as I know).</p><h4 id=casscf>CASSCF</h4><p>To perform CASSCF calculations, you need to include the <code>%casscf</code> block in the input file. Some important keywords are <code>nel</code> and <code>norb</code> to set the number of electrons and orbitals in the active space, respectively. Additionally, the <code>mult</code> keyword sets the spin multiplicity to consider. The following is an easy example of a single-state CASSCF calculation.</p><pre tabindex=0><code>! DKH dkh-def2-tzvp autoaux  PATOM
+</code></pre><h3 id=zfs-with-dft>ZFS with DFT</h3><p>Previously, I showed how to compute the Zero-Field Splitting parameters using multireference wave functions. However, in <code>Orca</code>, you can compute the ZFS using linear-response DFT using the coupled-perturbed method.</p><p>This is an input for computing the ZFS parameters using DFT.</p><pre tabindex=0><code>! DKH DKH-def2-TZVP autoaux  KDIIS SOSCF
+!NormalPrint printbasis largeprint
+
+
+%pal
+nprocs 32
+end
+
+%scf
+MaxIter 600
+end
+
+%MaxCore 4000
+
+%output
+Print[P_Basis]2
+Print[P_MOs]1
+end
+
+
+%eprnmr
+ DTensor ssandso
+ DSOC cp #qro,pk, cvw
+ DSS uno #direct
+end
+
+* xyz 0 3
+ Cr                -0.03151260    0.27836135    0.00000000
+ C                  0.60183169    1.17402169    1.55134379
+ H                  1.67183167    1.17383912    1.55144126
+ H                  0.24533664    2.18288802    1.55124621
+ H                  0.24499943    0.66973588    2.42499508
+ C                  0.60179899   -1.51298351    0.00000000
+ H                  0.24514256   -2.01737590    0.87366155
+ H                  0.24510974   -2.01738750   -0.87364146
+ H                  1.67179899   -1.51299670   -0.00002009
+ C                 -1.93151260    0.27838476    0.00000000
+ H                 -2.28816652    1.28719305    0.00195626
+ H                 -2.28818515   -0.22431884   -0.87462780
+ H                 -2.28818570   -0.22770676    0.87267157
+ C                  0.60183169    1.17402169   -1.55134379
+ H                  0.24509799    2.18280366   -1.55139234
+ H                  1.67183169    1.17409223   -1.55129511
+ H                  0.24523807    0.66956712   -2.42499508
+*
+</code></pre><p>Where <code>DTensor ssandso</code> indicates that the computation of the D-tensor involves including spin-orbit and spin-spin coupling. <code>DSOC</code> is the method used for the computation of spin-orbit coupling; in this case, the coupled-perturbed method (<code>cp</code>) is used, and to compute the spin-spin coupling, the previous input uses unrestricted natural orbitals (<code>uno</code>).</p><h3 id=multireference-methods>Multireference Methods</h3><p>I am not entirely sure, but I think that since <code>Orca 5</code>, the multireference methods implemented in <code>Orca</code> became really good, but probably I am wrong because I barely used <code>Orca 4</code> and I used it only for DFT and DLPNO-CCSD(T) calculations (I was not completely aware of multireference methods back then). Anyway, maybe Orca does not have all the methods and tools implemented in <code>OpenMolcas</code>, but at least I know their CASSCF and NEVPT2 implementations are amazing and really fast! Compared with OpenMolcas, you can perform calculations with more than 1 processor, and you don&rsquo;t have to struggle with the OpenMolcas installation to run in parallel. But Orca lacks methods such as RASSCF and GASSCF (as far as I know).</p><h4 id=casscf>CASSCF</h4><p>To perform CASSCF calculations, you need to include the <code>%casscf</code> block in the input file. Some important keywords are <code>nel</code> and <code>norb</code> to set the number of electrons and orbitals in the active space, respectively. Additionally, the <code>mult</code> keyword sets the spin multiplicity to consider. The following is an easy example of a single-state CASSCF calculation.</p><pre tabindex=0><code>! DKH dkh-def2-tzvp autoaux  PATOM
 !NormalPrint printbasis largeprint
 
 #!moread
@@ -477,58 +522,89 @@ end
 
 
 * xyzfile 0 3 U_NPH3_Td2Sq_0.xyz
-</code></pre><p>The AILFT analysis can be performed using CASSCF and NEVPT2 values.</p><p>I have only performed AILFT using a single shell of d or f orbitals; in <code>Orca 6</code>, you can include a second shell, but I have not tried those calculations. Also, it is possible to assign different types of orbitals to <code>ActOrbs</code>, even including ligand orbitals into the AILFT calculation, but I haven&rsquo;t tried those calculations yet. So I expect to update this section in the near future with more <code>Orca</code> examples of these calculations.</p><h3 id=zfs-with-dft>ZFS with DFT</h3><p>Previously, I showed how to compute the Zero-Field Splitting parameters using multireference wave functions. However, in <code>Orca</code>, you can compute the ZFS using linear-response DFT using the coupled-perturbed method.</p><p>This is an input for computing the ZFS parameters using DFT.</p><pre tabindex=0><code>! DKH DKH-def2-TZVP autoaux  KDIIS SOSCF
-!NormalPrint printbasis largeprint
+</code></pre><p>The AILFT analysis can be performed using CASSCF and NEVPT2 values.</p><p>I have only performed AILFT using a single shell of d or f orbitals; in <code>Orca 6</code>, you can include a second shell, but I have not tried those calculations. Also, it is possible to assign different types of orbitals to <code>ActOrbs</code>, even including ligand orbitals into the AILFT calculation, but I haven&rsquo;t tried those calculations yet. So I expect to update this section in the near future with more <code>Orca</code> examples of these calculations.</p><h4 id=avas>AVAS</h4><p>Currently, I had the necessity to move from <code>OpenMolcas</code> to <code>Orca</code> for the computation of absorption and emission for almost the complete lanthanide series, and many actinides (up to Cf). Why am I using Orca if I already know how to do these type of calculations with <code>OpenMolcas</code>? Well, the problem is the available all electron basis functions for the actinide series. Unfortunately, the <code>ANO-RCC</code> basis functions are available up to Cm. In the case of looking to continue with <code>OpenMolcas</code>, I would have to justify using another set of basis functions for Bk and Cf, and a lot of testing calculations to identify the basis functions that are closer to the <code>ANO-RCC</code> I am already using for the rest of actinide and lanthanide complexes. This is interesting, but it is a lot of unnecessary work for a collaboration project with experimentalists who want to advance as quick as possible in their research. The optimal solution is using <code>Orca</code> instead, because right there we have available the all-electron basis functions <code>ZORA-def2</code> and <code>DKH-def2</code> for light elements, and <code>SARC-ZORA</code> and <code>SARC-DKH</code> for all lanthanides and actinides.</p><p>I already mastered how to obtain active spaces with <code>OpenMolcas</code> (or I have a better developed skill). However, when using <code>Orca</code> I am still struggling with that. That&rsquo;s why I decided to give it a try to the active space selector <code>AVAS</code> that is finally available in <code>Orca</code>. To this moment, it worked for obtaining the correct active space for a Ce(III) complex, i.e., one electron in the $4f$ orbitals. Previously, I converged a DFT calculation as follows:</p><details><summary>Check code</summary><pre tabindex=0><code>!ZORA RIJCOSX M06L NoTRAH Mulliken Loewdin Mayer AIM NBO
 
-
-%pal
-nprocs 32
+%basis NewGTO Ce &#34;SARC-ZORA-TZVP&#34; end
+       newauxgto Ce &#34;autoaux&#34; end
+       newGTO C &#34;ZORA-def2-TZVP&#34; end
+       newauxgto C &#34;def2-SVP/C&#34; end
+       newGTO O &#34;ZORA-def2-TZVP&#34; end
+       newauxgto O &#34;def2-SVP/C&#34; end
+       newGTO N &#34;ZORA-def2-TZVP&#34; end
+       newauxgto N &#34;def2-SVP/C&#34; end
+       newGTO H &#34;ZORA-def2-TZVP&#34; end
+       newauxgto H &#34;def2-SVP/C&#34; end
+       newGTO S &#34;ZORA-def2-TZVP&#34; end
+       newauxgto S &#34;def2-SVP/C&#34; end
 end
 
-%scf
-MaxIter 600
+%pal
+nprocs 24
 end
 
 %MaxCore 4000
+
+%scf
+MaxIter 1600
+end
+
+* xyzfile 0 2 ce_pt_m06l.xyz 
+</code></pre></details><blockquote><p>Once the DFT calculation converged, I used the <code>.gbw</code> file as initial guess for the <code>SA-CASSCF</code> calculations with the next input file:</p></blockquote><pre tabindex=0><code>! ZORA   Mulliken Loewdin Mayer AutoAux PModel 
+! AVAS(Valence-F)
+! MOREAD
+
+%moinp &#34;doub_ce_pt_m06l.gbw&#34; 
+
+%basis NewGTO Ce &#34;SARC-ZORA-TZVP&#34; end
+       newauxgto Ce &#34;autoaux&#34; end
+       newGTO C &#34;ZORA-def2-TZVP&#34; end
+       newauxgto C &#34;def2-SVP/C&#34; end
+       newGTO O &#34;ZORA-def2-TZVP&#34; end
+       newauxgto O &#34;def2-SVP/C&#34; end
+       newGTO N &#34;ZORA-def2-TZVP&#34; end
+       newauxgto N &#34;def2-SVP/C&#34; end
+       newGTO H &#34;ZORA-def2-TZVP&#34; end
+       newauxgto H &#34;def2-SVP/C&#34; end
+       newGTO S &#34;ZORA-def2-TZVP&#34; end
+       newauxgto S &#34;def2-SVP/C&#34; end
+end
+
+%pal
+nprocs 24
+end
+
+%MaxCore 10000
 
 %output
 Print[P_Basis]2
 Print[P_MOs]1
 end
 
-
-%eprnmr
- DTensor ssandso
- DSOC cp #qro,pk, cvw
- DSS uno #direct
+%casscf
+  nel 1
+  norb 7
+  mult 2
+  nroots 7
+  maxiter 1000
+#  rel 
+#    dosoc true
+#  end
+  trafostep ri
+  CIStep ACCCI
+  OrbStep SuperCI_PT
+  ActConstraints 4
+  ActOrbs NatOrbs #fOrbs
+#  PTMethod SC_NEVPT2
 end
 
-* xyz 0 3
- Cr                -0.03151260    0.27836135    0.00000000
- C                  0.60183169    1.17402169    1.55134379
- H                  1.67183167    1.17383912    1.55144126
- H                  0.24533664    2.18288802    1.55124621
- H                  0.24499943    0.66973588    2.42499508
- C                  0.60179899   -1.51298351    0.00000000
- H                  0.24514256   -2.01737590    0.87366155
- H                  0.24510974   -2.01738750   -0.87364146
- H                  1.67179899   -1.51299670   -0.00002009
- C                 -1.93151260    0.27838476    0.00000000
- H                 -2.28816652    1.28719305    0.00195626
- H                 -2.28818515   -0.22431884   -0.87462780
- H                 -2.28818570   -0.22770676    0.87267157
- C                  0.60183169    1.17402169   -1.55134379
- H                  0.24509799    2.18280366   -1.55139234
- H                  1.67183169    1.17409223   -1.55129511
- H                  0.24523807    0.66956712   -2.42499508
-*
-</code></pre><p>Where <code>DTensor ssandso</code> indicates that the computation of the D-tensor involves including spin-orbit and spin-spin coupling. <code>DSOC</code> is the method used for the computation of spin-orbit coupling; in this case, the coupled-perturbed method (<code>cp</code>) is used, and to compute the spin-spin coupling, the previous input uses unrestricted natural orbitals (<code>uno</code>).</p><div dir=rtl>All suggestions to improve this section are welcome, just send me a message.</div></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
+* xyzfile 0 2 ce_pt_m06l.xyz 
+</code></pre><blockquote><p>Well&mldr; to this moment, I used the DFT-ZORA orbitals, but then I used DKH and DKH recontracted basis functions and I successfully obtained the active space. I am testing continue using ZORA for the multireference calculations. I changed Hamiltonian and basis functions because previously I had a lot of troubles converging simple CASSCF calculations with only ZORA. Once my test is done, I&rsquo;ll update this comment.</p></blockquote><div dir=rtl>All suggestions to improve this section are welcome, just send me a message.</div></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"><strong>Share on:</strong>
 <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f" target=_blank><i class="fab fa-facebook"></i>
 </a><a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f&text=Orca%206.1.1&via=Arturo%20Sauza%20de%20la%20Vega%2c%20Ph.D." target=_blank><i class="fab fa-twitter"></i>
 </a><a class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f&title=Orca%206.1.1" target=_blank><i class="fab fa-reddit"></i>
 </a><a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f&title=Orca%206.1.1" target=_blank><i class="fab fa-linkedin"></i>
 </a><a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Orca%206.1.1 https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f" target=_blank><i class="fab fa-whatsapp"></i>
 </a><a class="btn icon-button" href="mailto:?subject=Orca%206.1.1&body=https%3a%2f%2farturo-sauzadelavega.github.io%2fposts%2fprograms%2forca%2f" target=_blank><i class="fas fa-envelope-open-text"></i></a></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/programs/orca/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
-Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/programs/openmolcas/ title="OpenMolcas Manual" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>OpenMolcas Manual</div></a></div><div class="col-md-6 next-article"><a href=/posts/latex/ title="Figures with LaTeX/TikZ " class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>Figures with LaTeX/TikZ</div></a></div></div><hr></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#introduction>Introduction</a></li><li><a href=#standard-input-file>Standard Input File</a></li><li><a href=#hydrogen-atoms-optimization>Hydrogen Atoms Optimization</a></li><li><a href=#basis-set-files>Basis Set files</a></li><li><a href=#time-dependent-dft-td-dft>Time-Dependent DFT (TD-DFT)</a></li><li><a href=#multireference-methods>Multireference Methods</a><ul><li><a href=#casscf>CASSCF</a></li><li><a href=#nevpt2-and-caspt2>NEVPT2 and CASPT2</a></li><li><a href=#magnetic-properties>Magnetic Properties</a></li><li><a href=#single_aniso>SINGLE_ANISO</a></li><li><a href=#ab-initio-ligand-field-theory-ailft>Ab Initio Ligand Field Theory (AILFT)</a></li></ul></li><li><a href=#zfs-with-dft>ZFS with DFT</a></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#experiences>Experience</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#projects>Research</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#featured-posts>Featured Publications</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#publications>All Publications</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:arturo-sauzadelavega@uiowa.edu target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>arturo-sauzadelavega@uiowa.edu</span></a></li><li><a href=https://github.com/arturo-sauzadelavega target=_blank rel=noopener><span><i class="fab fa-github"></i></span> <span>arturo-sauzadelavega</span></a></li><li><a href=https://www.linkedin.com/in/asdlv target=_blank rel=noopener><span><i class="fab fa-linkedin"></i></span> <span>Arturo Sauza de la Vega</span></a></li><li><a href=https://www.researchgate.net/profile/Arturo-Sauza-De-La-Vega target=_blank rel=noopener><span><i class="fab fa-researchgate"></i></span> <span>Arturo Sauza de la Vega</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_be7279b2506ad3f1.png alt="Toha Theme Logo">
+Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/programs/openmolcas/ title="OpenMolcas Manual" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>OpenMolcas Manual</div></a></div><div class="col-md-6 next-article"><a href=/posts/latex/ title="Figures with LaTeX/TikZ " class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>Figures with LaTeX/TikZ</div></a></div></div><hr></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#introduction>Introduction</a></li><li><a href=#standard-input-file>Standard Input File</a></li><li><a href=#hydrogen-atoms-optimization>Hydrogen Atoms Optimization</a></li><li><a href=#basis-set-files>Basis Set files</a></li><li><a href=#time-dependent-dft-td-dft>Time-Dependent DFT (TD-DFT)</a></li><li><a href=#zfs-with-dft>ZFS with DFT</a></li><li><a href=#multireference-methods>Multireference Methods</a><ul><li><a href=#casscf>CASSCF</a></li><li><a href=#nevpt2-and-caspt2>NEVPT2 and CASPT2</a></li><li><a href=#magnetic-properties>Magnetic Properties</a></li><li><a href=#single_aniso>SINGLE_ANISO</a></li><li><a href=#ab-initio-ligand-field-theory-ailft>Ab Initio Ligand Field Theory (AILFT)</a></li><li><a href=#avas>AVAS</a></li></ul></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#experiences>Experience</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#projects>Research</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#featured-posts>Featured Publications</a></li><li class=nav-item><a class=smooth-scroll href=https://arturo-sauzadelavega.github.io/#publications>All Publications</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:arturo-sauzadelavega@uiowa.edu target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>arturo-sauzadelavega@uiowa.edu</span></a></li><li><a href=https://github.com/arturo-sauzadelavega target=_blank rel=noopener><span><i class="fab fa-github"></i></span> <span>arturo-sauzadelavega</span></a></li><li><a href=https://www.linkedin.com/in/asdlv target=_blank rel=noopener><span><i class="fab fa-linkedin"></i></span> <span>Arturo Sauza de la Vega</span></a></li><li><a href=https://www.researchgate.net/profile/Arturo-Sauza-De-La-Vega target=_blank rel=noopener><span><i class="fab fa-researchgate"></i></span> <span>Arturo Sauza de la Vega</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_be7279b2506ad3f1.png alt="Toha Theme Logo">
 Toha</a></div><div class="col-md-4 text-center">Copyright © 2026 Arturo Sauza de la Vega. All Rights Reserved.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
 <img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.1f64c228519f7e31a24e9f1e05a9504edfd229afb08b650959bcc877c54c4854.js integrity="sha256-H2TCKFGffjGiTp8eBalQTt/SKa+wi2UJWbzId8VMSFQ=" defer></script></body></html>
