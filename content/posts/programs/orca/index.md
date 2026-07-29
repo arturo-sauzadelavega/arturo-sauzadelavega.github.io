@@ -800,8 +800,22 @@ end
 
 ```
 
-> Well... to this moment, I used the DFT-ZORA orbitals, but then I used DKH and DKH recontracted basis functions and I successfully obtained the active space. I am testing continue using ZORA for the multireference calculations. I changed Hamiltonian and basis functions because previously I had a lot of troubles converging simple CASSCF calculations with only ZORA. Once my test is done, I'll update this comment.
+There are situations where the `AVAS` scheme fails in selecting the desired active space (it failed to me on selecting the 6 electrons in the $4f$ orbitals of an Eu(III) complex). In those situations, you can use the `%scf` block to indicate the number of electrons and orbitals, similar as in the `%casscf` block. You need to add the following into your calculation:
 
+```
+%scf
+ avas
+  system
+   center 0
+   type f
+   nel 6
+   norb 7
+  end
+ end
+end
+```
+
+Where `center` indicates the number of atom in the xyz coordinates list, and `type` could take values of `d`, `f`, `pz` or whatever, depending on your molecule.
 
 
 
