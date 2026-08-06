@@ -414,6 +414,69 @@ end
 
 ```
 
+##### CAS-CI
+
+There are different ways to obtain the desired active space. When using `Orca`, sometimes I perform a CASCI calculation to obtain an initial guess to later perform the CASSCF calculation. To do this type of calculation, I noticed things changed between `Orca` versions.
+
+For `Orca 5.X` and older, to perform a CASCI calculation you had to include the keyword `NoIter` in the next few lines of your calculation, for example:
+
+```
+! DKH dkh-def2-tzvp autoaux  PATOM 
+!NormalPrint printbasis largeprint
+!moread NoIter
+
+%moinp "dft_orbitals.gbw"
+
+%pal nprocs 20 end
+%MaxCore 2000
+
+%output
+Print[P_Basis]2
+Print[P_MOs]1
+end
+
+%casscf
+  nel 8
+  norb 6
+  mult 3,1
+  nroots 5,5
+end
+
+* 0 1 xyzfile molecule.xyz
+
+```
+
+However, for the newer `Orca 6.X` (Or in my current case, `Orca 6.1.1`), including the `NoIter` keyword is not helpful anymore, you don't need it anymore. Instead, inside the `%casscf` block, you have to set the `MaxIter` keyword set to `1`, just as follows:
+
+```
+! DKH dkh-def2-tzvp autoaux  PATOM
+!NormalPrint printbasis largeprint
+!moread
+
+%moinp "dft_orbitals.gbw"
+
+%pal nprocs 20 end
+%MaxCore 2000
+
+%output
+Print[P_Basis]2
+Print[P_MOs]1
+end
+
+%casscf
+  nel 8
+  norb 6
+  mult 3,1
+  nroots 5,5
+  MaxIter 1 
+end
+
+* 0 1 xyzfile molecule.xyz
+
+```
+
+Now, you are ready to perform a CASCI or SA-CASCI calculation!
+
 #### NEVPT2 and CASPT2 
 
 
