@@ -1,6 +1,6 @@
 	---
 title: "Orca 6.1.1"
-date: 2026-03-08
+date: 2026-08-06
 description: Onput examples of Orca 6.1.1
 tags: [ "Quantum Chemistry", "DFT", "MP2", "CCSD", "TD-DFT", "Transition State", "NBO", "Multireference methods", "AILFT"   ]
 hero: orca_6.png
