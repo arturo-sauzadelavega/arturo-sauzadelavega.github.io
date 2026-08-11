@@ -1,6 +1,6 @@
 ---
 title: "OpenMolcas Manual"
-date: 2026-07-03
+date: 2026-08-10 
 description: OpenMolcas Modules and Examples
 tags: [ "Quantum Chemistry", "CASSCF", "CASPT2", "MC-PDFT", "Multireference Methods", "Spin-Orbit Coupling", "Magnetism", "Spectroscopy"  ]
 hero: openmolcas.png
@@ -856,6 +856,63 @@ End of Input
 
 > In the previous example, I included the `WJOB` keyword to write the XMS-PDFT eigen states and energies into the `.JobIph` file instead of the SA-CASSCF energies, which might be useful for subsequent calculations with the `&RASSI` module. Additionally, in case you are interested on testing CMS-PDFT calculations, you can follow exactly the same input structure, but in the second `&RASSCF` module you have to substitute `XMSI` for `CMSI` instead.
 
+
+> It is possible to include solvation models while running HF, DFT, CASSCF, and CASPT2 calculations. To do that, you have to include the `PCM` related keywords in `&GATEWAY` or `&SEWARD` module. Automatically, the following modules will consider the continuum solvation model into the calculations. By the way, you cannot run `PCM` and `&MCPDFT`, this is not implemented yet. In the following lines, there is an example of how to run a SA-CASSCF and MS-CASPT2 calculation using PCM solvation model.
+
+```
+&SEWARD
+Basis set
+O.ANO-RCC-VDZ....
+O1   0.000000  0.0000000   0.000000     /angstrom
+End of Basis
+
+Basis set
+H.ANO-RCC-VDZ....
+H1    0.758602 0.0000000   0.504284    /angstrom
+H2    0.758602 0.0000000  -0.504284    /angstrom
+End of Basis
+RX2C
+ANGM
+0.000000 0.0000 0.0000 Angstrom
+RF-input
+PCM-model
+Solvent = tetrahydrofuran
+Conductor
+End of RF-input
+End of Input
+
+&SCF
+Spin = 1
+Charge = 0
+
+&RASSCF
+Lumorb
+Symmetry = 1
+Spin = 1
+Charge = 0
+NACTEL = 8 0 0
+RAS2 = 6
+CIROOT = 3 3 1
+CIRFRoot = 1 1 1
+ORBListing
+ALL
+ORBAppear
+COMPACT
+ ITERations = 200 100; CIMX = 500
+ Sdav = 200; PRWF = 0.01
+End of Input
+
+&CASPT2
+MULTistate
+3 1 2 3
+Imag = 0.25
+MAXIter = 300
+IPEA = 0.25
+End Of Input
+
+``` 
+
+In the previous example, the PCM keywords I used was `Solvent`, to define the solvent used in the calculation. There is a complete list of available solvents in the `&GATEWAY` webpage. Also, I used the keyword `Conductor` to establish that I want to use the CPCM model. In case the solvent you need is not implemented in the solvent list, you can define the value for the dielectric constant with the keyword `DIELectrc` followed by the value. Finally, for SA-CASSCF and multistate CASPT2 calculations, in the `&RASSCF` module you will need the `CIRFroot` keyword. It is used similarly as `CIROOT`. With this keyword, you specify the state that will be affected by the solvation model. In the previous example, from the 3 computed singlets, only the singlet is corrected by CPCM. 
 
 #### &CASPT2
 The `&CASPT2` module is used to perform perturbation theory over a CASSCF or RASSCF reference wave function. You can perform single-state, multistate, and extended multistate CASPT2, denoted as SS-CASPT2, MS-CASPT2, and XMS-CASPT2, respectively. In the following examples, we include the `IPEA` and `IMAGINARY` shifts, two empirical parameters used to address the intruder state problem in the CASPT2 formalism. An important output file from the `&CASPT2` module is the `.JobMix` file, which contains the CASPT2 wave function and energies. This file is of importance for the `&RASSI` module.
