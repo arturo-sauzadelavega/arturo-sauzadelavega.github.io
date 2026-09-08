@@ -53,6 +53,7 @@ outputs:
     - HTML
     - RSS
     - JSON
+    - sitemap
 
 # Enable global emoji support
 enableEmoji: true
