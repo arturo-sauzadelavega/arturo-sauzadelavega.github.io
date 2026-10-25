@@ -1,0 +1,7 @@
+section:
+  name: Research Impact
+  id: citations
+  enable: true
+  weight: 2
+  showOnNavbar: false
+  template: sections/citations.html

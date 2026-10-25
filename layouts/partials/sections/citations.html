@@ -1,0 +1,46 @@
+{{ $sectionID := .section.id | default "citations" }}
+{{ $s := site.Data.scholar }}
+
+<div class="container anchor p-lg-5 citations-section" id="{{ $sectionID }}">
+  {{ if not .section.hideTitle }}
+  <h1 class="text-center"><span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ end }}
+
+  {{ with $s }}
+  <div class="card p-4">
+    <div class="row align-items-center">
+
+      <!-- Números principales -->
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <div style="font-size:3rem; font-weight:700; color:#2c7a9c; line-height:1;">{{ .total_citations }}</div>
+        <div>Total citations</div>
+        <div style="display:flex; justify-content:center; gap:2rem; margin-top:1rem;">
+          <div><strong>{{ .h_index }}</strong><br><small>h-index</small></div>
+          <div><strong>{{ .i10_index }}</strong><br><small>i10-index</small></div>
+        </div>
+      </div>
+
+      <!-- Gráfica de barras -->
+      <div class="col-md-8">
+        {{ $max := 1 }}
+        {{ range .per_year }}{{ if gt .citations $max }}{{ $max = .citations }}{{ end }}{{ end }}
+        <div style="display:flex; align-items:flex-end; justify-content:center; gap:8px; height:190px;">
+          {{ range .per_year }}
+          {{ $h := math.Round (div (mul (float .citations) 140.0) (float $max)) }}
+          <div style="display:flex; flex-direction:column; align-items:center; flex:1; max-width:42px;">
+            <span style="font-size:0.7rem;">{{ .citations }}</span>
+            <div title="{{ .year }}: {{ .citations }} citations"
+                 style="width:100%; height:{{ $h }}px; background:#2c7a9c; border-radius:3px 3px 0 0;"></div>
+            <span style="font-size:0.7rem; margin-top:4px;">{{ .year }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+    <p class="text-center text-muted mt-3 mb-0" style="font-size:0.8rem;">
+      Source: <a href="{{ .profile_url }}" target="_blank" rel="noopener">Google Scholar</a> · Updated {{ .updated }}
+    </p>
+  </div>
+  {{ end }}
+</div>
