@@ -86,6 +86,7 @@ badges:
 #  url: "https://www.credly.com/org/grupo-bancolombia/badge/artificial-intelligence-and-machine-learning"
 #  badge: "https://images.credly.com/size/680x680/images/e027514f-9d07-4b29-862f-fe21a8aaebf1/ae.png"
 #
+
 - type: soft-skill-indicator
   name: Molecular Qubits
   percentage: 85
@@ -100,6 +101,12 @@ badges:
   name: Chemical Bonding
   percentage: 85
   color: orange
+
+- type: certification
+  name: "ACS Recognition of Excellence and Leadership 2026"
+  url: "https://www.acs.org/funding/awards/graduate-student-and-postdoctoral-scholars-recognition-program/past-recipients.html#mentoring"
+  badge: "/images/badges/acs_mentor_award_2026.png"
+
 
 #- type: certification
 #  name: "Glenn T. Seaborg Fellowship."
