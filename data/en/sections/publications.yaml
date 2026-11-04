@@ -3,7 +3,7 @@ section:
   name: All Publications
   id: publications
   enable: true
-  weight: 6
+  weight: 7 # after featured publications 
   showOnNavbar: true
   navbar:
     name: All Co-authored

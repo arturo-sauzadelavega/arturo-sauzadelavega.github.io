@@ -2,6 +2,6 @@ section:
   name: Research Impact
   id: citations
   enable: true
-  weight: 2
+  weight: 4 # after education
   showOnNavbar: false
   template: sections/citations.html
