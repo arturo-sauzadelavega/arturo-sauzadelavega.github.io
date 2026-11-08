@@ -1,5 +1,5 @@
 {
-  "total_citations": 166,
+  "total_citations": 167,
   "h_index": 7,
   "i10_index": 6,
   "per_year": [
@@ -21,7 +21,7 @@
     },
     {
       "year": 2022,
-      "citations": 16
+      "citations": 15
     },
     {
       "year": 2023,
@@ -33,13 +33,13 @@
     },
     {
       "year": 2025,
-      "citations": 38
+      "citations": 39
     },
     {
       "year": 2026,
-      "citations": 41
+      "citations": 42
     }
   ],
-  "updated": "2026-11-04",
+  "updated": "2026-11-08",
   "profile_url": "https://scholar.google.com/citations?user=HGBJ7qkAAAAJ"
 }
